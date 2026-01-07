@@ -1,0 +1,31 @@
+{
+  "source": "pcsx2-gameindex",
+  "generatedAt": "2026-01-04T20:46:26.197786+00:00",
+  "stats": {
+    "totalEntriesInYaml": 3,
+    "emittedItems": 2,
+    "withSettings": 2,
+    "withPatches": 2,
+    "applyModeCounts": {
+      "required": 2
+    },
+    "compatCounts": {
+      "perfect": 1,
+      "ingame": 1
+    },
+    "regionCounts": {
+      "NTSC-U": 1,
+      "PAL": 1
+    },
+    "settingsCategoryCounts": {
+      "gsHWFixes": 1,
+      "speedHacks": 1,
+      "memcardFilters": 1,
+      "gameFixes": 1,
+      "eeRoundMode": 1,
+      "vuRoundMode": 1,
+      "eeClamping": 1,
+      "vuClamping": 1
+    }
+  }
+}

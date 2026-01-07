@@ -1,0 +1,123 @@
+{
+  "version": "0.2.0",
+  "generatedAt": "2026-01-02T05:21:00.452931+00:00",
+  "notes": [
+    "Defines defaults for how ROM Runner treats missing performance scores (RetroCatalog) and missing emulator compatibility rows.",
+    "Performance missing rule: optimistic for platforms NOT covered by RetroCatalog; tiered for covered platforms.",
+    "Compatibility missing rule: optimistic for mature/easy platforms; conservative for modern/demanding platforms (exclude from auto lists unless user opts in)."
+  ],
+  "retroCatalogPlatformCoverage": [
+    "3ds",
+    "dreamcast",
+    "gamecube",
+    "gb",
+    "gba",
+    "genesis",
+    "n64",
+    "nds",
+    "nes",
+    "ps2",
+    "ps3",
+    "psp",
+    "psx",
+    "saturn",
+    "snes",
+    "switch",
+    "wii",
+    "wiiu"
+  ],
+  "bigSystemsSet": [
+    "ps3",
+    "wiiu",
+    "switch",
+    "xbox",
+    "xbox360",
+    "ps2",
+    "3ds",
+    "wii",
+    "gamecube",
+    "saturn"
+  ],
+  "difficultyTiers": {
+    "tier1_modern_hard": [
+      "ps3",
+      "wiiu",
+      "switch",
+      "xbox360"
+    ],
+    "tier2_demanding": [
+      "ps2",
+      "3ds",
+      "wii",
+      "gamecube",
+      "saturn",
+      "xbox"
+    ],
+    "tier3_moderate": [
+      "dreamcast",
+      "psp",
+      "n64"
+    ],
+    "tier4_easy": [
+      "nds",
+      "ps1",
+      "up_to_snes"
+    ]
+  },
+  "defaults": {
+    "performanceMissing": {
+      "ifPlatformNotInRetroCatalogCoverage": {
+        "autoListDecision": "include",
+        "status": "unknown",
+        "reasonCode": "PERF_NO_RETROCAT_DATA_ASSUME_OK"
+      },
+      "ifPlatformInRetroCatalogCoverage": {
+        "tier1_modern_hard": {
+          "autoListDecision": "exclude",
+          "status": "unknown",
+          "reasonCode": "PERF_MISSING_STRICT"
+        },
+        "tier2_demanding": {
+          "autoListDecision": "exclude",
+          "status": "unknown",
+          "reasonCode": "PERF_MISSING_STRICT"
+        },
+        "tier3_moderate": {
+          "autoListDecision": "include",
+          "status": "unknown",
+          "reasonCode": "PERF_MISSING_OPTIMISTIC"
+        },
+        "tier4_easy": {
+          "autoListDecision": "include",
+          "status": "unknown",
+          "reasonCode": "PERF_MISSING_OPTIMISTIC"
+        }
+      }
+    },
+    "compatibilityMissing": {
+      "strictPlatformsDefaultExclude": [
+        "ps3",
+        "wiiu",
+        "saturn",
+        "xbox",
+        "xbox360",
+        "switch"
+      ],
+      "strictDefault": {
+        "autoListDecision": "exclude",
+        "status": "unknown",
+        "reasonCode": "COMPAT_MISSING_STRICT"
+      },
+      "matureDefault": {
+        "autoListDecision": "include",
+        "status": "unknown",
+        "reasonCode": "COMPAT_MISSING_ASSUME_OK"
+      },
+      "userOverrideSetting": {
+        "settingId": "includeUnknownCompatibilityForStrictPlatforms",
+        "default": false,
+        "description": "When enabled, unknown compatibility for strict platforms may be included in auto-generated lists (still flagged as Unknown)."
+      }
+    }
+  }
+}

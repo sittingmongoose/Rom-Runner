@@ -1,0 +1,1994 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ROM Runner Definition Pack Schemas",
+  "description": "JSON Schema definitions for ROM Runner definition pack files",
+  "version": "1.1.0",
+  "definitions": {
+    "Region": {
+      "type": "string",
+      "enum": [
+        "USA",
+        "EUR",
+        "JPN",
+        "World",
+        "FRA",
+        "GER",
+        "SPA",
+        "ITA",
+        "NLD",
+        "KOR",
+        "CHN",
+        "TWN",
+        "HKG",
+        "BRA",
+        "AUS",
+        "Unknown",
+        "universal"
+      ],
+      "description": "Geographic region. 'universal' is used for BIOS files that work across all regions."
+    },
+    "Filesystem": {
+      "type": "string",
+      "enum": [
+        "fat32",
+        "exfat",
+        "ntfs",
+        "ext4",
+        "apfs",
+        "hfs+",
+        "btrfs",
+        "f2fs",
+        "unknown"
+      ]
+    },
+    "PerformanceTier": {
+      "type": "string",
+      "enum": [
+        "unplayable",
+        "poor",
+        "playable",
+        "good",
+        "excellent"
+      ],
+      "description": "Game outcome quality - how well a game runs on specific hardware. Not to be confused with Emulator.performance.demandTier which measures emulator resource requirements."
+    },
+    "ROMHashes": {
+      "type": "object",
+      "properties": {
+        "crc32": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "md5": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sha1": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Source of this hash (e.g., 'Libretro System.dat')"
+        },
+        "sourceUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri",
+          "description": "URL to source documentation"
+        },
+        "isPreferred": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, this is the recommended hash variant"
+        }
+      }
+    },
+    "Platform": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "shortName",
+        "manufacturer",
+        "type",
+        "supportedFormats",
+        "fileExtensions"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier (e.g., 'snes', 'psx', 'n64')",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "name": {
+          "type": "string",
+          "description": "Full display name",
+          "examples": [
+            "Super Nintendo Entertainment System",
+            "PlayStation"
+          ]
+        },
+        "shortName": {
+          "type": "string",
+          "description": "Abbreviated name for UI",
+          "examples": [
+            "SNES",
+            "PS1",
+            "N64"
+          ]
+        },
+        "manufacturer": {
+          "type": "string",
+          "examples": [
+            "Nintendo",
+            "Sony",
+            "Sega"
+          ]
+        },
+        "generation": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "releaseYear": {
+          "type": "integer",
+          "minimum": 1970,
+          "maximum": 2030
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "console",
+            "handheld",
+            "computer",
+            "arcade"
+          ]
+        },
+        "supportedFormats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Supported ROM file formats",
+          "examples": [
+            [
+              "sfc",
+              "smc",
+              "zip",
+              "7z"
+            ]
+          ]
+        },
+        "preferredFormat": {
+          "type": "string",
+          "description": "Recommended format for this platform"
+        },
+        "typicalRomSize": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "integer",
+              "description": "Minimum size in bytes"
+            },
+            "max": {
+              "type": "integer",
+              "description": "Maximum size in bytes"
+            }
+          }
+        },
+        "requiresBios": {
+          "type": "boolean",
+          "default": false
+        },
+        "commonFolderNames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Common folder names used by frontends",
+          "examples": [
+            [
+              "SNES",
+              "snes",
+              "Super Nintendo"
+            ]
+          ]
+        },
+        "fileExtensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "File extensions including dot",
+          "examples": [
+            [
+              ".sfc",
+              ".smc",
+              ".zip"
+            ]
+          ]
+        },
+        "supportsMultiDisc": {
+          "type": "boolean",
+          "default": false
+        },
+        "multiDiscFormat": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "cue-bin",
+            "iso",
+            "chd",
+            "m3u",
+            null
+          ]
+        },
+        "compressionSupport": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "format": {
+                "type": "string"
+              },
+              "toolRequired": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "spaceSavings": {
+                "type": "string"
+              },
+              "emulatorSupport": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "BIOSFile": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "filename",
+        "platformId"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable name",
+          "examples": [
+            "PlayStation BIOS (USA)"
+          ]
+        },
+        "filename": {
+          "type": "string",
+          "description": "Expected filename",
+          "examples": [
+            "scph1001.bin"
+          ]
+        },
+        "platformId": {
+          "type": "string"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "required": {
+          "type": "boolean",
+          "default": true
+        },
+        "region": {
+          "$ref": "#/definitions/Region",
+          "default": "universal"
+        },
+        "knownHashes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ROMHashes"
+          },
+          "description": "Array of known good hashes (multiple versions may exist)"
+        },
+        "alternateFilenames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Alternative filenames to search for"
+        },
+        "requiredForEmulators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Emulator IDs that require this BIOS"
+        },
+        "optionalForEmulators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Emulator IDs that can optionally use this BIOS"
+        },
+        "fileSize": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Expected file size in bytes"
+        },
+        "hleFallback": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, emulator can use HLE when BIOS is missing"
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "BIOS version number (e.g. '3.0', '2.1')"
+        },
+        "releaseDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Release date in ISO format or partial (e.g. '1997-11')"
+        },
+        "biosSubdirectory": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Expected subdirectory within BIOS folder (e.g. 'pcsx2/bios')"
+        },
+        "alternateSubdirectories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Alternative subdirectory paths to search"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Additional notes or documentation"
+        }
+      }
+    },
+    "Chipset": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "performanceTier"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "examples": [
+            "rk3566",
+            "sd865",
+            "h700",
+            "zen3"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "examples": [
+            "Rockchip RK3566",
+            "Snapdragon 865",
+            "AllWinner H700"
+          ]
+        },
+        "manufacturer": {
+          "type": "string",
+          "examples": [
+            "Rockchip",
+            "Qualcomm",
+            "AllWinner",
+            "AMD",
+            "Intel"
+          ]
+        },
+        "cpuCores": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "cpuArch": {
+          "type": "string",
+          "enum": [
+            "arm64",
+            "arm32",
+            "x86_64",
+            "x86"
+          ]
+        },
+        "gpu": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "performanceTier": {
+          "type": "string",
+          "enum": [
+            "very-low",
+            "low",
+            "medium",
+            "high",
+            "very-high",
+            "ultra"
+          ],
+          "description": "General performance classification"
+        },
+        "maxPlatformTier": {
+          "type": "string",
+          "description": "Highest platform generation this chipset can reasonably emulate"
+        }
+      }
+    },
+    "Device": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "type",
+        "chipsetId"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "examples": [
+            "rg35xx-plus",
+            "steam-deck-oled",
+            "retroid-pocket-4-pro"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "examples": [
+            "Anbernic RG35XX Plus",
+            "Steam Deck OLED",
+            "Retroid Pocket 4 Pro"
+          ]
+        },
+        "manufacturer": {
+          "type": "string",
+          "examples": [
+            "Anbernic",
+            "Valve",
+            "Retroid"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "handheld",
+            "console",
+            "pc",
+            "phone",
+            "tablet",
+            "sbc",
+            "arcade"
+          ]
+        },
+        "releaseYear": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "chipsetId": {
+          "type": "string",
+          "description": "Reference to chipset definition"
+        },
+        "ramMB": {
+          "type": "integer",
+          "description": "RAM in megabytes"
+        },
+        "screen": {
+          "type": "object",
+          "properties": {
+            "width": {
+              "type": "integer"
+            },
+            "height": {
+              "type": "integer"
+            },
+            "aspectRatio": {
+              "type": "string",
+              "examples": [
+                "4:3",
+                "16:9",
+                "3:2"
+              ]
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "lcd",
+                "ips",
+                "oled",
+                "amoled"
+              ]
+            },
+            "size": {
+              "type": "number",
+              "description": "Diagonal size in inches"
+            }
+          }
+        },
+        "storage": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "internal",
+                "sdcard",
+                "both"
+              ]
+            },
+            "internalGB": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "sdCardSlots": {
+              "type": "integer"
+            },
+            "maxSdCardGB": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            }
+          }
+        },
+        "connectivity": {
+          "type": "object",
+          "properties": {
+            "wifi": {
+              "type": "boolean"
+            },
+            "bluetooth": {
+              "type": "boolean"
+            },
+            "hdmiOut": {
+              "type": "boolean"
+            },
+            "usb": {
+              "type": "boolean"
+            },
+            "usbType": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "usb-a",
+                "usb-c",
+                "micro-usb",
+                null
+              ]
+            }
+          }
+        },
+        "supportedOS": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Operating system IDs this device supports"
+        },
+        "defaultOS": {
+          "type": "string"
+        },
+        "links": {
+          "type": "object",
+          "properties": {
+            "retroCatalogUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "retroDockUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "officialUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            }
+          }
+        }
+      }
+    },
+    "OperatingSystem": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "examples": [
+            "knulli",
+            "arkos",
+            "stock-android",
+            "windows-11"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "examples": [
+            "Knulli",
+            "ArkOS",
+            "Stock Android",
+            "Windows 11"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "cfw",
+            "linux",
+            "android",
+            "windows",
+            "macos",
+            "steamOS"
+          ]
+        },
+        "baseOS": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Parent OS if this is a derivative"
+        },
+        "supportedDevices": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Device IDs this OS supports"
+        },
+        "defaultFrontend": {
+          "type": "string"
+        },
+        "supportedFrontends": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowFrontendSelection": {
+          "type": "boolean",
+          "default": false,
+          "description": "Whether user can choose frontend (e.g., Stock Android allows choice)"
+        },
+        "paths": {
+          "type": "object",
+          "properties": {
+            "bios": {
+              "type": "string"
+            },
+            "roms": {
+              "type": "string"
+            },
+            "saves": {
+              "type": "string"
+            },
+            "states": {
+              "type": "string"
+            },
+            "screenshots": {
+              "type": "string"
+            },
+            "portmaster": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "filesystem": {
+          "type": "object",
+          "properties": {
+            "recommended": {
+              "$ref": "#/definitions/Filesystem"
+            },
+            "supported": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Filesystem"
+              }
+            }
+          }
+        },
+        "supportsPortMaster": {
+          "type": "boolean",
+          "default": false
+        },
+        "links": {
+          "type": "object",
+          "properties": {
+            "wikiUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "formattingGuideUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            }
+          }
+        },
+        "formattingNotes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "folderStructures": {
+          "type": "object",
+          "description": "Folder structure per frontend",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "platformFolders": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "biosFolder": {
+                "type": "string"
+              },
+              "saveFolder": {
+                "type": "string"
+              },
+              "stateFolder": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "metadataFormats": {
+          "type": "object",
+          "description": "Metadata format per frontend",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "format": {
+                "type": "string"
+              },
+              "filename": {
+                "type": "string"
+              },
+              "location": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Frontend": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "type",
+        "metadataFormat"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "examples": [
+            "emulationstation-de",
+            "pegasus",
+            "retroarch",
+            "launchbox"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "examples": [
+            "EmulationStation-DE",
+            "Pegasus",
+            "RetroArch",
+            "LaunchBox"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "couch-ui",
+            "library-manager",
+            "launcher"
+          ]
+        },
+        "availableOnOS": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "availableOnCFW": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "metadataFormat": {
+          "type": "string",
+          "enum": [
+            "emulationstation-xml",
+            "pegasus-txt",
+            "retroarch-lpl",
+            "launchbox-xml",
+            "playnite-json",
+            "daijisho-json",
+            "custom"
+          ]
+        },
+        "metadataFile": {
+          "type": "string",
+          "description": "Default metadata filename",
+          "examples": [
+            "gamelist.xml",
+            "metadata.pegasus.txt"
+          ]
+        },
+        "features": {
+          "type": "object",
+          "properties": {
+            "supportsCollections": {
+              "type": "boolean"
+            },
+            "supportsPlaylists": {
+              "type": "boolean"
+            },
+            "supportsPerGameEmulator": {
+              "type": "boolean"
+            },
+            "supportsPerGameSettings": {
+              "type": "boolean"
+            },
+            "supportsScraperIntegration": {
+              "type": "boolean"
+            }
+          }
+        },
+        "folderStructure": {
+          "type": "object",
+          "properties": {
+            "romsBasePath": {
+              "type": "string"
+            },
+            "mediaBasePath": {
+              "type": "string"
+            },
+            "platformFolderPattern": {
+              "type": "string"
+            }
+          }
+        },
+        "mediaStructure": {
+          "type": "object",
+          "description": "Where different media types are stored",
+          "properties": {
+            "boxFront": {
+              "type": "string"
+            },
+            "boxBack": {
+              "type": "string"
+            },
+            "screenshot": {
+              "type": "string"
+            },
+            "video": {
+              "type": "string"
+            },
+            "logo": {
+              "type": "string"
+            },
+            "wheel": {
+              "type": "string"
+            },
+            "marquee": {
+              "type": "string"
+            }
+          }
+        },
+        "canImportFrom": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Frontend IDs this frontend can import from"
+        },
+        "canExportTo": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Frontend IDs this frontend can export to"
+        },
+        "supportedMediaTypes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "box-front-2d",
+              "box-front-3d",
+              "box-back",
+              "box-spine",
+              "box-full",
+              "screenshot",
+              "title-screen",
+              "video",
+              "logo",
+              "wheel",
+              "marquee",
+              "cartridge",
+              "disc",
+              "manual",
+              "fanart",
+              "background"
+            ]
+          },
+          "description": "Media types this frontend supports displaying"
+        },
+        "links": {
+          "type": "object",
+          "properties": {
+            "docsUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            },
+            "setupGuideUrl": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "format": "uri"
+            }
+          }
+        }
+      }
+    },
+    "Emulator": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "type",
+        "supportedPlatforms"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "examples": [
+            "snes9x",
+            "duckstation",
+            "dolphin",
+            "ppsspp"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "examples": [
+            "Snes9x",
+            "DuckStation",
+            "Dolphin",
+            "PPSSPP"
+          ]
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "standalone",
+            "retroarch-core",
+            "libretro-core"
+          ]
+        },
+        "coreName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "LibRetro core name if applicable",
+          "examples": [
+            "snes9x_libretro",
+            "pcsx_rearmed_libretro"
+          ]
+        },
+        "supportedPlatforms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Platform IDs this emulator supports"
+        },
+        "supportedFormats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "supportedBios": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "BIOS file IDs this emulator uses"
+        },
+        "availableOnOS": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "availableOnFrontends": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "performance": {
+          "type": "object",
+          "properties": {
+            "demandTier": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "very-high"
+              ],
+              "description": "Hardware resource demand - how much CPU/GPU power this emulator requires. Not to be confused with PerformanceTier which measures game outcome quality."
+            },
+            "accuracy": {
+              "type": "string",
+              "enum": [
+                "low",
+                "medium",
+                "high",
+                "cycle-accurate"
+              ]
+            }
+          }
+        },
+        "supportsPerGameConfig": {
+          "type": "boolean",
+          "default": false
+        },
+        "configFormat": {
+          "type": "string",
+          "enum": [
+            "retroarch",
+            "standalone",
+            "custom"
+          ]
+        },
+        "availableSettings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "boolean",
+                  "number",
+                  "select",
+                  "range"
+                ]
+              },
+              "defaultValue": {},
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "value": {},
+                    "label": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "step": {
+                "type": "number"
+              },
+              "category": {
+                "type": "string",
+                "enum": [
+                  "performance",
+                  "video",
+                  "audio",
+                  "controls",
+                  "advanced"
+                ]
+              }
+            }
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "deprecated",
+            "archived"
+          ],
+          "default": "active"
+        }
+      }
+    },
+    "EmulatorRecommendation": {
+      "type": "object",
+      "required": [
+        "emulatorId",
+        "chipsetId",
+        "platformId",
+        "priority"
+      ],
+      "properties": {
+        "emulatorId": {
+          "type": "string"
+        },
+        "chipsetId": {
+          "type": "string"
+        },
+        "platformId": {
+          "type": "string"
+        },
+        "priority": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Lower number = higher priority"
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "GamePerformance": {
+      "type": "object",
+      "required": [
+        "gameId",
+        "platformId",
+        "chipsetId",
+        "performanceTier"
+      ],
+      "properties": {
+        "gameId": {
+          "type": "string",
+          "description": "Game identifier or '*' for platform-wide default"
+        },
+        "platformId": {
+          "type": "string"
+        },
+        "chipsetId": {
+          "type": "string"
+        },
+        "emulatorId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "performanceTier": {
+          "$ref": "#/definitions/PerformanceTier"
+        },
+        "requiresSettings": {
+          "type": "boolean",
+          "default": false
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "excludeFromAutoLists": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, this game won't be auto-added to curated lists for this chipset"
+        },
+        "source": {
+          "type": "string",
+          "default": "rom-runner-db"
+        }
+      }
+    },
+    "RecommendedSettings": {
+      "type": "object",
+      "required": [
+        "platformId",
+        "chipsetId",
+        "emulatorId",
+        "settings"
+      ],
+      "properties": {
+        "gameId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Specific game ID, or null for platform-wide defaults"
+        },
+        "platformId": {
+          "type": "string"
+        },
+        "chipsetId": {
+          "type": "string"
+        },
+        "emulatorId": {
+          "type": "string"
+        },
+        "settings": {
+          "type": "object",
+          "description": "Emulator-specific settings object",
+          "properties": {
+            "frameskip": {
+              "type": [
+                "integer",
+                "string",
+                "null"
+              ]
+            },
+            "frameskipType": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "auto",
+                "manual",
+                null
+              ]
+            },
+            "cpuClockSpeed": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 50,
+              "maximum": 200
+            },
+            "cpuUnderclock": {
+              "type": "boolean"
+            },
+            "cpuOverclock": {
+              "type": "boolean"
+            },
+            "internalResolution": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "renderingBackend": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "vsync": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "audioLatency": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "audioSync": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "runAheadFrames": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "rewind": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "preferredCore": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "resultingPerformance": {
+          "$ref": "#/definitions/PerformanceTier"
+        },
+        "explanation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "default": "rom-runner-db"
+        }
+      }
+    },
+    "ShaderPreset": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "shaderPath"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "name": {
+          "type": "string",
+          "examples": [
+            "CRT-Royale",
+            "CRT-Geom",
+            "xBR",
+            "None"
+          ]
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "crt",
+            "lcd",
+            "scanlines",
+            "smoothing",
+            "sharpen",
+            "ntsc",
+            "handheld",
+            "artistic",
+            "none"
+          ]
+        },
+        "shaderPath": {
+          "type": "string",
+          "description": "Path to shader file (.glslp, .slangp)"
+        },
+        "supportedBackends": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "opengl",
+              "vulkan",
+              "direct3d"
+            ]
+          }
+        },
+        "performanceImpact": {
+          "type": "string",
+          "enum": [
+            "none",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "previewImage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "isBuiltin": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "ControllerProfile": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "mappings"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "targetPlatformId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "targetEmulatorId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mappings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "virtualButton": {
+                "type": "string"
+              },
+              "physicalButton": {
+                "type": "string"
+              },
+              "physicalAxis": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "axisDirection": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "enum": [
+                  "positive",
+                  "negative",
+                  null
+                ]
+              }
+            }
+          }
+        },
+        "analogConfig": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "deadzone": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "sensitivity": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 2
+            }
+          }
+        },
+        "turboConfig": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "enableTurbo": {
+              "type": "boolean"
+            },
+            "turboRateHz": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 60
+            },
+            "turboButtons": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "isBuiltin": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "ChangelogEntry": {
+      "type": "object",
+      "required": [
+        "version",
+        "date",
+        "changes"
+      ],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "changes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "added",
+                  "changed",
+                  "fixed",
+                  "removed"
+                ]
+              },
+              "description": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "DefinitionPack": {
+    "type": "object",
+    "description": "Complete definition pack containing all ROM Runner definitions",
+    "required": [
+      "version",
+      "releaseDate",
+      "minAppVersion",
+      "schemaVersion"
+    ],
+    "properties": {
+      "version": {
+        "type": "string",
+        "pattern": "^\\d+\\.\\d+\\.\\d+$"
+      },
+      "releaseDate": {
+        "type": "string",
+        "format": "date"
+      },
+      "minAppVersion": {
+        "type": "string",
+        "pattern": "^\\d+\\.\\d+\\.\\d+$"
+      },
+      "schemaVersion": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "platforms": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Platform"
+        }
+      },
+      "biosFiles": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/BIOSFile"
+        }
+      },
+      "chipsets": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Chipset"
+        }
+      },
+      "devices": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Device"
+        }
+      },
+      "operatingSystems": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/OperatingSystem"
+        }
+      },
+      "frontends": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Frontend"
+        }
+      },
+      "emulators": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/Emulator"
+        }
+      },
+      "emulatorRecommendations": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/EmulatorRecommendation"
+        }
+      },
+      "gamePerformance": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/GamePerformance"
+        }
+      },
+      "recommendedSettings": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/RecommendedSettings"
+        }
+      },
+      "shaderPresets": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/ShaderPreset"
+        }
+      },
+      "controllerProfiles": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/ControllerProfile"
+        }
+      },
+      "changelog": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/ChangelogEntry"
+        }
+      },
+      "signature": {
+        "type": "string",
+        "description": "Cryptographic signature for verification"
+      }
+    }
+  },
+  "DeltaUpdate": {
+    "type": "object",
+    "description": "Incremental update containing only changes between versions",
+    "required": [
+      "fromVersion",
+      "toVersion"
+    ],
+    "properties": {
+      "fromVersion": {
+        "type": "string",
+        "pattern": "^\\d+\\.\\d+\\.\\d+$"
+      },
+      "toVersion": {
+        "type": "string",
+        "pattern": "^\\d+\\.\\d+\\.\\d+$"
+      },
+      "added": {
+        "type": "object",
+        "properties": {
+          "platforms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Platform"
+            }
+          },
+          "devices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Device"
+            }
+          },
+          "emulators": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Emulator"
+            }
+          },
+          "operatingSystems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/OperatingSystem"
+            }
+          },
+          "frontends": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Frontend"
+            }
+          },
+          "chipsets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Chipset"
+            }
+          },
+          "biosFiles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/BIOSFile"
+            }
+          },
+          "gamePerformance": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/GamePerformance"
+            }
+          },
+          "recommendedSettings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/RecommendedSettings"
+            }
+          }
+        }
+      },
+      "modified": {
+        "type": "object",
+        "properties": {
+          "platforms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Platform"
+            }
+          },
+          "devices": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Device"
+            }
+          },
+          "emulators": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Emulator"
+            }
+          },
+          "operatingSystems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/OperatingSystem"
+            }
+          },
+          "frontends": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Frontend"
+            }
+          },
+          "chipsets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/Chipset"
+            }
+          },
+          "biosFiles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/definitions/BIOSFile"
+            }
+          }
+        }
+      },
+      "removed": {
+        "type": "object",
+        "properties": {
+          "platforms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "devices": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "emulators": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "operatingSystems": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "frontends": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "chipsets": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "biosFiles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "changelog": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/ChangelogEntry"
+        }
+      },
+      "signature": {
+        "type": "string"
+      }
+    }
+  },
+  "UpdateManifest": {
+    "type": "object",
+    "description": "Manifest file served by update servers for checking available updates",
+    "required": [
+      "latestVersion",
+      "releaseDate",
+      "downloadUrl"
+    ],
+    "properties": {
+      "latestVersion": {
+        "type": "string",
+        "pattern": "^\\d+\\.\\d+\\.\\d+$"
+      },
+      "releaseDate": {
+        "type": "string",
+        "format": "date"
+      },
+      "minAppVersion": {
+        "type": "string",
+        "pattern": "^\\d+\\.\\d+\\.\\d+$"
+      },
+      "downloadUrl": {
+        "type": "string",
+        "format": "uri"
+      },
+      "downloadSize": {
+        "type": "integer",
+        "description": "Size in bytes"
+      },
+      "sha256": {
+        "type": "string",
+        "description": "SHA256 hash of the download"
+      },
+      "deltaUpdates": {
+        "type": "array",
+        "description": "Available delta updates from previous versions",
+        "items": {
+          "type": "object",
+          "properties": {
+            "fromVersion": {
+              "type": "string"
+            },
+            "downloadUrl": {
+              "type": "string",
+              "format": "uri"
+            },
+            "downloadSize": {
+              "type": "integer"
+            },
+            "sha256": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "changelog": {
+        "type": "array",
+        "items": {
+          "$ref": "#/definitions/ChangelogEntry"
+        }
+      }
+    }
+  }
+}

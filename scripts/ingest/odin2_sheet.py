@@ -1,0 +1,273 @@
+#!/usr/bin/env python3
+"""
+odin2_sheet.py â€” Odin 2 (Snapdragon 8 Gen 2) community compatibility sheet ingestor.
+
+Source sheet:
+https://docs.google.com/spreadsheets/d/1XaPYEyTinKk7F2uTfgSDpgEelhUYPFBWo7knX_3aQgw/
+
+This script is "best effort" because community sheets evolve.
+Key features:
+- Attempts to auto-discover tab GIDs/names.
+- Lets you override platform -> gid or platform -> sheet name from CLI.
+- Normalizes statuses to ROM Runner's layerC-v1 schema.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Optional
+
+from layerC_common import (
+    SheetTab,
+    clean_text,
+    discover_sheet_tabs,
+    ensure_dirs,
+    fetch_sheet_csv,
+    fetch_sheet_csv_by_name,
+    find_column,
+    is_probably_header_row,
+    normalize_platform_token,
+    normalize_status,
+    now_iso_utc,
+    read_csv_rows,
+)
+
+
+SOURCE_ID = "odin2_8gen2_sheet"
+SHEET_ID = "1XaPYEyTinKk7F2uTfgSDpgEelhUYPFBWo7knX_3aQgw"
+SHEET_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/"
+
+# The seed file says Odin 2 sheet covers these platforms.
+DEFAULT_PLATFORMS = ["switch", "wiiu", "ps2", "3ds", "wii", "gamecube", "vita", "dreamcast"]
+
+COLUMN_MAP = {
+    "game": ["game", "title", "name", "game name", "game title"],
+    "status": ["status", "compatibility", "rating", "playability", "playable", "performance"],
+    "region": ["region", "reg", "country"],
+    "emulator": ["emulator", "emu", "app", "core"],
+    "version": ["version", "emu version", "emulator version", "build", "commit"],
+    "notes": ["notes", "comments", "settings", "fix", "tips", "notes/tips"],
+}
+
+
+PLATFORM_ALIASES = {
+    "switch": ["switch", "nintendo switch", "ns", "yuzu", "ryujinx"],
+    "wiiu": ["wiiu", "wii u", "wiiu (cemu)", "cemu"],
+    "ps2": ["ps2", "playstation2", "playstation 2", "pcsx2", "aethersx2", "nethersx2"],
+    "3ds": ["3ds", "nintendo3ds", "nintendo 3ds", "citra", "lime3ds", "panda3ds"],
+    "wii": ["wii", "nintendowii", "nintendo wii", "dolphin wii"],
+    "gamecube": ["gamecube", "gc", "nintendo gamecube", "dolphin gc", "dolphin gamecube"],
+    "vita": ["vita", "psvita", "ps vita", "playstation vita", "vita3k"],
+    "dreamcast": ["dreamcast", "dc", "sega dreamcast", "flycast", "redream"],
+}
+
+
+def _norm(s: str) -> str:
+    return normalize_platform_token(s)
+
+
+def auto_pick_tab_for_platform(tabs: list[SheetTab], platform_id: str) -> Optional[SheetTab]:
+    """Try to pick the best-matching tab by name, given a platformId."""
+    aliases = PLATFORM_ALIASES.get(platform_id, [platform_id])
+    alias_norms = {_norm(a) for a in aliases}
+
+    # exact/substring match
+    for t in tabs:
+        tn = _norm(t.name)
+        if tn in alias_norms or any(a in tn or tn in a for a in alias_norms):
+            return t
+
+    # looser: if a token starts with platform token, etc.
+    p = _norm(platform_id)
+    for t in tabs:
+        tn = _norm(t.name)
+        if tn.startswith(p) or p.startswith(tn):
+            return t
+
+    return None
+
+
+def parse_items(csv_text: str, platform_id: str) -> list[dict]:
+    headers, rows = read_csv_rows(csv_text)
+    if not headers:
+        return []
+
+    game_col = find_column(headers, COLUMN_MAP["game"])
+    status_col = find_column(headers, COLUMN_MAP["status"])
+    region_col = find_column(headers, COLUMN_MAP["region"])
+    emu_col = find_column(headers, COLUMN_MAP["emulator"])
+    ver_col = find_column(headers, COLUMN_MAP["version"])
+    notes_col = find_column(headers, COLUMN_MAP["notes"])
+
+    # Some sheets don't use the first row as headers; try to auto-detect.
+    if game_col is None or status_col is None:
+        # Try scanning first ~10 rows for header-like row
+        for i, r in enumerate(rows[:10]):
+            if is_probably_header_row(r):
+                headers = r
+                rows = rows[i + 1 :]
+                game_col = find_column(headers, COLUMN_MAP["game"])
+                status_col = find_column(headers, COLUMN_MAP["status"])
+                region_col = find_column(headers, COLUMN_MAP["region"])
+                emu_col = find_column(headers, COLUMN_MAP["emulator"])
+                ver_col = find_column(headers, COLUMN_MAP["version"])
+                notes_col = find_column(headers, COLUMN_MAP["notes"])
+                break
+
+    if game_col is None or status_col is None:
+        # Required columns missing
+        return []
+
+    items: list[dict] = []
+    for row in rows:
+        if not row or len(row) <= max(game_col, status_col):
+            continue
+
+        game_title = clean_text(row[game_col] if game_col < len(row) else "")
+        if not game_title:
+            continue
+
+        raw_status = clean_text(row[status_col] if status_col < len(row) else "")
+        normalized, tier = normalize_status(raw_status)
+
+        region = clean_text(row[region_col] if (region_col is not None and region_col < len(row)) else "")
+        emulator_id = clean_text(row[emu_col] if (emu_col is not None and emu_col < len(row)) else "")
+        emulator_version = clean_text(row[ver_col] if (ver_col is not None and ver_col < len(row)) else "")
+        notes = clean_text(row[notes_col] if (notes_col is not None and notes_col < len(row)) else "")
+
+        item = {
+            "platformId": platform_id,
+            "gameTitle": game_title,
+            "externalGameId": None,
+            "performance": {
+                "raw": raw_status,
+                "normalized": normalized,
+                "tier": tier,
+            },
+            "emulatorId": emulator_id or None,
+            "emulatorVersion": emulator_version or None,
+            "settings": {},
+            "confidence": "layerC",
+            "sourceUrl": SHEET_URL,
+        }
+
+        if region:
+            item["region"] = region  # optional field (only present when source provides it)
+
+        if notes:
+            item["settings"]["notes"] = notes
+
+        items.append(item)
+
+    return items
+
+
+def parse_kv_list(arg_values: list[str]) -> dict[str, str]:
+    """
+    Parse repeated args like ["ps2=123", "wii=456"] into {"ps2": "123", ...}
+    """
+    out: dict[str, str] = {}
+    for v in arg_values:
+        if "=" not in v:
+            continue
+        k, val = v.split("=", 1)
+        k = k.strip()
+        val = val.strip()
+        if k and val:
+            out[k] = val
+    return out
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description="Ingest Odin 2 community compatibility Google Sheet â†’ layerC-v1 JSON")
+    ap.add_argument("--out", default="out/layerC.odin2.json", help="Output path")
+    ap.add_argument("--cache-dir", default=".cache/layerC", help="Cache directory (shared across ingestors)")
+    ap.add_argument("--platform", action="append", help="Only ingest these platformIds (repeatable). Default: all")
+    ap.add_argument("--gid", action="append", default=[], help="Override platform tab gid mapping, e.g. --gid ps2=0 --gid wii=12345")
+    ap.add_argument("--sheet-name", action="append", default=[], help="Override platform tab sheet name, e.g. --sheet-name ps2=PS2")
+    ap.add_argument("--list-tabs", action="store_true", help="Print discovered tabs (name + gid) and exit")
+    args = ap.parse_args()
+
+    ensure_dirs(args.out, args.cache_dir)
+
+    platforms = args.platform or DEFAULT_PLATFORMS
+    gid_overrides = parse_kv_list(args.gid)
+    sheet_name_overrides = parse_kv_list(args.sheet_name)
+
+    tabs = discover_sheet_tabs(SHEET_ID, cache_dir=args.cache_dir)
+
+    if args.list_tabs:
+        print(f"Discovered {len(tabs)} tabs for sheet {SHEET_ID}:")
+        for t in tabs:
+            print(f"- {t.name} (gid={t.gid})")
+        return
+
+    all_items: list[dict] = []
+    for platform_id in platforms:
+        # 1) explicit sheet name override
+        if platform_id in sheet_name_overrides:
+            sheet_name = sheet_name_overrides[platform_id]
+            print(f"[{platform_id}] Fetching by sheet name: {sheet_name!r}")
+            try:
+                csv_text = fetch_sheet_csv_by_name(SHEET_ID, sheet_name, cache_dir=args.cache_dir)
+                items = parse_items(csv_text, platform_id)
+                all_items.extend(items)
+                print(f"  Found {len(items)} rows")
+            except Exception as e:
+                print(f"  Error: {e}")
+            continue
+
+        # 2) explicit gid override
+        gid = gid_overrides.get(platform_id)
+        tab = None
+        if gid:
+            print(f"[{platform_id}] Fetching by gid override: {gid}")
+            try:
+                csv_text = fetch_sheet_csv(SHEET_ID, gid, cache_dir=args.cache_dir)
+                items = parse_items(csv_text, platform_id)
+                all_items.extend(items)
+                print(f"  Found {len(items)} rows")
+            except Exception as e:
+                print(f"  Error: {e}")
+            continue
+
+        # 3) auto pick a tab
+        tab = auto_pick_tab_for_platform(tabs, platform_id)
+        if tab:
+            print(f"[{platform_id}] Auto-picked tab: {tab.name!r} (gid={tab.gid})")
+            try:
+                csv_text = fetch_sheet_csv(SHEET_ID, tab.gid, cache_dir=args.cache_dir)
+                items = parse_items(csv_text, platform_id)
+                # annotate sourceUrl with gid for traceability
+                for it in items:
+                    it["sourceUrl"] = f"{SHEET_URL}edit#gid={tab.gid}"
+                all_items.extend(items)
+                print(f"  Found {len(items)} rows")
+            except Exception as e:
+                print(f"  Error: {e}")
+        else:
+            print(f"[{platform_id}] Could not map to a tab automatically. Use --list-tabs and set --gid/--sheet-name.")
+
+    output = {
+        "schemaVersion": "layerC-v1",
+        "source": {
+            "id": SOURCE_ID,
+            "name": "Odin 2 Game Compatibility Sheets",
+            "kind": "community",
+            "url": SHEET_URL,
+            "hardwareScope": {"deviceFamily": "Odin 2", "chipset": "Snapdragon 8 Gen 2"},
+        },
+        "generatedAt": now_iso_utc(),
+        "items": all_items,
+    }
+
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.out).write_text(json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"\nWrote {len(all_items)} items â†’ {args.out}")
+
+
+if __name__ == "__main__":
+    main()

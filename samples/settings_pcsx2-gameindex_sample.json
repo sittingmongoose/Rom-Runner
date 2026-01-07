@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "emulator-settings-v1",
+  "source": "pcsx2-gameindex",
+  "sourceUrl": "/mnt/data/GameIndex.sample.yaml",
+  "generatedAt": "2026-01-04T20:46:26.197080+00:00",
+  "items": [
+    {
+      "platformId": "ps2",
+      "emulatorId": "pcsx2",
+      "externalIdType": "ps2-serial",
+      "externalGameId": "SLUS-20946",
+      "title": "God of War",
+      "region": "NTSC-U",
+      "settings": {
+        "gsHWFixes": {
+          "mipmap": 2,
+          "texturePreloading": 1,
+          "cpuCLUTRender": 1
+        },
+        "speedHacks": {
+          "mvuFlagSpeedHack": 0
+        },
+        "memcardFilters": [
+          "SLUS-20946"
+        ]
+      },
+      "patches": {
+        "default": "// 60 FPS patch\npatch=1,EE,00123456,extended,00000001\n"
+      },
+      "settingsFormat": "pcsx2-gameindex",
+      "applyMode": "required",
+      "compatRating": {
+        "raw": 5,
+        "normalized": "perfect"
+      },
+      "confidence": "high",
+      "sourceUrl": "/mnt/data/GameIndex.sample.yaml",
+      "notes": null
+    },
+    {
+      "platformId": "ps2",
+      "emulatorId": "pcsx2",
+      "externalIdType": "ps2-serial",
+      "externalGameId": "SLES-12345",
+      "title": "Example PAL Game",
+      "region": "PAL",
+      "settings": {
+        "gameFixes": [
+          "SoftwareRendererFMVHack"
+        ],
+        "eeRoundMode": 1,
+        "vuRoundMode": 3,
+        "eeClamping": 1,
+        "vuClamping": 3,
+        "roundModes": {
+          "eeRoundMode": 1,
+          "vuRoundMode": 3
+        },
+        "clampModes": {
+          "eeClampMode": 1,
+          "vuClampMode": 3
+        }
+      },
+      "patches": {
+        "default": "// Example patch in string form\npatch=1,EE,00ABCDEF,word,00000000\n"
+      },
+      "settingsFormat": "pcsx2-gameindex",
+      "applyMode": "required",
+      "compatRating": {
+        "raw": 3,
+        "normalized": "ingame"
+      },
+      "confidence": "high",
+      "sourceUrl": "/mnt/data/GameIndex.sample.yaml",
+      "notes": null
+    }
+  ]
+}

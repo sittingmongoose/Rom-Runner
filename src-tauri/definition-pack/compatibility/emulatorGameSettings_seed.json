@@ -1,0 +1,25 @@
+{
+  "$schema": "../ROM_Runner_JSON_Schemas.json#/definitions/EmulatorGameSettings",
+  "version": "0.1.0",
+  "generatedAt": "2026-01-02T01:25:21.772602+00:00",
+  "description": "Per-game emulator settings and fixes. Opt-in application.",
+  "schemaVersion": "emulator-settings-v1",
+  "items": [],
+  "applyModeEnum": [
+    "suggested",
+    "auto",
+    "required"
+  ],
+  "settingsFormatEnum": [
+    "ini",
+    "json",
+    "xml",
+    "custom"
+  ],
+  "usage": {
+    "description": "Use these records to apply per-game fixes and optimizations.",
+    "defaultApplyMode": "suggested",
+    "userPreference": "Apply recommended settings toggle in settings",
+    "autoApply": "Only when applyMode='auto' and user enables auto-apply"
+  }
+}

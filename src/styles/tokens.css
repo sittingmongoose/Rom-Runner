@@ -1,0 +1,998 @@
+/**
+ * ROM Runner - CSS Design Tokens
+ * @version 1.1.0
+ * @description CSS custom properties for theming with full multi-theme support
+ * @supersedes tokens.css (unversioned)
+ * 
+ * Theme Support:
+ * - Default (Light/Dark)
+ * - Neumorphism (Light/Dark)
+ * - Retro (Light/Dark)
+ * - Terminal (Single variant)
+ * - Custom themes
+ */
+
+/* ========================================
+   BASE RESET & GLOBALS
+   ======================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ========================================
+   BRAND & CONSTANT COLORS
+   (Never change between themes)
+   ======================================== */
+
+:root {
+  /* Brand colors from logo */
+  --brand-blue: #1f6cb2;
+  --brand-navy: #02375e;
+  --brand-gray: #dbddda;
+  
+  /* Platform colors (for badges/icons) */
+  --platform-nintendo: #E60012;
+  --platform-sony: #003791;
+  --platform-sega: #0060A8;
+  --platform-microsoft: #107C10;
+  --platform-atari: #F7941D;
+  --platform-nec: #FF6600;
+  --platform-snk: #FFD700;
+  --platform-commodore: #6B5B95;
+  --platform-sinclair: #CC0000;
+  
+  /* Compatibility status colors */
+  --compat-perfect: #10b981;
+  --compat-playable: #22c55e;
+  --compat-ingame: #f59e0b;
+  --compat-menu: #f97316;
+  --compat-boots: #ef4444;
+  --compat-broken: #dc2626;
+  --compat-unknown: #6b7280;
+  
+  /* Performance tier colors */
+  --perf-excellent: #10b981;
+  --perf-great: #22c55e;
+  --perf-good: #84cc16;
+  --perf-moderate: #f59e0b;
+  --perf-poor: #f97316;
+  --perf-unplayable: #ef4444;
+  
+  /* Focus ring (consistent across themes) */
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+}
+
+/* ========================================
+   DEFAULT THEME - LIGHT
+   ======================================== */
+
+.theme-default.light,
+:root {
+  /* Font families */
+  --font-family: 'Inter var', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  
+  /* Surface colors */
+  --surface-0: #ffffff;
+  --surface-1: #f9fafb;
+  --surface-2: #f3f4f6;
+  --surface-3: #e5e7eb;
+  --surface-4: #d1d5db;
+
+  /* Text colors */
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  --text-disabled: #9ca3af;
+  --text-inverse: #ffffff;
+  --text-link: #2563eb;
+  --text-link-hover: #1d4ed8;
+
+  /* Border colors */
+  --border-default: #e5e7eb;
+  --border-hover: #d1d5db;
+  --border-focus: #3b82f6;
+  --border-subtle: #f3f4f6;
+  --border-strong: #9ca3af;
+
+  /* Background colors */
+  --bg-app: #f9fafb;
+  --bg-sidebar: #ffffff;
+  --bg-header: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f9fafb;
+  --bg-input: #ffffff;
+  --bg-input-disabled: #f3f4f6;
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+  --bg-modal: #ffffff;
+  --bg-dropdown: #ffffff;
+  --bg-tooltip: #1f2937;
+
+  /* Interactive states */
+  --interactive-normal: #f3f4f6;
+  --interactive-hover: #e5e7eb;
+  --interactive-active: #d1d5db;
+  --interactive-selected: #dbeafe;
+  --interactive-selected-hover: #bfdbfe;
+
+  /* Accent colors */
+  --accent-primary: #3b82f6;
+  --accent-primary-hover: #2563eb;
+  --accent-secondary: #8b5cf6;
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
+  --accent-error: #ef4444;
+  --accent-info: #3b82f6;
+
+  /* Focus ring */
+  --focus-ring-color: rgba(59, 130, 246, 0.5);
+
+  /* Scrollbar */
+  --scrollbar-track: #f3f4f6;
+  --scrollbar-thumb: #d1d5db;
+  --scrollbar-thumb-hover: #9ca3af;
+
+  /* Shadows */
+  --shadow-color: 0 0% 0%;
+  --shadow-strength: 0.1;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  /* Border radius */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* Skeleton loading */
+  --skeleton-base: #e5e7eb;
+  --skeleton-shine: #f3f4f6;
+
+  /* Toast colors */
+  --toast-success-bg: #ecfdf5;
+  --toast-success-border: #10b981;
+  --toast-success-text: #065f46;
+  --toast-warning-bg: #fffbeb;
+  --toast-warning-border: #f59e0b;
+  --toast-warning-text: #92400e;
+  --toast-error-bg: #fef2f2;
+  --toast-error-border: #ef4444;
+  --toast-error-text: #991b1b;
+  --toast-info-bg: #eff6ff;
+  --toast-info-border: #3b82f6;
+  --toast-info-text: #1e40af;
+
+  /* Progress bar */
+  --progress-bg: #e5e7eb;
+  --progress-fill: #3b82f6;
+  --progress-text: #374151;
+}
+
+/* ========================================
+   DEFAULT THEME - DARK
+   ======================================== */
+
+.theme-default.dark {
+  /* Surface colors */
+  --surface-0: #0f172a;
+  --surface-1: #1e293b;
+  --surface-2: #334155;
+  --surface-3: #475569;
+  --surface-4: #64748b;
+
+  /* Text colors */
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-disabled: #64748b;
+  --text-inverse: #0f172a;
+  --text-link: #60a5fa;
+  --text-link-hover: #93c5fd;
+
+  /* Border colors */
+  --border-default: #334155;
+  --border-hover: #475569;
+  --border-focus: #60a5fa;
+  --border-subtle: #1e293b;
+  --border-strong: #64748b;
+
+  /* Background colors */
+  --bg-app: #0f172a;
+  --bg-sidebar: #1e293b;
+  --bg-header: #1e293b;
+  --bg-card: #1e293b;
+  --bg-card-hover: #334155;
+  --bg-input: #1e293b;
+  --bg-input-disabled: #334155;
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --bg-modal: #1e293b;
+  --bg-dropdown: #1e293b;
+  --bg-tooltip: #f1f5f9;
+
+  /* Interactive states */
+  --interactive-normal: #334155;
+  --interactive-hover: #475569;
+  --interactive-active: #64748b;
+  --interactive-selected: #1e3a5f;
+  --interactive-selected-hover: #1e40af;
+
+  /* Accent colors */
+  --accent-primary: #60a5fa;
+  --accent-primary-hover: #3b82f6;
+  --accent-secondary: #a78bfa;
+  --accent-success: #34d399;
+  --accent-warning: #fbbf24;
+  --accent-error: #f87171;
+  --accent-info: #60a5fa;
+
+  /* Focus ring */
+  --focus-ring-color: rgba(96, 165, 250, 0.5);
+
+  /* Scrollbar */
+  --scrollbar-track: #1e293b;
+  --scrollbar-thumb: #475569;
+  --scrollbar-thumb-hover: #64748b;
+
+  /* Shadows (darker in dark mode) */
+  --shadow-strength: 0.3;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+
+  /* Skeleton loading */
+  --skeleton-base: #334155;
+  --skeleton-shine: #475569;
+
+  /* Toast colors (darker variants) */
+  --toast-success-bg: #064e3b;
+  --toast-success-border: #10b981;
+  --toast-success-text: #a7f3d0;
+  --toast-warning-bg: #78350f;
+  --toast-warning-border: #f59e0b;
+  --toast-warning-text: #fde68a;
+  --toast-error-bg: #7f1d1d;
+  --toast-error-border: #ef4444;
+  --toast-error-text: #fecaca;
+  --toast-info-bg: #1e3a8a;
+  --toast-info-border: #3b82f6;
+  --toast-info-text: #bfdbfe;
+
+  /* Progress bar */
+  --progress-bg: #334155;
+  --progress-fill: #60a5fa;
+  --progress-text: #e2e8f0;
+}
+
+/* ========================================
+   NEUMORPHISM THEME - LIGHT
+   ======================================== */
+
+.theme-neumorphic.light {
+  /* Font families */
+  --font-family: 'Inter var', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  
+  /* Base surface - soft gray */
+  --surface-0: #e0e0e0;
+  --surface-1: #e4e4e4;
+  --surface-2: #e8e8e8;
+  --surface-3: #d8d8d8;
+  --surface-4: #d0d0d0;
+  
+  /* Neumorphic shadow colors */
+  --neu-shadow-light: #ffffff;
+  --neu-shadow-dark: #bebebe;
+  --neu-shadow-distance: 6px;
+  --neu-shadow-blur: 12px;
+  
+  /* Neumorphic shadow presets */
+  --neu-raised: 
+    6px 6px 12px #bebebe,
+    -6px -6px 12px #ffffff;
+  --neu-pressed: 
+    inset 6px 6px 12px #bebebe,
+    inset -6px -6px 12px #ffffff;
+  --neu-flat:
+    3px 3px 6px #bebebe,
+    -3px -3px 6px #ffffff;
+
+  /* Text colors */
+  --text-primary: #333333;
+  --text-secondary: #555555;
+  --text-tertiary: #777777;
+  --text-disabled: #aaaaaa;
+  --text-inverse: #ffffff;
+  --text-link: #6d28d9;
+  --text-link-hover: #5b21b6;
+
+  /* Border colors */
+  --border-default: #d0d0d0;
+  --border-hover: #c0c0c0;
+  --border-focus: #6d28d9;
+  --border-subtle: #e0e0e0;
+  --border-strong: #b0b0b0;
+
+  /* Background colors */
+  --bg-app: #e0e0e0;
+  --bg-sidebar: #e0e0e0;
+  --bg-header: #e0e0e0;
+  --bg-card: linear-gradient(145deg, #e6e6e6, #ffffff);
+  --bg-card-hover: linear-gradient(145deg, #eaeaea, #ffffff);
+  --bg-input: #e8e8e8;
+  --bg-input-disabled: #d8d8d8;
+  --bg-overlay: rgba(0, 0, 0, 0.4);
+  --bg-modal: #e4e4e4;
+  --bg-dropdown: #e4e4e4;
+  --bg-tooltip: #333333;
+
+  /* Interactive states */
+  --interactive-normal: linear-gradient(145deg, #e6e6e6, #ffffff);
+  --interactive-hover: linear-gradient(145deg, #eaeaea, #ffffff);
+  --interactive-active: linear-gradient(145deg, #ffffff, #e6e6e6);
+  --interactive-selected: linear-gradient(145deg, #d4d4ff, #eaeaff);
+  --interactive-selected-hover: linear-gradient(145deg, #c8c8ff, #e0e0ff);
+
+  /* Accent colors - Purple for light neumorphic */
+  --accent-primary: #6d28d9;
+  --accent-primary-hover: #5b21b6;
+  --accent-secondary: #a855f7;
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
+  --accent-error: #ef4444;
+  --accent-info: #6d28d9;
+
+  /* Focus ring */
+  --focus-ring-color: rgba(109, 40, 217, 0.4);
+
+  /* Scrollbar */
+  --scrollbar-track: #d8d8d8;
+  --scrollbar-thumb: #c0c0c0;
+  --scrollbar-thumb-hover: #b0b0b0;
+
+  /* Override standard shadows with neumorphic */
+  --shadow-sm: var(--neu-flat);
+  --shadow-md: var(--neu-raised);
+  --shadow-lg: 
+    8px 8px 16px #bebebe,
+    -8px -8px 16px #ffffff;
+  --shadow-xl: 
+    12px 12px 24px #bebebe,
+    -12px -12px 24px #ffffff;
+  --shadow-inner: var(--neu-pressed);
+
+  /* Border radius - larger for neumorphic */
+  --radius-none: 0;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Skeleton loading */
+  --skeleton-base: #d8d8d8;
+  --skeleton-shine: #e8e8e8;
+
+  /* Toast colors */
+  --toast-success-bg: linear-gradient(145deg, #d1fae5, #ecfdf5);
+  --toast-success-border: #10b981;
+  --toast-success-text: #065f46;
+  --toast-warning-bg: linear-gradient(145deg, #fef3c7, #fffbeb);
+  --toast-warning-border: #f59e0b;
+  --toast-warning-text: #92400e;
+  --toast-error-bg: linear-gradient(145deg, #fee2e2, #fef2f2);
+  --toast-error-border: #ef4444;
+  --toast-error-text: #991b1b;
+  --toast-info-bg: linear-gradient(145deg, #e0e7ff, #eff6ff);
+  --toast-info-border: #6d28d9;
+  --toast-info-text: #4c1d95;
+
+  /* Progress bar */
+  --progress-bg: #d8d8d8;
+  --progress-fill: #6d28d9;
+  --progress-text: #333333;
+}
+
+/* ========================================
+   NEUMORPHISM THEME - DARK
+   ======================================== */
+
+.theme-neumorphic.dark {
+  /* Font families */
+  --font-family: 'Inter var', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+  
+  /* Base surface - dark gray */
+  --surface-0: #2d2d2d;
+  --surface-1: #313131;
+  --surface-2: #353535;
+  --surface-3: #292929;
+  --surface-4: #252525;
+  
+  /* Neumorphic shadow colors */
+  --neu-shadow-light: #383838;
+  --neu-shadow-dark: #222222;
+  --neu-shadow-distance: 6px;
+  --neu-shadow-blur: 12px;
+  
+  /* Neumorphic shadow presets */
+  --neu-raised: 
+    6px 6px 12px #222222,
+    -6px -6px 12px #383838;
+  --neu-pressed: 
+    inset 6px 6px 12px #222222,
+    inset -6px -6px 12px #383838;
+  --neu-flat:
+    3px 3px 6px #222222,
+    -3px -3px 6px #383838;
+
+  /* Text colors */
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --text-tertiary: #909090;
+  --text-disabled: #606060;
+  --text-inverse: #2d2d2d;
+  --text-link: #60a5fa;
+  --text-link-hover: #93c5fd;
+
+  /* Border colors */
+  --border-default: #404040;
+  --border-hover: #505050;
+  --border-focus: #60a5fa;
+  --border-subtle: #353535;
+  --border-strong: #606060;
+
+  /* Background colors */
+  --bg-app: #2d2d2d;
+  --bg-sidebar: #2d2d2d;
+  --bg-header: #2d2d2d;
+  --bg-card: linear-gradient(145deg, #313131, #292929);
+  --bg-card-hover: linear-gradient(145deg, #353535, #2d2d2d);
+  --bg-input: #353535;
+  --bg-input-disabled: #292929;
+  --bg-overlay: rgba(0, 0, 0, 0.6);
+  --bg-modal: #313131;
+  --bg-dropdown: #313131;
+  --bg-tooltip: #e0e0e0;
+
+  /* Interactive states */
+  --interactive-normal: linear-gradient(145deg, #313131, #292929);
+  --interactive-hover: linear-gradient(145deg, #353535, #2d2d2d);
+  --interactive-active: linear-gradient(145deg, #292929, #313131);
+  --interactive-selected: linear-gradient(145deg, #1e3a5f, #1a3050);
+  --interactive-selected-hover: linear-gradient(145deg, #234570, #1e3a5f);
+
+  /* Accent colors - Blue for dark neumorphic */
+  --accent-primary: #3b82f6;
+  --accent-primary-hover: #2563eb;
+  --accent-secondary: #60a5fa;
+  --accent-success: #34d399;
+  --accent-warning: #fbbf24;
+  --accent-error: #f87171;
+  --accent-info: #3b82f6;
+
+  /* Focus ring */
+  --focus-ring-color: rgba(59, 130, 246, 0.4);
+
+  /* Scrollbar */
+  --scrollbar-track: #292929;
+  --scrollbar-thumb: #404040;
+  --scrollbar-thumb-hover: #505050;
+
+  /* Override standard shadows with neumorphic */
+  --shadow-sm: var(--neu-flat);
+  --shadow-md: var(--neu-raised);
+  --shadow-lg: 
+    8px 8px 16px #222222,
+    -8px -8px 16px #383838;
+  --shadow-xl: 
+    12px 12px 24px #222222,
+    -12px -12px 24px #383838;
+  --shadow-inner: var(--neu-pressed);
+
+  /* Border radius - larger for neumorphic */
+  --radius-none: 0;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Skeleton loading */
+  --skeleton-base: #353535;
+  --skeleton-shine: #404040;
+
+  /* Toast colors */
+  --toast-success-bg: linear-gradient(145deg, #064e3b, #065f46);
+  --toast-success-border: #34d399;
+  --toast-success-text: #a7f3d0;
+  --toast-warning-bg: linear-gradient(145deg, #78350f, #92400e);
+  --toast-warning-border: #fbbf24;
+  --toast-warning-text: #fde68a;
+  --toast-error-bg: linear-gradient(145deg, #7f1d1d, #991b1b);
+  --toast-error-border: #f87171;
+  --toast-error-text: #fecaca;
+  --toast-info-bg: linear-gradient(145deg, #1e3a8a, #1e40af);
+  --toast-info-border: #60a5fa;
+  --toast-info-text: #bfdbfe;
+
+  /* Progress bar */
+  --progress-bg: #353535;
+  --progress-fill: #3b82f6;
+  --progress-text: #e0e0e0;
+}
+
+/* ========================================
+   RETRO THEME - LIGHT
+   ======================================== */
+
+.theme-retro.light {
+  /* Font families - retro/pixel style option */
+  --font-family: 'Courier New', 'Consolas', monospace;
+  --font-family-mono: 'Courier New', 'Consolas', monospace;
+  
+  /* Surface colors - warm cream/beige */
+  --surface-0: #f5f0e6;
+  --surface-1: #ebe5d8;
+  --surface-2: #dfd9ca;
+  --surface-3: #d4cdb8;
+  --surface-4: #c9c1a8;
+  
+  /* Text colors - brown tones */
+  --text-primary: #3d2914;
+  --text-secondary: #6b5344;
+  --text-tertiary: #8b7355;
+  --text-disabled: #b5a78f;
+  --text-inverse: #f5f0e6;
+  --text-link: #1e5fa8;
+  --text-link-hover: #164a84;
+
+  /* Border colors - tan */
+  --border-default: #a69580;
+  --border-hover: #8f8068;
+  --border-focus: #c41e3a;
+  --border-subtle: #c9c1a8;
+  --border-strong: #7a6b55;
+
+  /* Background colors */
+  --bg-app: #f5f0e6;
+  --bg-sidebar: #ebe5d8;
+  --bg-header: #ebe5d8;
+  --bg-card: #ebe5d8;
+  --bg-card-hover: #dfd9ca;
+  --bg-input: #f5f0e6;
+  --bg-input-disabled: #dfd9ca;
+  --bg-overlay: rgba(61, 41, 20, 0.5);
+  --bg-modal: #ebe5d8;
+  --bg-dropdown: #ebe5d8;
+  --bg-tooltip: #3d2914;
+
+  /* Interactive states */
+  --interactive-normal: #dfd9ca;
+  --interactive-hover: #d4cdb8;
+  --interactive-active: #c9c1a8;
+  --interactive-selected: #d4e3f5;
+  --interactive-selected-hover: #c4d8ef;
+
+  /* Accent colors - classic red/blue */
+  --accent-primary: #c41e3a;
+  --accent-primary-hover: #a31830;
+  --accent-secondary: #1e5fa8;
+  --accent-success: #2e7d32;
+  --accent-warning: #ed6c02;
+  --accent-error: #c41e3a;
+  --accent-info: #1e5fa8;
+
+  /* Focus ring */
+  --focus-ring-color: rgba(196, 30, 58, 0.4);
+
+  /* Scrollbar */
+  --scrollbar-track: #dfd9ca;
+  --scrollbar-thumb: #a69580;
+  --scrollbar-thumb-hover: #8f8068;
+
+  /* Shadows - hard offset shadow (retro style) */
+  --shadow-sm: 2px 2px 0 #a69580;
+  --shadow-md: 3px 3px 0 #a69580;
+  --shadow-lg: 4px 4px 0 #a69580;
+  --shadow-xl: 6px 6px 0 #a69580;
+  --shadow-inner: inset 2px 2px 0 #c9c1a8;
+
+  /* Border radius - sharper for retro */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-full: 9999px;
+
+  /* Skeleton loading */
+  --skeleton-base: #dfd9ca;
+  --skeleton-shine: #ebe5d8;
+
+  /* Toast colors */
+  --toast-success-bg: #e8f5e9;
+  --toast-success-border: #2e7d32;
+  --toast-success-text: #1b5e20;
+  --toast-warning-bg: #fff3e0;
+  --toast-warning-border: #ed6c02;
+  --toast-warning-text: #e65100;
+  --toast-error-bg: #ffebee;
+  --toast-error-border: #c41e3a;
+  --toast-error-text: #b71c1c;
+  --toast-info-bg: #e3f2fd;
+  --toast-info-border: #1e5fa8;
+  --toast-info-text: #0d47a1;
+
+  /* Progress bar */
+  --progress-bg: #dfd9ca;
+  --progress-fill: #c41e3a;
+  --progress-text: #3d2914;
+}
+
+/* ========================================
+   RETRO THEME - DARK
+   ======================================== */
+
+.theme-retro.dark {
+  /* Font families */
+  --font-family: 'Courier New', 'Consolas', monospace;
+  --font-family-mono: 'Courier New', 'Consolas', monospace;
+  
+  /* Surface colors - dark warm brown */
+  --surface-0: #1a1814;
+  --surface-1: #2d2620;
+  --surface-2: #3d342c;
+  --surface-3: #4d4338;
+  --surface-4: #5d5244;
+  
+  /* Text colors - cream tones */
+  --text-primary: #e8dcc8;
+  --text-secondary: #b5a78f;
+  --text-tertiary: #8b7355;
+  --text-disabled: #5d5244;
+  --text-inverse: #1a1814;
+  --text-link: #4dabf7;
+  --text-link-hover: #74c0fc;
+
+  /* Border colors */
+  --border-default: #5c4f3d;
+  --border-hover: #6d5f4c;
+  --border-focus: #ff6b6b;
+  --border-subtle: #3d342c;
+  --border-strong: #7d6e5b;
+
+  /* Background colors */
+  --bg-app: #1a1814;
+  --bg-sidebar: #2d2620;
+  --bg-header: #2d2620;
+  --bg-card: #2d2620;
+  --bg-card-hover: #3d342c;
+  --bg-input: #2d2620;
+  --bg-input-disabled: #3d342c;
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  --bg-modal: #2d2620;
+  --bg-dropdown: #2d2620;
+  --bg-tooltip: #e8dcc8;
+
+  /* Interactive states */
+  --interactive-normal: #3d342c;
+  --interactive-hover: #4d4338;
+  --interactive-active: #5d5244;
+  --interactive-selected: #3d4854;
+  --interactive-selected-hover: #4d5a68;
+
+  /* Accent colors - bright coral/blue */
+  --accent-primary: #ff6b6b;
+  --accent-primary-hover: #ff5252;
+  --accent-secondary: #4dabf7;
+  --accent-success: #51cf66;
+  --accent-warning: #fcc419;
+  --accent-error: #ff6b6b;
+  --accent-info: #4dabf7;
+
+  /* Focus ring */
+  --focus-ring-color: rgba(255, 107, 107, 0.4);
+
+  /* Scrollbar */
+  --scrollbar-track: #2d2620;
+  --scrollbar-thumb: #5c4f3d;
+  --scrollbar-thumb-hover: #6d5f4c;
+
+  /* Shadows - hard dark offset shadow */
+  --shadow-sm: 2px 2px 0 #0d0b09;
+  --shadow-md: 3px 3px 0 #0d0b09;
+  --shadow-lg: 4px 4px 0 #0d0b09;
+  --shadow-xl: 6px 6px 0 #0d0b09;
+  --shadow-inner: inset 2px 2px 0 #3d342c;
+
+  /* Border radius - sharper for retro */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-full: 9999px;
+
+  /* Skeleton loading */
+  --skeleton-base: #3d342c;
+  --skeleton-shine: #4d4338;
+
+  /* Toast colors */
+  --toast-success-bg: #1b3d1e;
+  --toast-success-border: #51cf66;
+  --toast-success-text: #b2f2bb;
+  --toast-warning-bg: #3d3010;
+  --toast-warning-border: #fcc419;
+  --toast-warning-text: #ffe066;
+  --toast-error-bg: #3d1a1a;
+  --toast-error-border: #ff6b6b;
+  --toast-error-text: #ffc9c9;
+  --toast-info-bg: #1a2e3d;
+  --toast-info-border: #4dabf7;
+  --toast-info-text: #a5d8ff;
+
+  /* Progress bar */
+  --progress-bg: #3d342c;
+  --progress-fill: #ff6b6b;
+  --progress-text: #e8dcc8;
+}
+
+/* ========================================
+   TERMINAL THEME (SINGLE VARIANT)
+   Green phosphor terminal - no light mode
+   ======================================== */
+
+.theme-terminal,
+.theme-terminal.dark,
+.theme-terminal.light {
+  /* Font families - monospace only */
+  --font-family: 'Fira Code', 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+  --font-family-mono: 'Fira Code', 'Cascadia Code', 'Consolas', 'Courier New', monospace;
+  
+  /* Surface colors - near black */
+  --surface-0: #0a0a0a;
+  --surface-1: #0f0f0f;
+  --surface-2: #141414;
+  --surface-3: #1a1a1a;
+  --surface-4: #202020;
+  
+  /* Terminal glow effect */
+  --glow-color: rgba(0, 255, 0, 0.3);
+  --glow-intense: rgba(0, 255, 0, 0.5);
+  
+  /* Text colors - green phosphor */
+  --text-primary: #00ff00;
+  --text-secondary: #00cc00;
+  --text-tertiary: #009900;
+  --text-disabled: #006600;
+  --text-inverse: #0a0a0a;
+  --text-link: #00ffff;
+  --text-link-hover: #66ffff;
+
+  /* Border colors - dark green */
+  --border-default: #003300;
+  --border-hover: #004400;
+  --border-focus: #00ff00;
+  --border-subtle: #002200;
+  --border-strong: #006600;
+
+  /* Background colors */
+  --bg-app: #0a0a0a;
+  --bg-sidebar: #0f0f0f;
+  --bg-header: #0f0f0f;
+  --bg-card: #0f0f0f;
+  --bg-card-hover: #141414;
+  --bg-input: #0f0f0f;
+  --bg-input-disabled: #141414;
+  --bg-overlay: rgba(0, 0, 0, 0.8);
+  --bg-modal: #0f0f0f;
+  --bg-dropdown: #0f0f0f;
+  --bg-tooltip: #00ff00;
+
+  /* Interactive states */
+  --interactive-normal: #141414;
+  --interactive-hover: #1a1a1a;
+  --interactive-active: #202020;
+  --interactive-selected: #003300;
+  --interactive-selected-hover: #004400;
+
+  /* Accent colors - terminal colors */
+  --accent-primary: #00ff00;
+  --accent-primary-hover: #33ff33;
+  --accent-secondary: #00ffff;
+  --accent-success: #00ff00;
+  --accent-warning: #ffff00;
+  --accent-error: #ff4444;
+  --accent-info: #00ffff;
+
+  /* Focus ring - green glow */
+  --focus-ring-color: rgba(0, 255, 0, 0.5);
+
+  /* Scrollbar */
+  --scrollbar-track: #0f0f0f;
+  --scrollbar-thumb: #003300;
+  --scrollbar-thumb-hover: #004400;
+
+  /* Shadows - green glow effects */
+  --shadow-sm: 0 0 5px var(--glow-color);
+  --shadow-md: 0 0 10px var(--glow-color);
+  --shadow-lg: 0 0 15px var(--glow-color);
+  --shadow-xl: 0 0 20px var(--glow-color);
+  --shadow-inner: inset 0 0 10px rgba(0, 0, 0, 0.5);
+
+  /* Border radius - sharp 90° corners for terminal */
+  --radius-none: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-full: 0;
+
+  /* Skeleton loading */
+  --skeleton-base: #141414;
+  --skeleton-shine: #1a1a1a;
+
+  /* Toast colors - terminal style */
+  --toast-success-bg: #001a00;
+  --toast-success-border: #00ff00;
+  --toast-success-text: #00ff00;
+  --toast-warning-bg: #1a1a00;
+  --toast-warning-border: #ffff00;
+  --toast-warning-text: #ffff00;
+  --toast-error-bg: #1a0000;
+  --toast-error-border: #ff4444;
+  --toast-error-text: #ff4444;
+  --toast-info-bg: #001a1a;
+  --toast-info-border: #00ffff;
+  --toast-info-text: #00ffff;
+
+  /* Progress bar */
+  --progress-bg: #002200;
+  --progress-fill: #00ff00;
+  --progress-text: #00ff00;
+
+  /* Scanline overlay opacity */
+  --scanline-opacity: 0.1;
+}
+
+/* Terminal text glow effect */
+.theme-terminal * {
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+/* Terminal scanline overlay */
+.theme-terminal::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  opacity: var(--scanline-opacity);
+  z-index: 9999;
+}
+
+/* CRT screen curvature effect for terminal cards */
+.theme-terminal .card {
+  box-shadow: 
+    inset 0 0 60px rgba(0, 255, 0, 0.05),
+    0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+/* ========================================
+   REDUCED MOTION
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========================================
+   CUSTOM SCROLLBAR
+   ======================================== */
+
+/* WebKit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* ========================================
+   FOCUS STYLES
+   ======================================== */
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Remove focus outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ========================================
+   SELECTION STYLES
+   ======================================== */
+
+::selection {
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+/* Terminal theme selection override */
+.theme-terminal ::selection {
+  background-color: #00ff00;
+  color: #0a0a0a;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Neumorphic component utilities */
+.neu-raised {
+  box-shadow: var(--neu-raised, var(--shadow-md));
+}
+
+.neu-pressed {
+  box-shadow: var(--neu-pressed, var(--shadow-inner));
+}
+
+.neu-flat {
+  box-shadow: var(--neu-flat, var(--shadow-sm));
+}
+
+/* Terminal glow utilities */
+.terminal-glow {
+  text-shadow: 0 0 5px var(--glow-color);
+}
+
+.terminal-glow-intense {
+  text-shadow: 0 0 10px var(--glow-intense);
+}

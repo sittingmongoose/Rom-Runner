@@ -1,0 +1,8584 @@
+{
+  "$schema": "../ROM_Runner_JSON_Schemas.json#/definitions/Emulator",
+  "version": "2.1.0",
+  "generatedAt": "2026-01-04T20:14:30Z",
+  "changeNotes": [
+    "Merged from emulators_v2_0_0.json (98 emulators) + ChatGPT additions",
+    "Added 181 emulators/cores/frontends required by osEmulatorProfiles_v0_2_0",
+    "Source: emulators_v0_1_0_expanded_v33.json from ChatGPT"
+  ],
+  "emulators": [
+    {
+      "id": "a5200",
+      "name": "A5200",
+      "type": "libretro-core",
+      "coreName": "a5200_libretro",
+      "supportedPlatforms": [
+        "atari-5200"
+      ],
+      "supportedFormats": [
+        "a52",
+        "bin",
+        "rom"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "a5200_libretro",
+      "name": "A5200 (core id)",
+      "type": "libretro-core",
+      "coreName": "a5200_libretro",
+      "supportedPlatforms": [
+        "atari-5200"
+      ],
+      "supportedFormats": [
+        "a52",
+        "bin",
+        "rom"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "aethersx2",
+      "name": "AetherSX2",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "ps2"
+      ],
+      "supportedFormats": [
+        "iso",
+        "bin",
+        "chd",
+        "cso",
+        "gz"
+      ],
+      "supportedBios": [
+        "ps2-bios"
+      ],
+      "availableOnOS": [
+        "android"
+      ],
+      "availableOnFrontends": [
+        "daijisho"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "archived"
+    },
+    {
+      "id": "arduous",
+      "name": "Arduous",
+      "type": "libretro-core",
+      "coreName": "arduous_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "atari800",
+      "name": "Atari800",
+      "type": "libretro-core",
+      "coreName": "atari800_libretro",
+      "supportedPlatforms": [
+        "atari-5200"
+      ],
+      "supportedFormats": [
+        "a52",
+        "bin",
+        "xfd",
+        "atr",
+        "atx",
+        "cdm",
+        "cas",
+        "car",
+        "xex",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "atari-5200-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "azahar",
+      "name": "Azahar",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "3ds"
+      ],
+      "supportedFormats": [
+        "3ds",
+        "cia",
+        "cxi",
+        "app"
+      ],
+      "supportedBios": [
+        "3ds-aes-keys"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "beetle-gba",
+      "name": "Beetle GBA",
+      "type": "libretro-core",
+      "coreName": "mednafen_gba_libretro",
+      "supportedPlatforms": [
+        "gba"
+      ],
+      "supportedFormats": [
+        "7z",
+        "gba",
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "beetle-lynx",
+      "name": "Beetle Lynx",
+      "type": "libretro-core",
+      "coreName": "mednafen_lynx_libretro",
+      "supportedPlatforms": [
+        "atari-lynx"
+      ],
+      "supportedFormats": [
+        "lnx",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "lynx-bios"
+      ],
+      "availableOnOS": [
+        "linux",
+        "windows",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "beetle-ngp",
+      "name": "Beetle NeoPop",
+      "type": "libretro-core",
+      "coreName": "mednafen_ngp_libretro",
+      "supportedPlatforms": [
+        "neogeo-pocket",
+        "neogeo-pocket-color"
+      ],
+      "supportedFormats": [
+        "ngp",
+        "ngc",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "beetle-pce",
+      "name": "Beetle PCE",
+      "type": "libretro-core",
+      "coreName": "mednafen_pce_libretro",
+      "supportedPlatforms": [
+        "tg16",
+        "tgcd",
+        "supergrafx"
+      ],
+      "supportedFormats": [
+        "pce",
+        "cue",
+        "chd",
+        "sgx",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "tgcd-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "beetle-pce-fast",
+      "name": "Beetle PCE Fast",
+      "type": "libretro-core",
+      "coreName": "mednafen_pce_fast_libretro",
+      "supportedPlatforms": [
+        "tg16",
+        "tgcd",
+        "supergrafx"
+      ],
+      "supportedFormats": [
+        "pce",
+        "cue",
+        "chd",
+        "sgx",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "tgcd-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "beetle-pcfx",
+      "name": "Beetle PC-FX",
+      "type": "libretro-core",
+      "coreName": "mednafen_pcfx_libretro",
+      "supportedPlatforms": [
+        "pcfx"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd"
+      ],
+      "supportedBios": [
+        "pcfx-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "beetle-psx",
+      "name": "Beetle PSX",
+      "type": "libretro-core",
+      "coreName": "mednafen_psx_libretro",
+      "supportedPlatforms": [
+        "psx"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "img",
+        "chd",
+        "pbp",
+        "m3u"
+      ],
+      "supportedBios": [
+        "psx-bios-usa",
+        "psx-bios-eur",
+        "psx-bios-jpn"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "beetle-psx-hw",
+      "name": "Beetle PSX HW",
+      "type": "libretro-core",
+      "coreName": "mednafen_psx_hw_libretro",
+      "supportedPlatforms": [
+        "psx"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "img",
+        "chd",
+        "pbp",
+        "m3u"
+      ],
+      "supportedBios": [
+        "psx-bios-usa",
+        "psx-bios-eur",
+        "psx-bios-jpn"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "beetle-saturn",
+      "name": "Beetle Saturn",
+      "type": "libretro-core",
+      "coreName": "mednafen_saturn_libretro",
+      "supportedPlatforms": [
+        "saturn"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd",
+        "mds",
+        "ccd"
+      ],
+      "supportedBios": [
+        "saturn-bios-usa",
+        "saturn-bios-eur",
+        "saturn-bios-jpn"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "beetle-sgx",
+      "name": "Beetle SuperGrafx",
+      "type": "libretro",
+      "coreName": "mednafen_supergrafx",
+      "supportedPlatforms": [
+        "tgcd"
+      ],
+      "supportedFormats": [
+        "cue",
+        "ccd",
+        "chd",
+        "iso",
+        "bin"
+      ],
+      "supportedBios": [
+        "tgcd-syscard1",
+        "tgcd-syscard2",
+        "tgcd-syscard2u",
+        "tgcd-syscard3",
+        "tgcd-syscard3u",
+        "tgcd-gexpress"
+      ],
+      "availableOnOS": [
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "libretro",
+      "status": "active"
+    },
+    {
+      "id": "beetle-vb",
+      "name": "Beetle VB",
+      "type": "libretro-core",
+      "coreName": "mednafen_vb_libretro",
+      "supportedPlatforms": [
+        "virtualboy"
+      ],
+      "supportedFormats": [
+        "vb",
+        "vboy",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "beetle-wswan",
+      "name": "Beetle WonderSwan",
+      "type": "libretro-core",
+      "coreName": "mednafen_wswan_libretro",
+      "supportedPlatforms": [
+        "wonderswan",
+        "wonderswan-color"
+      ],
+      "supportedFormats": [
+        "ws",
+        "wsc",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "bigpemu",
+      "name": "BigPEmu",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "jaguar"
+      ],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "bizhawk",
+      "name": "BizHawk",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "nes",
+        "snes",
+        "n64",
+        "gb",
+        "gbc",
+        "gba",
+        "nds",
+        "genesis",
+        "sms",
+        "gamegear",
+        "saturn",
+        "psx",
+        "tg16",
+        "tgcd",
+        "atari-2600",
+        "atari-7800",
+        "atari-lynx",
+        "neogeo-pocket",
+        "neogeo-pocket-color",
+        "wonderswan",
+        "wonderswan-color",
+        "colecovision",
+        "intellivision",
+        "vectrex",
+        "msx",
+        "zxspectrum",
+        "c64"
+      ],
+      "supportedFormats": [
+        "*"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "bluemsx",
+      "name": "blueMSX",
+      "type": "libretro-core",
+      "coreName": "bluemsx_libretro",
+      "supportedPlatforms": [
+        "msx",
+        "msx2",
+        "colecovision"
+      ],
+      "supportedFormats": [
+        "rom",
+        "mx1",
+        "mx2",
+        "dsk",
+        "cas",
+        "col",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "msx-bios",
+        "msx2-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "bluemsx_libretro",
+      "name": "blueMSX (core id)",
+      "type": "libretro-core",
+      "coreName": "bluemsx_libretro",
+      "supportedPlatforms": [
+        "msx",
+        "msx2",
+        "colecovision"
+      ],
+      "supportedFormats": [
+        "rom",
+        "mx1",
+        "mx2",
+        "dsk",
+        "cas",
+        "col",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "msx-bios",
+        "msx2-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "bsnes",
+      "name": "bsnes",
+      "type": "libretro-core",
+      "coreName": "bsnes_libretro",
+      "supportedPlatforms": [
+        "snes"
+      ],
+      "supportedFormats": [
+        "sfc",
+        "smc",
+        "swc",
+        "fig",
+        "bs",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "cycle-accurate"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "bsnes-hd",
+      "name": "bsnes-hd",
+      "type": "libretro-core",
+      "coreName": "bsnes_hd_beta_libretro",
+      "supportedPlatforms": [
+        "snes"
+      ],
+      "supportedFormats": [
+        "sfc",
+        "smc",
+        "swc",
+        "fig",
+        "bs",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "very-high",
+        "accuracy": "cycle-accurate"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "cannonball",
+      "name": "Cannonball",
+      "type": "libretro-core",
+      "coreName": "cannonball_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "cap32",
+      "type": "retroarch-core",
+      "name": "Caprice32 (libretro) (alias id)",
+      "aliases": [
+        "cap32_libretro"
+      ],
+      "notes": "Alias id used by some Recalbox core manifests; maps to cap32_libretro."
+    },
+    {
+      "id": "cap32_libretro",
+      "name": "Caprice32 (core id)",
+      "type": "libretro-core",
+      "coreName": "cap32_libretro",
+      "supportedPlatforms": [
+        "amstradcpc"
+      ],
+      "supportedFormats": [
+        "dsk",
+        "sna",
+        "tap",
+        "cdt",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "caprice32",
+      "name": "Caprice32",
+      "type": "libretro-core",
+      "coreName": "cap32_libretro",
+      "supportedPlatforms": [
+        "amstradcpc"
+      ],
+      "supportedFormats": [
+        "dsk",
+        "sna",
+        "tap",
+        "cdt",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "cdi-emulator",
+      "name": "CD-i Emulator",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "cdi"
+      ],
+      "supportedFormats": [
+        "chd",
+        "iso",
+        "bin",
+        "cue"
+      ],
+      "supportedBios": [
+        "cdi-bios"
+      ],
+      "availableOnOS": [
+        "windows"
+      ],
+      "availableOnFrontends": [
+        "launchbox",
+        "playnite"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "cemu",
+      "name": "Cemu",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "wiiu"
+      ],
+      "supportedFormats": [
+        "wud",
+        "wux",
+        "iso",
+        "rpx",
+        "wua"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite",
+        "steam-rom-manager"
+      ],
+      "performance": {
+        "demandTier": "very-high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "chailove",
+      "name": "Chailove",
+      "type": "libretro-core",
+      "coreName": "chailove_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "chimerasnes",
+      "name": "Chimerasnes",
+      "type": "libretro-core",
+      "coreName": "chimerasnes_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "citra",
+      "name": "Citra",
+      "type": "libretro-core",
+      "coreName": "citra_libretro",
+      "supportedPlatforms": [
+        "3ds"
+      ],
+      "supportedFormats": [
+        "3ds",
+        "cia",
+        "cxi",
+        "app"
+      ],
+      "supportedBios": [
+        "3ds-aes-keys"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "archived"
+    },
+    {
+      "id": "citron",
+      "name": "Citron",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "classicboy",
+      "name": "ClassicBoy",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "*"
+      ],
+      "supportedFormats": [
+        "*"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "android"
+      ],
+      "availableOnFrontends": [
+        "*"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "low"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": null,
+      "status": "discouraged"
+    },
+    {
+      "id": "crocods_libretro",
+      "type": "retroarch-core",
+      "name": "Crocods (Amstrad CPC) (libretro)",
+      "aliases": [],
+      "notes": ""
+    },
+    {
+      "id": "daijisho",
+      "name": "DaijishÅ (Frontend)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "*"
+      ],
+      "supportedFormats": [
+        "*"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "android"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "desmume",
+      "name": "DeSmuME",
+      "type": "libretro-core",
+      "coreName": "desmume_libretro",
+      "supportedPlatforms": [
+        "nds"
+      ],
+      "supportedFormats": [
+        "nds",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "desmume_libretro",
+      "name": "DeSmuME (core id)",
+      "type": "libretro-core",
+      "coreName": "desmume_libretro",
+      "supportedPlatforms": [
+        "nds"
+      ],
+      "supportedFormats": [
+        "nds",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "dig",
+      "name": "DIG (Frontend)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "*"
+      ],
+      "supportedFormats": [
+        "*"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "android"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "dinothawr",
+      "name": "Dinothawr",
+      "type": "libretro-core",
+      "coreName": "dinothawr_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "dolphin",
+      "name": "Dolphin",
+      "type": "libretro-core",
+      "coreName": "dolphin_libretro",
+      "supportedPlatforms": [
+        "gamecube",
+        "wii"
+      ],
+      "supportedFormats": [
+        "iso",
+        "gcm",
+        "gcz",
+        "rvz",
+        "wbfs",
+        "ciso",
+        "wia"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "dolphin-standalone",
+      "name": "Dolphin (Standalone)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "gamecube",
+        "wii"
+      ],
+      "supportedFormats": [
+        "iso",
+        "gcm",
+        "gcz",
+        "rvz",
+        "wbfs",
+        "ciso",
+        "wia"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite",
+        "steam-rom-manager"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "dosbox",
+      "name": "DOSBox",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "dos"
+      ],
+      "supportedFormats": [
+        "conf",
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x",
+        "simplemenu"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "dosbox-pure",
+      "name": "DOSBox Pure",
+      "type": "libretro-core",
+      "coreName": "dosbox_pure_libretro",
+      "supportedPlatforms": [
+        "dos"
+      ],
+      "supportedFormats": [
+        "exe",
+        "com",
+        "bat",
+        "iso",
+        "img",
+        "zip",
+        "7z",
+        "dosz"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "dosbox-svn",
+      "name": "DOSBox SVN",
+      "type": "libretro-core",
+      "coreName": "dosbox_svn_libretro",
+      "supportedPlatforms": [
+        "dos"
+      ],
+      "supportedFormats": [
+        "exe",
+        "com",
+        "bat",
+        "iso",
+        "img",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "dosbox_pure_libretro",
+      "name": "DOSBox Pure (core id)",
+      "type": "libretro-core",
+      "coreName": "dosbox_pure_libretro",
+      "supportedPlatforms": [
+        "dos"
+      ],
+      "supportedFormats": [
+        "exe",
+        "com",
+        "bat",
+        "iso",
+        "img",
+        "zip",
+        "7z",
+        "dosz"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "doublecherrygb",
+      "name": "DoubleCherryGB (Libretro)",
+      "type": "libretro-core",
+      "aliases": [
+        "lr-doublecherrygb",
+        "lr-doublecherryGB",
+        "doublecherryGB"
+      ],
+      "sources": {
+        "upstreamUrls": []
+      },
+      "retroarchCore": "doublecherrygb"
+    },
+    {
+      "id": "drastic",
+      "name": "DraStic",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "nds"
+      ],
+      "supportedFormats": [
+        "nds",
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "android"
+      ],
+      "availableOnFrontends": [
+        "daijisho"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "drastic-anbernic-linux",
+      "name": "DraStic (Anbernic Linux Build)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "nds"
+      ],
+      "supportedFormats": [
+        "nds",
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "duckstation",
+      "name": "DuckStation",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "psx"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "img",
+        "chd",
+        "pbp",
+        "m3u"
+      ],
+      "supportedBios": [
+        "psx-bios-usa",
+        "psx-bios-eur",
+        "psx-bios-jpn"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite",
+        "daijisho"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "duckstation-libretro",
+      "name": "Duckstation",
+      "type": "libretro-core",
+      "coreName": "duckstation_libretro",
+      "supportedPlatforms": [
+        "psx"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cbn",
+        "ccd",
+        "chd",
+        "cue",
+        "img",
+        "iso",
+        "m3u",
+        "mdf",
+        "pbp",
+        "toc",
+        "znx"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "duckstation-standalone",
+      "name": "DuckStation",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "psx"
+      ],
+      "supportedFormats": [
+        "bin",
+        "chd",
+        "cue",
+        "img",
+        "iso",
+        "m3u",
+        "pbp"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "emulationstation",
+        "pegasus",
+        "daijisho"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "easyrpg",
+      "name": "Easyrpg",
+      "type": "libretro-core",
+      "coreName": "easyrpg_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "easyrpg_libretro",
+      "name": "Easyrpg (core id)",
+      "type": "libretro-core",
+      "coreName": "easyrpg_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "emulationstation",
+      "name": "EmulationStation",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "*"
+      ],
+      "supportedFormats": [
+        "*"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux",
+        "windows",
+        "macos"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "ep128emu-core",
+      "name": "Ep128Emu",
+      "type": "libretro-core",
+      "coreName": "ep128emu_core_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fake08",
+      "name": "Fake08",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "pico8"
+      ],
+      "supportedFormats": [
+        ".p8",
+        ".png",
+        ".p8.png",
+        ".p8.rom"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux",
+        "windows",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "minui",
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "low"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "none",
+      "status": "active"
+    },
+    {
+      "id": "fake08_libretro",
+      "name": "Fake08 (core id)",
+      "type": "libretro-core",
+      "coreName": "fake08_libretro",
+      "supportedPlatforms": [
+        "pico8"
+      ],
+      "supportedFormats": [
+        "p8",
+        "png"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fbalpha",
+      "name": "Fbalpha",
+      "type": "libretro-core",
+      "coreName": "fbalpha_libretro",
+      "supportedPlatforms": [
+        "fbneo"
+      ],
+      "supportedFormats": [
+        "chd"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fbalpha2012",
+      "name": "FB Alpha 2012",
+      "type": "libretro-core",
+      "coreName": "fbalpha2012_libretro",
+      "supportedPlatforms": [
+        "arcade",
+        "neogeo"
+      ],
+      "supportedFormats": [
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "neogeo-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fbalpha2012-neogeo",
+      "name": "Fbalpha2012 Neogeo",
+      "type": "libretro-core",
+      "coreName": "fbalpha2012_neogeo_libretro",
+      "supportedPlatforms": [
+        "neogeo"
+      ],
+      "supportedFormats": [
+        "chd"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fbalpha2012_libretro",
+      "name": "FB Alpha 2012 (core id)",
+      "type": "libretro-core",
+      "coreName": "fbalpha2012_libretro",
+      "supportedPlatforms": [
+        "arcade",
+        "neogeo"
+      ],
+      "supportedFormats": [
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "neogeo-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fbneo",
+      "name": "FinalBurn Neo",
+      "type": "libretro-core",
+      "coreName": "fbneo_libretro",
+      "supportedPlatforms": [
+        "arcade",
+        "fbneo",
+        "neogeo"
+      ],
+      "supportedFormats": [
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "neogeo-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fbneo_libretro",
+      "name": "FinalBurn Neo (core id)",
+      "type": "libretro-core",
+      "coreName": "fbneo_libretro",
+      "supportedPlatforms": [
+        "arcade",
+        "fbneo",
+        "neogeo"
+      ],
+      "supportedFormats": [
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "neogeo-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fceumm",
+      "name": "FCEUmm",
+      "type": "libretro-core",
+      "coreName": "fceumm_libretro",
+      "supportedPlatforms": [
+        "nes",
+        "famicom-disk-system"
+      ],
+      "supportedFormats": [
+        "nes",
+        "unf",
+        "unif",
+        "fds",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "fds-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fceumm_libretro",
+      "name": "FCEUmm (core id)",
+      "type": "libretro-core",
+      "coreName": "fceumm_libretro",
+      "supportedPlatforms": [
+        "nes",
+        "famicom-disk-system"
+      ],
+      "supportedFormats": [
+        "nes",
+        "unf",
+        "unif",
+        "fds",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "fds-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fceux",
+      "name": "FCEUX",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "nes",
+        "famicom-disk-system"
+      ],
+      "supportedFormats": [
+        "nes",
+        "fds",
+        "zip"
+      ],
+      "supportedBios": [
+        "fds-bios"
+      ],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x",
+        "simplemenu"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "fceux-standalone",
+      "name": "FCEUX",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "nes",
+        "famicom-disk-system"
+      ],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "ini",
+      "status": "active"
+    },
+    {
+      "id": "ffmpeg_libretro",
+      "name": "FFmpeg (Libretro Core)",
+      "type": "libretro-core",
+      "coreName": "ffmpeg_libretro",
+      "supportedPlatforms": [
+        "*"
+      ],
+      "supportedFormats": [
+        "*"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "flycast",
+      "name": "Flycast",
+      "type": "libretro-core",
+      "coreName": "flycast_libretro",
+      "supportedPlatforms": [
+        "dreamcast",
+        "neogeo-cd",
+        "arcade"
+      ],
+      "supportedFormats": [
+        "gdi",
+        "cdi",
+        "chd",
+        "cue",
+        "bin",
+        "zip"
+      ],
+      "supportedBios": [
+        "dc-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "flycast-standalone",
+      "name": "Flycast (Standalone)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "dreamcast",
+        "neogeo-cd",
+        "arcade"
+      ],
+      "supportedFormats": [
+        "gdi",
+        "cdi",
+        "chd",
+        "cue",
+        "bin"
+      ],
+      "supportedBios": [
+        "dc-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "daijisho"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "flycast-xtreme",
+      "name": "Flycast Xtreme (Libretro)",
+      "type": "libretro-core",
+      "aliases": [
+        "lr-flycast_xtreme",
+        "flycast_xtreme",
+        "flycast_xtreme_libretro"
+      ],
+      "sources": {
+        "upstreamUrls": []
+      },
+      "retroarchCore": "flycast_xtreme"
+    },
+    {
+      "id": "flycast2021",
+      "name": "Flycast 2021",
+      "type": "libretro-core",
+      "coreName": "flycast2021_libretro",
+      "supportedPlatforms": [
+        "dreamcast",
+        "naomi",
+        "atomiswave"
+      ],
+      "supportedFormats": [
+        "cdi",
+        "gdi",
+        "chd",
+        "zip",
+        "7z",
+        "m3u"
+      ],
+      "supportedBios": [
+        "dreamcast-bios"
+      ],
+      "availableOnOS": [
+        "linux",
+        "windows",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "flycast_libretro",
+      "name": "Flycast (core id)",
+      "type": "libretro-core",
+      "coreName": "flycast_libretro",
+      "supportedPlatforms": [
+        "dreamcast",
+        "neogeo-cd",
+        "arcade"
+      ],
+      "supportedFormats": [
+        "gdi",
+        "cdi",
+        "chd",
+        "cue",
+        "bin",
+        "zip"
+      ],
+      "supportedBios": [
+        "dc-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fmsx",
+      "name": "fMSX",
+      "type": "libretro-core",
+      "coreName": "fmsx_libretro",
+      "supportedPlatforms": [
+        "msx",
+        "msx2"
+      ],
+      "supportedFormats": [
+        "rom",
+        "mx1",
+        "mx2",
+        "dsk",
+        "cas",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "msx-bios",
+        "msx2-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "freechaf",
+      "name": "FreeChaF",
+      "type": "libretro-core",
+      "coreName": "freechaf_libretro",
+      "supportedPlatforms": [
+        "channelf"
+      ],
+      "supportedFormats": [
+        "bin",
+        "chf",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "channelf-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "freechaf_libretro",
+      "name": "FreeChaF (core id)",
+      "type": "libretro-core",
+      "coreName": "freechaf_libretro",
+      "supportedPlatforms": [
+        "channelf"
+      ],
+      "supportedFormats": [
+        "bin",
+        "chf",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "channelf-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "freeintv",
+      "name": "FreeIntv",
+      "type": "libretro-core",
+      "coreName": "freeintv_libretro",
+      "supportedPlatforms": [
+        "intellivision"
+      ],
+      "supportedFormats": [
+        "int",
+        "bin",
+        "rom",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "intellivision-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "freeintv_libretro",
+      "name": "FreeIntv (core id)",
+      "type": "libretro-core",
+      "coreName": "freeintv_libretro",
+      "supportedPlatforms": [
+        "intellivision"
+      ],
+      "supportedFormats": [
+        "int",
+        "bin",
+        "rom",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "intellivision-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fuse",
+      "name": "Fuse",
+      "type": "libretro-core",
+      "coreName": "fuse_libretro",
+      "supportedPlatforms": [
+        "zxspectrum"
+      ],
+      "supportedFormats": [
+        "tzx",
+        "tap",
+        "z80",
+        "sna",
+        "szx",
+        "dsk",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "fuse_libretro",
+      "name": "Fuse (core id)",
+      "type": "libretro-core",
+      "coreName": "fuse_libretro",
+      "supportedPlatforms": [
+        "zxspectrum"
+      ],
+      "supportedFormats": [
+        "tzx",
+        "tap",
+        "z80",
+        "sna",
+        "szx",
+        "dsk",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "gambatte",
+      "name": "Gambatte",
+      "type": "libretro-core",
+      "coreName": "gambatte_libretro",
+      "supportedPlatforms": [
+        "gb",
+        "gbc"
+      ],
+      "supportedFormats": [
+        "gb",
+        "gbc",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "gambatte_libretro",
+      "name": "Gambatte (core id)",
+      "type": "libretro-core",
+      "coreName": "gambatte_libretro",
+      "supportedPlatforms": [
+        "gb",
+        "gbc"
+      ],
+      "supportedFormats": [
+        "gb",
+        "gbc",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "gearboy",
+      "name": "Gearboy",
+      "type": "libretro-core",
+      "coreName": "gearboy_libretro",
+      "supportedPlatforms": [
+        "gb",
+        "gbc"
+      ],
+      "supportedFormats": [
+        "bin",
+        "gb",
+        "gbc"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "gearcoleco",
+      "name": "Gearcoleco",
+      "type": "libretro-core",
+      "coreName": "gearcoleco_libretro",
+      "supportedPlatforms": [
+        "colecovision"
+      ],
+      "supportedFormats": [
+        "bin",
+        "col",
+        "rom"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "gearsystem",
+      "name": "Gearsystem",
+      "type": "libretro-core",
+      "coreName": "gearsystem_libretro",
+      "supportedPlatforms": [
+        "sms",
+        "gamegear",
+        "sg-1000"
+      ],
+      "supportedFormats": [
+        "sms",
+        "gg",
+        "sg",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux",
+        "windows",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "genesis-plus-gx",
+      "name": "Genesis Plus GX",
+      "type": "libretro-core",
+      "coreName": "genesis_plus_gx_libretro",
+      "supportedPlatforms": [
+        "genesis",
+        "sms",
+        "gamegear",
+        "sega-cd",
+        "sg-1000"
+      ],
+      "supportedFormats": [
+        "md",
+        "gen",
+        "bin",
+        "smd",
+        "sms",
+        "gg",
+        "sg",
+        "cue",
+        "chd",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "sega-cd-bios-usa",
+        "sega-cd-bios-eur",
+        "sega-cd-bios-jpn"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "genesis-plus-gx-wide",
+      "name": "Genesis Plus GX Wide",
+      "type": "libretro-core",
+      "coreName": "genesis_plus_gx_wide_libretro",
+      "supportedPlatforms": [
+        "genesis",
+        "sms",
+        "gamegear",
+        "sega-cd",
+        "sg-1000"
+      ],
+      "supportedFormats": [
+        "md",
+        "gen",
+        "bin",
+        "smd",
+        "sms",
+        "gg",
+        "sg",
+        "cue",
+        "chd",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "sega-cd-bios-usa",
+        "sega-cd-bios-eur",
+        "sega-cd-bios-jpn"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "genesis_plus_gx_libretro",
+      "name": "Genesis Plus GX (core id)",
+      "type": "libretro-core",
+      "coreName": "genesis_plus_gx_libretro",
+      "supportedPlatforms": [
+        "genesis",
+        "sms",
+        "gamegear",
+        "sega-cd",
+        "sg-1000"
+      ],
+      "supportedFormats": [
+        "md",
+        "gen",
+        "bin",
+        "smd",
+        "sms",
+        "gg",
+        "sg",
+        "cue",
+        "chd",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "sega-cd-bios-usa",
+        "sega-cd-bios-eur",
+        "sega-cd-bios-jpn"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "geolith",
+      "name": "Geolith",
+      "type": "libretro",
+      "coreName": "geolith",
+      "supportedPlatforms": [
+        "neogeo"
+      ],
+      "supportedFormats": [
+        "zip"
+      ],
+      "supportedBios": [
+        "neogeo-bios-aes"
+      ],
+      "availableOnOS": [
+        "windows",
+        "mac",
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "libretro",
+      "status": "active"
+    },
+    {
+      "id": "glupen64",
+      "type": "retroarch-core",
+      "name": "Glupen64 (libretro)",
+      "aliases": [],
+      "notes": "Legacy N64 libretro core id referenced by some manifests (e.g., Recalbox)."
+    },
+    {
+      "id": "gngeo",
+      "name": "GNGeo",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "neogeo"
+      ],
+      "supportedFormats": [
+        "zip"
+      ],
+      "supportedBios": [
+        "neogeo-bios"
+      ],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x",
+        "simplemenu"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "gpsp",
+      "name": "gpSP",
+      "type": "libretro-core",
+      "coreName": "gpsp_libretro",
+      "supportedPlatforms": [
+        "gba"
+      ],
+      "supportedFormats": [
+        "gba",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "gba-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "low"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "gpsp-standalone",
+      "name": "gpSP",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "gba"
+      ],
+      "supportedFormats": [],
+      "supportedBios": [
+        "gba-bios"
+      ],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "ini",
+      "status": "active"
+    },
+    {
+      "id": "gpsp_libretro",
+      "name": "gpSP (core id)",
+      "type": "libretro-core",
+      "coreName": "gpsp_libretro",
+      "supportedPlatforms": [
+        "gba"
+      ],
+      "supportedFormats": [
+        "gba",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "gba-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "low"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "gw",
+      "name": "Gw",
+      "type": "libretro-core",
+      "coreName": "gw_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "handy",
+      "name": "Handy",
+      "type": "libretro-core",
+      "coreName": "handy_libretro",
+      "supportedPlatforms": [
+        "atari-lynx"
+      ],
+      "supportedFormats": [
+        "lnx",
+        "o",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "lynx-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "handy_libretro",
+      "name": "Handy (core id)",
+      "type": "libretro-core",
+      "coreName": "handy_libretro",
+      "supportedPlatforms": [
+        "atari-lynx"
+      ],
+      "supportedFormats": [
+        "lnx",
+        "o",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "lynx-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "hatari",
+      "name": "Hatari",
+      "type": "libretro-core",
+      "coreName": "hatari_libretro",
+      "supportedPlatforms": [
+        "atari-st"
+      ],
+      "supportedFormats": [
+        "st",
+        "stx",
+        "msa",
+        "ipf",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "atari-st-tos"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "hatari_libretro",
+      "name": "Hatari (core id)",
+      "type": "libretro-core",
+      "coreName": "hatari_libretro",
+      "supportedPlatforms": [
+        "atari-st"
+      ],
+      "supportedFormats": [
+        "st",
+        "stx",
+        "msa",
+        "ipf",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "atari-st-tos"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "imame4all",
+      "type": "retroarch-core",
+      "name": "iMAME4all (libretro)",
+      "aliases": [],
+      "notes": "Legacy arcade libretro core id referenced by some manifests (e.g., Recalbox)."
+    },
+    {
+      "id": "km-daphne-xtreme",
+      "name": "Km Daphne Xtreme",
+      "type": "libretro-core",
+      "coreName": "km_daphne_xtreme_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "kronos",
+      "name": "Kronos",
+      "type": "libretro-core",
+      "coreName": "kronos_libretro",
+      "supportedPlatforms": [
+        "saturn"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd",
+        "mds",
+        "ccd"
+      ],
+      "supportedBios": [
+        "saturn-bios-usa",
+        "saturn-bios-eur",
+        "saturn-bios-jpn"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "lime3ds",
+      "name": "Lime3DS",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "3ds"
+      ],
+      "supportedFormats": [
+        "3ds",
+        "cia",
+        "cxi",
+        "app"
+      ],
+      "supportedBios": [
+        "3ds-aes-keys"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "lowresnx",
+      "name": "Lowresnx",
+      "type": "libretro-core",
+      "coreName": "lowresnx_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "lutro",
+      "name": "Lutro",
+      "type": "libretro-core",
+      "coreName": "lutro_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mame",
+      "name": "MAME",
+      "type": "libretro-core",
+      "coreName": "mame_libretro",
+      "supportedPlatforms": [
+        "arcade",
+        "fm-towns",
+        "cdi"
+      ],
+      "supportedFormats": [
+        "zip",
+        "7z",
+        "chd"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mame-standalone",
+      "name": "MAME",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "arcade"
+      ],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "mame0139",
+      "type": "retroarch-core",
+      "name": "MAME 0.139 (libretro)",
+      "aliases": [],
+      "notes": "Legacy arcade core id referenced by some manifests (e.g., Recalbox)."
+    },
+    {
+      "id": "mame078plus_libretro",
+      "name": "MAME 2003-Plus (0.78+) (core id)",
+      "type": "libretro-core",
+      "coreName": "mame078plus_libretro",
+      "supportedPlatforms": [
+        "arcade",
+        "neogeo"
+      ],
+      "supportedFormats": [
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mame2000",
+      "name": "Mame2000",
+      "type": "libretro-core",
+      "coreName": "mame2000_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mame2000_libretro",
+      "name": "Mame2000 (core id)",
+      "type": "libretro-core",
+      "coreName": "mame2000_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mame2003-plus",
+      "name": "MAME 2003-Plus",
+      "type": "libretro-core",
+      "coreName": "mame2003_plus_libretro",
+      "supportedPlatforms": [
+        "arcade"
+      ],
+      "supportedFormats": [
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mame2003_xtreme_libretro",
+      "type": "retroarch-core",
+      "name": "MAME 2003 Xtreme (libretro)",
+      "aliases": [],
+      "notes": ""
+    },
+    {
+      "id": "mame2010",
+      "name": "Mame2010",
+      "type": "libretro-core",
+      "coreName": "mame2010_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mame2015",
+      "name": "Mame2015",
+      "type": "libretro-core",
+      "coreName": "mame2015_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mame2016",
+      "name": "Mame2016",
+      "type": "libretro-core",
+      "coreName": "mame2016_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mame219",
+      "name": "Mame219",
+      "type": "libretro-core",
+      "coreName": "mame219_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mame4all",
+      "name": "MAME4All (MAME 2000)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "arcade"
+      ],
+      "supportedFormats": [
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x",
+        "simplemenu"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "mame4droid-0139u1",
+      "name": "MAME4Droid (0.139u1)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "arcade",
+        "mame"
+      ],
+      "supportedFormats": [
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "android"
+      ],
+      "availableOnFrontends": [
+        "*"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": null,
+      "status": "active"
+    },
+    {
+      "id": "mame_libretro",
+      "name": "MAME (core id)",
+      "type": "libretro-core",
+      "coreName": "mame_libretro",
+      "supportedPlatforms": [
+        "arcade",
+        "fm-towns",
+        "cdi"
+      ],
+      "supportedFormats": [
+        "zip",
+        "7z",
+        "chd"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mednafen",
+      "name": "Mednafen",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "nes",
+        "snes",
+        "gb",
+        "gbc",
+        "gba",
+        "psx",
+        "saturn",
+        "tg16",
+        "tgcd",
+        "pcfx",
+        "neogeo-pocket",
+        "neogeo-pocket-color",
+        "wonderswan",
+        "wonderswan-color",
+        "virtualboy",
+        "atari-lynx"
+      ],
+      "supportedFormats": [
+        "*"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "cycle-accurate"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "mednafen-supafaust",
+      "name": "Mednafen Supafaust",
+      "type": "libretro-core",
+      "coreName": "mednafen_supafaust_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mednafen-supergrafx",
+      "name": "Mednafen Supergrafx",
+      "type": "libretro-core",
+      "coreName": "mednafen_supergrafx_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mednafen_lynx_libretro",
+      "name": "Beetle Lynx (core id)",
+      "type": "libretro-core",
+      "coreName": "mednafen_lynx_libretro",
+      "supportedPlatforms": [
+        "atari-lynx"
+      ],
+      "supportedFormats": [
+        "lnx",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "lynx-bios"
+      ],
+      "availableOnOS": [
+        "linux",
+        "windows",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mednafen_ngp_libretro",
+      "name": "Beetle NeoPop (core id)",
+      "type": "libretro-core",
+      "coreName": "mednafen_ngp_libretro",
+      "supportedPlatforms": [
+        "neogeo-pocket",
+        "neogeo-pocket-color"
+      ],
+      "supportedFormats": [
+        "ngp",
+        "ngc",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mednafen_pce_fast_libretro",
+      "name": "Beetle PCE Fast (core id)",
+      "type": "libretro-core",
+      "coreName": "mednafen_pce_fast_libretro",
+      "supportedPlatforms": [
+        "tg16",
+        "tgcd",
+        "supergrafx"
+      ],
+      "supportedFormats": [
+        "pce",
+        "cue",
+        "chd",
+        "sgx",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "tgcd-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mednafen_pce_libretro",
+      "name": "Beetle PCE (core id)",
+      "type": "libretro-core",
+      "coreName": "mednafen_pce_libretro",
+      "supportedPlatforms": [
+        "tg16",
+        "tgcd",
+        "supergrafx"
+      ],
+      "supportedFormats": [
+        "pce",
+        "cue",
+        "chd",
+        "sgx",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "tgcd-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mednafen_pcfx_libretro",
+      "name": "Beetle PC-FX (core id)",
+      "type": "libretro-core",
+      "coreName": "mednafen_pcfx_libretro",
+      "supportedPlatforms": [
+        "pcfx"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd"
+      ],
+      "supportedBios": [
+        "pcfx-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mednafen_supafaust_libretro",
+      "name": "Mednafen Supafaust (core id)",
+      "type": "libretro-core",
+      "coreName": "mednafen_supafaust_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mednafen_supergrafx_libretro",
+      "name": "Mednafen Supergrafx (core id)",
+      "type": "libretro-core",
+      "coreName": "mednafen_supergrafx_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mednafen_vb_libretro",
+      "name": "Beetle VB (core id)",
+      "type": "libretro-core",
+      "coreName": "mednafen_vb_libretro",
+      "supportedPlatforms": [
+        "virtualboy"
+      ],
+      "supportedFormats": [
+        "vb",
+        "vboy",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mednafen_wswan_libretro",
+      "name": "Beetle WonderSwan (core id)",
+      "type": "libretro-core",
+      "coreName": "mednafen_wswan_libretro",
+      "supportedPlatforms": [
+        "wonderswan",
+        "wonderswan-color"
+      ],
+      "supportedFormats": [
+        "ws",
+        "wsc",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "melonds",
+      "name": "melonDS",
+      "type": "libretro-core",
+      "coreName": "melonds_libretro",
+      "supportedPlatforms": [
+        "nds"
+      ],
+      "supportedFormats": [
+        "nds",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "nds-bios7",
+        "nds-bios9",
+        "nds-firmware"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "melonds-standalone",
+      "name": "melonDS (Standalone)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "nds"
+      ],
+      "supportedFormats": [
+        "nds",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "nds-bios7",
+        "nds-bios9",
+        "nds-firmware"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "mesen",
+      "name": "Mesen",
+      "type": "libretro-core",
+      "coreName": "mesen_libretro",
+      "supportedPlatforms": [
+        "nes",
+        "famicom-disk-system"
+      ],
+      "supportedFormats": [
+        "nes",
+        "unf",
+        "unif",
+        "fds",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "fds-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "cycle-accurate"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mesen-s",
+      "name": "Mesen-S",
+      "type": "libretro-core",
+      "coreName": "mesen-s_libretro",
+      "supportedPlatforms": [
+        "snes",
+        "gb",
+        "gbc"
+      ],
+      "supportedFormats": [
+        "sfc",
+        "smc",
+        "gb",
+        "gbc",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "meteor",
+      "type": "retroarch-core",
+      "name": "Meteor (GBA) (libretro)",
+      "aliases": [],
+      "notes": "Legacy GBA libretro core id referenced by some manifests."
+    },
+    {
+      "id": "mgba",
+      "name": "mGBA",
+      "type": "libretro-core",
+      "coreName": "mgba_libretro",
+      "supportedPlatforms": [
+        "gba",
+        "gbc",
+        "gb"
+      ],
+      "supportedFormats": [
+        "gba",
+        "gbc",
+        "gb",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "gba-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mgba-standalone",
+      "name": "mGBA (Standalone)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "gba",
+        "gbc",
+        "gb"
+      ],
+      "supportedFormats": [
+        "gba",
+        "gbc",
+        "gb",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "gba-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "mgba_libretro",
+      "name": "mGBA (core id)",
+      "type": "libretro-core",
+      "coreName": "mgba_libretro",
+      "supportedPlatforms": [
+        "gba",
+        "gbc",
+        "gb"
+      ],
+      "supportedFormats": [
+        "gba",
+        "gbc",
+        "gb",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "gba-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "minivmac",
+      "name": "Minivmac",
+      "type": "libretro-core",
+      "coreName": "minivmac_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "minui-native",
+      "type": "standalone",
+      "name": "MinUI native emulators (internal wrapper)",
+      "aliases": [],
+      "notes": "Internal wrapper id representing MinUI built-in emulators (not RetroArch)."
+    },
+    {
+      "id": "model2",
+      "name": "Model 2 Emulator",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "mu",
+      "name": "Mu",
+      "type": "libretro-core",
+      "coreName": "mu_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mupen64plus",
+      "name": "Mupen64Plus",
+      "type": "libretro-core",
+      "coreName": "mupen64plus_libretro",
+      "supportedPlatforms": [
+        "n64"
+      ],
+      "supportedFormats": [
+        "n64",
+        "v64",
+        "z64"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mupen64plus-fz",
+      "name": "Mupen64Plus FZ",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "n64"
+      ],
+      "supportedFormats": [
+        "n64",
+        "z64",
+        "v64",
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "android"
+      ],
+      "availableOnFrontends": [
+        "*"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "mupen64plus-fz",
+      "status": "active"
+    },
+    {
+      "id": "mupen64plus-gliden64-mk2",
+      "name": "Mupen64Plus (GLideN64 mk2)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "n64"
+      ],
+      "supportedFormats": [
+        "n64",
+        "v64",
+        "z64"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "mupen64plus-gliden64-rice",
+      "name": "Mupen64Plus (GLideN64 Rice)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "n64"
+      ],
+      "supportedFormats": [
+        "n64",
+        "v64",
+        "z64"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "mupen64plus-next",
+      "name": "Mupen64Plus-Next",
+      "type": "libretro-core",
+      "coreName": "mupen64plus_next_libretro",
+      "supportedPlatforms": [
+        "n64"
+      ],
+      "supportedFormats": [
+        "n64",
+        "z64",
+        "v64",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "mupen64plus-standalone",
+      "name": "Mupen64Plus",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "n64",
+        "n64dd"
+      ],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "ini",
+      "status": "active"
+    },
+    {
+      "id": "n64oid",
+      "name": "N64oid",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "n64"
+      ],
+      "supportedFormats": [
+        "n64",
+        "z64",
+        "v64",
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "android"
+      ],
+      "availableOnFrontends": [
+        "*"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "low"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": null,
+      "status": "deprecated"
+    },
+    {
+      "id": "nekop2",
+      "name": "Nekop2",
+      "type": "libretro-core",
+      "coreName": "nekop2_libretro",
+      "supportedPlatforms": [
+        "pc-98"
+      ],
+      "supportedFormats": [
+        "2hd",
+        "88d",
+        "98d",
+        "cmd",
+        "d88",
+        "d98",
+        "dup",
+        "fdd",
+        "fdi",
+        "hdd",
+        "hdi",
+        "hdm",
+        "hdn",
+        "nhd",
+        "tfd",
+        "thd",
+        "xdf"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "neocd",
+      "name": "NeoCD",
+      "type": "libretro-core",
+      "coreName": "neocd_libretro",
+      "supportedPlatforms": [
+        "neogeo-cd"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd"
+      ],
+      "supportedBios": [
+        "neocd-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "neocd_libretro",
+      "name": "NeoCD (core id)",
+      "type": "libretro-core",
+      "coreName": "neocd_libretro",
+      "supportedPlatforms": [
+        "neogeo-cd"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd"
+      ],
+      "supportedBios": [
+        "neocd-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "neodroid",
+      "name": "NeoDroid",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "neogeo",
+        "arcade"
+      ],
+      "supportedFormats": [
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "android"
+      ],
+      "availableOnFrontends": [
+        "*"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": null,
+      "status": "deprecated"
+    },
+    {
+      "id": "nestopia",
+      "name": "Nestopia UE",
+      "type": "libretro-core",
+      "coreName": "nestopia_libretro",
+      "supportedPlatforms": [
+        "nes",
+        "famicom-disk-system"
+      ],
+      "supportedFormats": [
+        "nes",
+        "unf",
+        "unif",
+        "fds",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "fds-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "nethersx2",
+      "name": "NetherSX2",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "ps2"
+      ],
+      "supportedFormats": [
+        "iso",
+        "bin",
+        "chd",
+        "cso",
+        "gz"
+      ],
+      "supportedBios": [
+        "ps2-bios"
+      ],
+      "availableOnOS": [
+        "android"
+      ],
+      "availableOnFrontends": [
+        "daijisho"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "nextui-native",
+      "name": "NextUI built-in emulation engine",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "nes",
+        "snes",
+        "gb",
+        "gbc",
+        "gba",
+        "genesis",
+        "sms",
+        "gamegear",
+        "psx"
+      ],
+      "supportedFormats": [
+        "zip",
+        "7z",
+        "bin",
+        "cue",
+        "iso",
+        "gba",
+        "gb",
+        "gbc",
+        "nes",
+        "sfc",
+        "smc"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "np2kai",
+      "name": "Neko Project II Kai",
+      "type": "libretro-core",
+      "coreName": "np2kai_libretro",
+      "supportedPlatforms": [
+        "pc-98"
+      ],
+      "supportedFormats": [
+        "hdi",
+        "fdi",
+        "fdd",
+        "d88",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "pc98-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "np2kai_libretro",
+      "name": "Neko Project II Kai (core id)",
+      "type": "libretro-core",
+      "coreName": "np2kai_libretro",
+      "supportedPlatforms": [
+        "pc-98"
+      ],
+      "supportedFormats": [
+        "hdi",
+        "fdi",
+        "fdd",
+        "d88",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "pc98-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "numero",
+      "name": "Numero",
+      "type": "libretro-core",
+      "coreName": "numero_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "nxengine",
+      "name": "Nxengine",
+      "type": "libretro-core",
+      "coreName": "nxengine_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "o2em",
+      "name": "O2EM",
+      "type": "libretro-core",
+      "coreName": "o2em_libretro",
+      "supportedPlatforms": [
+        "odyssey2"
+      ],
+      "supportedFormats": [
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "odyssey2-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "ohboy",
+      "name": "OhBoy",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "gb",
+        "gbc"
+      ],
+      "supportedFormats": [
+        "gb",
+        "gbc",
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x",
+        "simplemenu"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "onscripter_libretro",
+      "name": "ONScripter (Libretro Core)",
+      "type": "libretro-core",
+      "coreName": "onscripter_libretro",
+      "supportedPlatforms": [
+        "ons"
+      ],
+      "supportedFormats": [
+        "*"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "openbor-standalone",
+      "name": "OpenBOR",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "openbor"
+      ],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "none",
+      "status": "active"
+    },
+    {
+      "id": "openbor_libretro",
+      "name": "OpenBOR (Libretro Core)",
+      "type": "libretro-core",
+      "coreName": "openbor_libretro",
+      "supportedPlatforms": [
+        "openbor"
+      ],
+      "supportedFormats": [
+        "pak",
+        "zip",
+        "openbor"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "opera",
+      "name": "Opera",
+      "type": "libretro-core",
+      "coreName": "opera_libretro",
+      "supportedPlatforms": [
+        "3do"
+      ],
+      "supportedFormats": [
+        "iso",
+        "bin",
+        "cue",
+        "chd"
+      ],
+      "supportedBios": [
+        "3do-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "opera_libretro",
+      "name": "Opera (core id)",
+      "type": "libretro-core",
+      "coreName": "opera_libretro",
+      "supportedPlatforms": [
+        "3do"
+      ],
+      "supportedFormats": [
+        "iso",
+        "bin",
+        "cue",
+        "chd"
+      ],
+      "supportedBios": [
+        "3do-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "oswan",
+      "name": "Oswan",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "wonderswan",
+        "wonderswan-color"
+      ],
+      "supportedFormats": [
+        "ws",
+        "wsc"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x",
+        "simplemenu"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "parallel-n64",
+      "name": "ParaLLEl N64",
+      "type": "libretro-core",
+      "coreName": "parallel_n64_libretro",
+      "supportedPlatforms": [
+        "n64"
+      ],
+      "supportedFormats": [
+        "n64",
+        "z64",
+        "v64",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "pcsx-rearmed",
+      "name": "PCSX ReARMed",
+      "type": "libretro-core",
+      "coreName": "pcsx_rearmed_libretro",
+      "supportedPlatforms": [
+        "psx"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "img",
+        "chd",
+        "pbp",
+        "m3u"
+      ],
+      "supportedBios": [
+        "psx-bios-usa",
+        "psx-bios-eur",
+        "psx-bios-jpn"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "pcsx-rearmed-32b",
+      "name": "PCSX-ReARMed (32-bit build)",
+      "type": "libretro-core",
+      "coreName": "pcsx_rearmed_32b_libretro",
+      "supportedPlatforms": [
+        "psx"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "chd",
+        "pbp",
+        "m3u",
+        "zip",
+        "7z",
+        "img",
+        "ccd",
+        "mdf",
+        "toc"
+      ],
+      "supportedBios": [
+        "psx-bios"
+      ],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "pcsx-standalone",
+      "name": "PCSX",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "psx"
+      ],
+      "supportedFormats": [],
+      "supportedBios": [
+        "psx-bios-usa",
+        "psx-bios-eur",
+        "psx-bios-jpn"
+      ],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "ini",
+      "status": "active"
+    },
+    {
+      "id": "pcsx2",
+      "name": "PCSX2",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "ps2"
+      ],
+      "supportedFormats": [
+        "iso",
+        "bin",
+        "chd",
+        "cso",
+        "gz"
+      ],
+      "supportedBios": [
+        "ps2-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite",
+        "steam-rom-manager"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "pcsx2-libretro",
+      "name": "PCSX2 (LibRetro)",
+      "type": "libretro-core",
+      "coreName": "pcsx2_libretro",
+      "supportedPlatforms": [
+        "ps2"
+      ],
+      "supportedFormats": [
+        "iso",
+        "bin",
+        "chd",
+        "cso",
+        "gz"
+      ],
+      "supportedBios": [
+        "ps2-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "pcsx_rearmed_libretro",
+      "name": "PCSX ReARMed (core id)",
+      "type": "libretro-core",
+      "coreName": "pcsx_rearmed_libretro",
+      "supportedPlatforms": [
+        "psx"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "img",
+        "chd",
+        "pbp",
+        "m3u"
+      ],
+      "supportedBios": [
+        "psx-bios-usa",
+        "psx-bios-eur",
+        "psx-bios-jpn"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "pico8",
+      "name": "PICO-8",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "requires-user-binary"
+    },
+    {
+      "id": "pico8-official",
+      "name": "PICO-8 (official)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "pico8"
+      ],
+      "supportedFormats": [
+        ".p8",
+        ".png",
+        ".p8.png"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux",
+        "windows",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "minui",
+        "muos",
+        "knulli",
+        "batocera",
+        "recalbox"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "pico8",
+      "status": "active"
+    },
+    {
+      "id": "pico8-splore",
+      "name": "PICO-8",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "pico8"
+      ],
+      "supportedFormats": [
+        "p8",
+        "png"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "picoarch",
+      "name": "PicoArch (libretro core loader)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "nes",
+        "snes",
+        "genesis",
+        "tg16",
+        "gb",
+        "gbc",
+        "gba",
+        "pokemini"
+      ],
+      "supportedFormats": [
+        "zip",
+        "7z",
+        "bin",
+        "cue",
+        "iso",
+        "gba",
+        "gb",
+        "gbc",
+        "nes",
+        "sfc",
+        "smc"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "picodrive",
+      "name": "PicoDrive",
+      "type": "libretro-core",
+      "coreName": "picodrive_libretro",
+      "supportedPlatforms": [
+        "genesis",
+        "sms",
+        "gamegear",
+        "sega-cd",
+        "sega-32x",
+        "sg-1000"
+      ],
+      "supportedFormats": [
+        "md",
+        "gen",
+        "bin",
+        "smd",
+        "sms",
+        "gg",
+        "sg",
+        "32x",
+        "cue",
+        "chd",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "sega-cd-bios-usa",
+        "sega-cd-bios-eur",
+        "sega-cd-bios-jpn",
+        "32x-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "picodrive-standalone",
+      "name": "PicoDrive",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "genesis",
+        "sms",
+        "gamegear",
+        "sega-cd",
+        "sega-32x"
+      ],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "ini",
+      "status": "active"
+    },
+    {
+      "id": "picodrive_libretro",
+      "name": "PicoDrive (core id)",
+      "type": "libretro-core",
+      "coreName": "picodrive_libretro",
+      "supportedPlatforms": [
+        "genesis",
+        "sms",
+        "gamegear",
+        "sega-cd",
+        "sega-32x",
+        "sg-1000"
+      ],
+      "supportedFormats": [
+        "md",
+        "gen",
+        "bin",
+        "smd",
+        "sms",
+        "gg",
+        "sg",
+        "32x",
+        "cue",
+        "chd",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "sega-cd-bios-usa",
+        "sega-cd-bios-eur",
+        "sega-cd-bios-jpn",
+        "32x-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "pokemini",
+      "type": "retroarch-core",
+      "name": "PokeMini (libretro) (alias id)",
+      "aliases": [
+        "pokemini_libretro",
+        "pokemini-core"
+      ],
+      "notes": "Alias id used by some manifests; maps to pokemini_libretro."
+    },
+    {
+      "id": "pokemini-core",
+      "name": "PokeMini",
+      "type": "libretro-core",
+      "coreName": "pokemini_libretro",
+      "supportedPlatforms": [
+        "pokemini"
+      ],
+      "supportedFormats": [
+        "min",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "pokemini-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "pokemini-standalone",
+      "name": "PokeMini (standalone)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "pokemini"
+      ],
+      "supportedFormats": [
+        "min",
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x",
+        "simplemenu"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "pokemini_libretro",
+      "name": "PokeMini (core id)",
+      "type": "libretro-core",
+      "coreName": "pokemini_libretro",
+      "supportedPlatforms": [
+        "pokemini"
+      ],
+      "supportedFormats": [
+        "min",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "pokemini-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "portmaster",
+      "name": "PortMaster",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "ports"
+      ],
+      "supportedFormats": [
+        "sh",
+        "squashfs"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "simplemenu"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "custom",
+      "status": "active"
+    },
+    {
+      "id": "potator",
+      "name": "Potator",
+      "type": "libretro-core",
+      "coreName": "potator_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "ppsspp",
+      "name": "PPSSPP",
+      "type": "libretro-core",
+      "coreName": "ppsspp_libretro",
+      "supportedPlatforms": [
+        "psp"
+      ],
+      "supportedFormats": [
+        "iso",
+        "cso",
+        "chd",
+        "pbp"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "ppsspp-go",
+      "name": "PPSSPP (GO build)",
+      "type": "standalone",
+      "aliases": [
+        "ppsspp-go-standalone",
+        "ppsspp_go",
+        "ppsspp-go"
+      ],
+      "sources": {
+        "upstreamUrls": []
+      }
+    },
+    {
+      "id": "ppsspp-sdl",
+      "name": "PPSSPP (SDL build)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "psp"
+      ],
+      "supportedFormats": [
+        "iso",
+        "cso",
+        "pbp"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "ppsspp-standalone",
+      "name": "PPSSPP (Standalone)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "psp"
+      ],
+      "supportedFormats": [
+        "iso",
+        "cso",
+        "chd",
+        "pbp"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite",
+        "daijisho"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "prboom",
+      "name": "Prboom",
+      "type": "libretro-core",
+      "coreName": "prboom_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "primehack",
+      "name": "PrimeHack",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "prosystem",
+      "name": "ProSystem",
+      "type": "libretro-core",
+      "coreName": "prosystem_libretro",
+      "supportedPlatforms": [
+        "atari-7800"
+      ],
+      "supportedFormats": [
+        "a78",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "atari-7800-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "prosystem_libretro",
+      "name": "ProSystem (core id)",
+      "type": "libretro-core",
+      "coreName": "prosystem_libretro",
+      "supportedPlatforms": [
+        "atari-7800"
+      ],
+      "supportedFormats": [
+        "a78",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "atari-7800-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "puae",
+      "name": "PUAE",
+      "type": "libretro-core",
+      "coreName": "puae_libretro",
+      "supportedPlatforms": [
+        "amiga"
+      ],
+      "supportedFormats": [
+        "adf",
+        "adz",
+        "dms",
+        "ipf",
+        "hdf",
+        "lha",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "amiga-kickstart"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "puae2021",
+      "name": "Puae2021",
+      "type": "libretro-core",
+      "coreName": "puae2021_libretro",
+      "supportedPlatforms": [
+        "amiga"
+      ],
+      "supportedFormats": [
+        "adf",
+        "adz",
+        "cpio",
+        "dms",
+        "exe",
+        "hdf",
+        "hdz",
+        "ipf",
+        "lha",
+        "m3u",
+        "rom",
+        "uae",
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "puae_2021_libretro",
+      "type": "retroarch-core",
+      "name": "PUAE 2021 (libretro)",
+      "aliases": [],
+      "notes": ""
+    },
+    {
+      "id": "puae_libretro",
+      "name": "PUAE (core id)",
+      "type": "libretro-core",
+      "coreName": "puae_libretro",
+      "supportedPlatforms": [
+        "amiga"
+      ],
+      "supportedFormats": [
+        "adf",
+        "adz",
+        "dms",
+        "ipf",
+        "hdf",
+        "lha",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "amiga-kickstart"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "px68k",
+      "name": "PX68K",
+      "type": "libretro-core",
+      "coreName": "px68k_libretro",
+      "supportedPlatforms": [
+        "x68000"
+      ],
+      "supportedFormats": [
+        "dim",
+        "xdf",
+        "hdm",
+        "2hd",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "x68000-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "px68k_libretro",
+      "name": "PX68K (core id)",
+      "type": "libretro-core",
+      "coreName": "px68k_libretro",
+      "supportedPlatforms": [
+        "x68000"
+      ],
+      "supportedFormats": [
+        "dim",
+        "xdf",
+        "hdm",
+        "2hd",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "x68000-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "quasi88",
+      "name": "Quasi88",
+      "type": "libretro-core",
+      "coreName": "quasi88_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "quicknes",
+      "name": "Quicknes",
+      "type": "libretro-core",
+      "coreName": "quicknes_libretro",
+      "supportedPlatforms": [
+        "nes"
+      ],
+      "supportedFormats": [
+        "bin",
+        "fds",
+        "fig",
+        "nes",
+        "unf"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "redream",
+      "name": "Redream",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "dreamcast"
+      ],
+      "supportedFormats": [
+        "gdi",
+        "cdi",
+        "chd",
+        "cue",
+        "bin"
+      ],
+      "supportedBios": [
+        "dc-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "daijisho"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "reicast",
+      "name": "Reicast",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "dreamcast"
+      ],
+      "supportedFormats": [
+        "cdi",
+        "gdi",
+        "chd"
+      ],
+      "supportedBios": [
+        "dc"
+      ],
+      "availableOnOS": [
+        "android"
+      ],
+      "availableOnFrontends": [
+        "*"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": null,
+      "status": "deprecated"
+    },
+    {
+      "id": "reicast-xtreme",
+      "name": "Reicast Xtreme (Libretro)",
+      "type": "libretro-core",
+      "aliases": [
+        "lr-reicast_xtreme",
+        "reicast_xtreme"
+      ],
+      "sources": {
+        "upstreamUrls": []
+      },
+      "retroarchCore": "reicast_xtreme"
+    },
+    {
+      "id": "reminiscence",
+      "name": "Reminiscence",
+      "type": "libretro-core",
+      "coreName": "reminiscence_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "retro8",
+      "name": "Retro8",
+      "type": "libretro-core",
+      "coreName": "retro8_libretro",
+      "supportedPlatforms": [
+        "pico8"
+      ],
+      "supportedFormats": [
+        "p8",
+        "png"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "retro8_libretro",
+      "name": "Retro8 (core id)",
+      "type": "libretro-core",
+      "coreName": "retro8_libretro",
+      "supportedPlatforms": [
+        "pico8"
+      ],
+      "supportedFormats": [
+        "p8",
+        "png"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "retroarch",
+      "name": "RetroArch",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "*"
+      ],
+      "supportedFormats": [
+        "*"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios",
+        "steamOS"
+      ],
+      "availableOnFrontends": [
+        "retroarch",
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "retrorun",
+      "name": "RetroRun",
+      "type": "standalone",
+      "aliases": [
+        "RetroRun"
+      ],
+      "sources": {
+        "upstreamUrls": []
+      }
+    },
+    {
+      "id": "retrorun32",
+      "name": "RetroRun 32-bit",
+      "type": "standalone",
+      "aliases": [
+        "RetroRun32",
+        "retrorun-32"
+      ],
+      "sources": {
+        "upstreamUrls": []
+      }
+    },
+    {
+      "id": "rmg",
+      "name": "Rosalie's Mupen GUI (RMG)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "n64"
+      ],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "rpcs3",
+      "name": "RPCS3",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "ps3"
+      ],
+      "supportedFormats": [
+        "iso",
+        "pkg",
+        "folder"
+      ],
+      "supportedBios": [
+        "ps3-firmware"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite"
+      ],
+      "performance": {
+        "demandTier": "very-high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "ruffle",
+      "name": "Ruffle",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "ryujinx",
+      "name": "Ryujinx",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "switch"
+      ],
+      "supportedFormats": [
+        "nsp",
+        "xci",
+        "nsz",
+        "xcz"
+      ],
+      "supportedBios": [
+        "switch-prod-keys",
+        "switch-title-keys"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite",
+        "steam-rom-manager"
+      ],
+      "performance": {
+        "demandTier": "very-high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "same-cdi",
+      "name": "SAME CDi",
+      "type": "libretro-core",
+      "coreName": "same_cdi_libretro",
+      "supportedPlatforms": [
+        "cdi"
+      ],
+      "supportedFormats": [
+        "chd",
+        "iso",
+        "bin",
+        "cue"
+      ],
+      "supportedBios": [
+        "cdi-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "sameboy",
+      "name": "SameBoy",
+      "type": "libretro-core",
+      "coreName": "sameboy_libretro",
+      "supportedPlatforms": [
+        "gb",
+        "gbc"
+      ],
+      "supportedFormats": [
+        "gb",
+        "gbc",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "cycle-accurate"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "sameduck",
+      "name": "Sameduck",
+      "type": "libretro-core",
+      "coreName": "sameduck_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "scummvm",
+      "name": "ScummVM",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "scummvm-core",
+      "name": "ScummVM (Core)",
+      "type": "libretro-core",
+      "coreName": "scummvm_libretro",
+      "supportedPlatforms": [
+        "scummvm"
+      ],
+      "supportedFormats": [
+        "scummvm"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "scummvm-standalone",
+      "name": "ScummVM (Standalone)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "scummvm"
+      ],
+      "supportedFormats": [
+        "scummvm"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "shadps4",
+      "name": "shadPS4",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "smsplusgx",
+      "name": "SMS Plus GX",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "sms",
+        "gamegear"
+      ],
+      "supportedFormats": [
+        "sms",
+        "gg",
+        "zip"
+      ],
+      "supportedBios": [
+        "sms-bios-col"
+      ],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x",
+        "simplemenu"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "snes9x",
+      "name": "Snes9x",
+      "type": "libretro-core",
+      "coreName": "snes9x_libretro",
+      "supportedPlatforms": [
+        "snes"
+      ],
+      "supportedFormats": [
+        "sfc",
+        "smc",
+        "swc",
+        "fig",
+        "bs",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "snes9x2002",
+      "name": "Snes9X2002",
+      "type": "libretro-core",
+      "coreName": "snes9x2002_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "snes9x2005",
+      "name": "Snes9X2005",
+      "type": "libretro-core",
+      "coreName": "snes9x2005_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "snes9x2005-plus",
+      "name": "Snes9x 2005 Plus",
+      "type": "libretro-core",
+      "coreName": "snes9x2005_plus_libretro",
+      "supportedPlatforms": [
+        "snes"
+      ],
+      "supportedFormats": [
+        "7z",
+        "bs",
+        "fig",
+        "sfc",
+        "smc",
+        "swc",
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "snes9x2005_plus_libretro",
+      "name": "Snes9x 2005 Plus (core id)",
+      "type": "libretro-core",
+      "coreName": "snes9x2005_plus_libretro",
+      "supportedPlatforms": [
+        "snes"
+      ],
+      "supportedFormats": [
+        "7z",
+        "bs",
+        "fig",
+        "sfc",
+        "smc",
+        "swc",
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "snes9x2010",
+      "name": "Snes9x 2010",
+      "type": "libretro-core",
+      "coreName": "snes9x2010_libretro",
+      "supportedPlatforms": [
+        "snes"
+      ],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "snes9x4d",
+      "name": "Snes9x4d",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "snes"
+      ],
+      "supportedFormats": [
+        "sfc",
+        "smc",
+        "zip"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x",
+        "simplemenu"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "snes9x_libretro",
+      "name": "Snes9x (core id)",
+      "type": "libretro-core",
+      "coreName": "snes9x_libretro",
+      "supportedPlatforms": [
+        "snes"
+      ],
+      "supportedFormats": [
+        "sfc",
+        "smc",
+        "swc",
+        "fig",
+        "bs",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "stella",
+      "name": "Stella",
+      "type": "libretro-core",
+      "coreName": "stella_libretro",
+      "supportedPlatforms": [
+        "atari-2600"
+      ],
+      "supportedFormats": [
+        "a26",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "stella_libretro",
+      "name": "Stella (core id)",
+      "type": "libretro-core",
+      "coreName": "stella_libretro",
+      "supportedPlatforms": [
+        "atari-2600"
+      ],
+      "supportedFormats": [
+        "a26",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "supermodel",
+      "name": "Supermodel",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "arcade"
+      ],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "suyu",
+      "name": "Suyu",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "switch"
+      ],
+      "supportedFormats": [
+        "nsp",
+        "xci",
+        "nsz",
+        "xcz"
+      ],
+      "supportedBios": [
+        "switch-prod-keys",
+        "switch-title-keys"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite"
+      ],
+      "performance": {
+        "demandTier": "very-high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "swanstation",
+      "name": "SwanStation",
+      "type": "libretro-core",
+      "coreName": "swanstation_libretro",
+      "supportedPlatforms": [
+        "psx"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "img",
+        "chd",
+        "pbp",
+        "m3u"
+      ],
+      "supportedBios": [
+        "psx-bios-usa",
+        "psx-bios-eur",
+        "psx-bios-jpn"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "temper",
+      "name": "Temper",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "tg16",
+        "tgcd"
+      ],
+      "supportedFormats": [
+        "pce",
+        "zip"
+      ],
+      "supportedBios": [
+        "pce-syscard3"
+      ],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x",
+        "simplemenu"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "tgbdual",
+      "name": "Tgbdual",
+      "type": "libretro-core",
+      "coreName": "tgbdual_libretro",
+      "supportedPlatforms": [
+        "gb",
+        "gbc"
+      ],
+      "supportedFormats": [
+        "bin",
+        "gb",
+        "gbc"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "tgbdual_libretro",
+      "name": "Tgbdual (core id)",
+      "type": "libretro-core",
+      "coreName": "tgbdual_libretro",
+      "supportedPlatforms": [
+        "gb",
+        "gbc"
+      ],
+      "supportedFormats": [
+        "bin",
+        "gb",
+        "gbc"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "theodore",
+      "name": "Theodore",
+      "type": "libretro-core",
+      "coreName": "theodore_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "tic80",
+      "name": "TIC-80",
+      "type": "libretro-core",
+      "coreName": "tic80_libretro",
+      "supportedPlatforms": [
+        "tic80"
+      ],
+      "supportedFormats": [
+        "tic"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "tic80_libretro",
+      "name": "TIC-80 (core id)",
+      "type": "libretro-core",
+      "coreName": "tic80_libretro",
+      "supportedPlatforms": [
+        "tic80"
+      ],
+      "supportedFormats": [
+        "tic"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "torzu",
+      "name": "Torzu",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "switch"
+      ],
+      "supportedFormats": [
+        "nsp",
+        "xci",
+        "nsz",
+        "xcz"
+      ],
+      "supportedBios": [
+        "switch-prod-keys",
+        "switch-title-keys"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox",
+        "playnite"
+      ],
+      "performance": {
+        "demandTier": "very-high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "tsugaru",
+      "name": "Tsugaru (FM-TOWNS)",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "fm-towns"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux",
+        "windows",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "batocera",
+        "emulationstation-de"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "tyrquake",
+      "name": "Tyrquake",
+      "type": "libretro-core",
+      "coreName": "tyrquake_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "uzem",
+      "name": "Uzem",
+      "type": "libretro-core",
+      "coreName": "uzem_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "vba-m",
+      "name": "VBA-M",
+      "type": "libretro-core",
+      "coreName": "vbam_libretro",
+      "supportedPlatforms": [
+        "gba",
+        "gbc",
+        "gb"
+      ],
+      "supportedFormats": [
+        "gba",
+        "gbc",
+        "gb",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "gba-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "vba-next",
+      "name": "Vba Next",
+      "type": "libretro-core",
+      "coreName": "vba_next_libretro",
+      "supportedPlatforms": [
+        "gba"
+      ],
+      "supportedFormats": [
+        "bin",
+        "gba"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "vbam_libretro",
+      "name": "VBA-M (core id)",
+      "type": "libretro-core",
+      "coreName": "vbam_libretro",
+      "supportedPlatforms": [
+        "gba",
+        "gbc",
+        "gb"
+      ],
+      "supportedFormats": [
+        "gba",
+        "gbc",
+        "gb",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "gba-bios"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "vecx",
+      "name": "vecx",
+      "type": "libretro-core",
+      "coreName": "vecx_libretro",
+      "supportedPlatforms": [
+        "vectrex"
+      ],
+      "supportedFormats": [
+        "vec",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "vecx_libretro",
+      "name": "vecx (core id)",
+      "type": "libretro-core",
+      "coreName": "vecx_libretro",
+      "supportedPlatforms": [
+        "vectrex"
+      ],
+      "supportedFormats": [
+        "vec",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "vecxemu",
+      "name": "Vecxemu",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "vectrex"
+      ],
+      "supportedFormats": [
+        "vec"
+      ],
+      "supportedBios": [
+        "vectrex-rom"
+      ],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "gmenu2x",
+        "simplemenu"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "vemulator_libretro",
+      "type": "retroarch-core",
+      "name": "VEmulator (Dreamcast VMU) (libretro)",
+      "aliases": [],
+      "notes": ""
+    },
+    {
+      "id": "vice-x64",
+      "name": "VICE x64",
+      "type": "libretro-core",
+      "coreName": "vice_x64_libretro",
+      "supportedPlatforms": [
+        "c64"
+      ],
+      "supportedFormats": [
+        "d64",
+        "t64",
+        "crt",
+        "prg",
+        "tap",
+        "g64",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "vice-xpet",
+      "name": "Vice Xpet",
+      "type": "libretro-core",
+      "coreName": "vice_xpet_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "vice-xplus4",
+      "name": "Vice Xplus4",
+      "type": "libretro-core",
+      "coreName": "vice_xplus4_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "vice-xvic",
+      "name": "Vice Xvic",
+      "type": "libretro-core",
+      "coreName": "vice_xvic_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "vice_x64_libretro",
+      "name": "VICE x64 (core id)",
+      "type": "libretro-core",
+      "coreName": "vice_x64_libretro",
+      "supportedPlatforms": [
+        "c64"
+      ],
+      "supportedFormats": [
+        "d64",
+        "t64",
+        "crt",
+        "prg",
+        "tap",
+        "g64",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "virtualjaguar",
+      "name": "Virtual Jaguar",
+      "type": "libretro-core",
+      "coreName": "virtualjaguar_libretro",
+      "supportedPlatforms": [
+        "atari-jaguar"
+      ],
+      "supportedFormats": [
+        "j64",
+        "jag",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "virtualjaguar_libretro",
+      "name": "Virtual Jaguar (core id)",
+      "type": "libretro-core",
+      "coreName": "virtualjaguar_libretro",
+      "supportedPlatforms": [
+        "atari-jaguar"
+      ],
+      "supportedFormats": [
+        "j64",
+        "jag",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "vita3k",
+      "name": "Vita3K",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "psvita"
+      ],
+      "supportedFormats": [
+        "vpk",
+        "mai",
+        "folder"
+      ],
+      "supportedBios": [
+        "psvita-firmware"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox"
+      ],
+      "performance": {
+        "demandTier": "very-high",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "wiliwili",
+      "name": "WiliWili",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "*"
+      ],
+      "supportedFormats": [
+        "*"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": false,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "x1",
+      "name": "X1",
+      "type": "libretro-core",
+      "coreName": "x1_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "xemu",
+      "name": "xemu",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "xbox"
+      ],
+      "supportedFormats": [
+        "iso",
+        "xiso"
+      ],
+      "supportedBios": [
+        "xbox-bios",
+        "xbox-eeprom",
+        "xbox-hdd"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de",
+        "pegasus",
+        "launchbox"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "high"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "xenia",
+      "name": "Xenia",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "active"
+    },
+    {
+      "id": "xmil",
+      "name": "XMIL",
+      "type": "libretro-core",
+      "coreName": "xmil",
+      "supportedPlatforms": [
+        "sharp-x1"
+      ],
+      "supportedFormats": [
+        "d88",
+        "dsk",
+        "2d",
+        "2hd",
+        "zip",
+        "7z"
+      ],
+      "supportedBios": [
+        "sharp-x1-iplrom",
+        "sharp-x1t-iplrom"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android",
+        "ios"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "low",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "xrick",
+      "name": "Xrick",
+      "type": "libretro-core",
+      "coreName": "xrick_libretro",
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "yabasanshiro",
+      "name": "Yabasanshiro",
+      "type": "libretro-core",
+      "coreName": "yabasanshiro_libretro",
+      "supportedPlatforms": [
+        "saturn"
+      ],
+      "supportedFormats": [
+        "bin",
+        "chd",
+        "cue",
+        "iso",
+        "m3u",
+        "mdf"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "yabasanshiro-standalone",
+      "name": "YabaSanshiro",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [
+        "saturn"
+      ],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "linux",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "emulationstation-de"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "ini",
+      "status": "active"
+    },
+    {
+      "id": "yabasanshiroSA1_5",
+      "name": "YabaSanshiro SA 1.5",
+      "type": "libretro-core",
+      "coreName": "yabasanshiroSA1_5_libretro",
+      "supportedPlatforms": [
+        "saturn"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "chd",
+        "iso",
+        "mds",
+        "zip"
+      ],
+      "supportedBios": [
+        "saturn-bios"
+      ],
+      "availableOnOS": [
+        "linux"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "high",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "yabasanshiro_libretro",
+      "name": "Yabasanshiro (core id)",
+      "type": "libretro-core",
+      "coreName": "yabasanshiro_libretro",
+      "supportedPlatforms": [
+        "saturn"
+      ],
+      "supportedFormats": [
+        "bin",
+        "chd",
+        "cue",
+        "iso",
+        "m3u",
+        "mdf"
+      ],
+      "supportedBios": [],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "yabause",
+      "name": "Yabause",
+      "type": "libretro-core",
+      "coreName": "yabause_libretro",
+      "supportedPlatforms": [
+        "saturn"
+      ],
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd",
+        "mds",
+        "ccd"
+      ],
+      "supportedBios": [
+        "saturn-bios-usa",
+        "saturn-bios-eur",
+        "saturn-bios-jpn"
+      ],
+      "availableOnOS": [
+        "windows",
+        "linux",
+        "macos",
+        "android"
+      ],
+      "availableOnFrontends": [
+        "retroarch"
+      ],
+      "performance": {
+        "demandTier": "medium",
+        "accuracy": "medium"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "retroarch",
+      "status": "active"
+    },
+    {
+      "id": "yuzu",
+      "name": "Yuzu",
+      "type": "standalone",
+      "coreName": null,
+      "supportedPlatforms": [],
+      "supportedFormats": [],
+      "supportedBios": [],
+      "availableOnOS": [
+        "steamos",
+        "linux-desktop",
+        "windows-10",
+        "windows-11",
+        "bazzite"
+      ],
+      "availableOnFrontends": [],
+      "performance": {
+        "demandTier": "unknown",
+        "accuracy": "unknown"
+      },
+      "supportsPerGameConfig": true,
+      "configFormat": "standalone",
+      "status": "discontinued"
+    }
+  ]
+}

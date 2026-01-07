@@ -1,0 +1,2125 @@
+{
+  "$schema": "../ROM_Runner_JSON_Schemas.json#/definitions/OperatingSystem",
+  "version": "2.1.0",
+  "generatedAt": "2026-01-05",
+  "operatingSystems": [
+    {
+      "id": "knulli",
+      "name": "KNULLI",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/userdata/bios",
+        "roms": "/userdata/roms",
+        "saves": "/userdata/saves",
+        "states": "/userdata/states",
+        "screenshots": "/userdata/screenshots",
+        "portmaster": "/userdata/roms/ports"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": "https://knulli.org/",
+        "formattingGuideUrl": "https://knulli.org/play/quick-start/"
+      },
+      "formattingNotes": "SD card should be formatted as ext4 for best performance. KNULLI supports dual SD card setups."
+    },
+    {
+      "id": "rocknix",
+      "name": "ROCKNIX",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/storage/roms/bios",
+        "roms": "/storage/roms",
+        "saves": "/storage/roms/savestates",
+        "states": "/storage/roms/savestates",
+        "screenshots": "/storage/screenshots",
+        "portmaster": "/storage/roms/ports"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": "https://rocknix.org/",
+        "formattingGuideUrl": "https://rocknix.org/faqs/"
+      },
+      "formattingNotes": "Formerly known as JELOS fork. Uses ext4 by default for the STORAGE partition."
+    },
+    {
+      "id": "arkos",
+      "name": "ArkOS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch",
+        "simplemenu"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/roms/bios",
+        "roms": "/roms",
+        "saves": "/roms/savestates",
+        "states": "/roms/savestates",
+        "screenshots": "/screenshots",
+        "portmaster": "/roms/ports"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": "https://github.com/christianhaitian/arkos/wiki",
+        "formattingGuideUrl": "https://github.com/christianhaitian/arkos/wiki/Frequently-Asked-Questions"
+      },
+      "formattingNotes": "Supports single and dual SD card setups. Second SD card can be exFAT."
+    },
+    {
+      "id": "amberelec",
+      "name": "AmberELEC",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/storage/roms/bios",
+        "roms": "/storage/roms",
+        "saves": "/storage/roms/savestates",
+        "states": "/storage/roms/savestates",
+        "screenshots": "/storage/screenshots",
+        "portmaster": "/storage/roms/ports"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": "https://amberelec.org/",
+        "formattingGuideUrl": "https://amberelec.org/getting-started"
+      },
+      "formattingNotes": "Continuation of EmuELEC for RG351 devices. STORAGE partition uses ext4."
+    },
+    {
+      "id": "jelos",
+      "name": "JELOS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/storage/roms/bios",
+        "roms": "/storage/roms",
+        "saves": "/storage/roms/savestates",
+        "states": "/storage/roms/savestates",
+        "screenshots": "/storage/screenshots",
+        "portmaster": "/storage/roms/ports"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": "https://jelos.org/",
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Project discontinued - succeeded by ROCKNIX. Legacy support only."
+    },
+    {
+      "id": "batocera",
+      "name": "Batocera",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "batocera-es",
+      "supportedFrontends": [
+        "batocera-es",
+        "retroarch",
+        "pegasus"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/userdata/bios",
+        "roms": "/userdata/roms",
+        "saves": "/userdata/saves",
+        "states": "/userdata/savestates",
+        "screenshots": "/userdata/screenshots",
+        "portmaster": "/userdata/roms/ports"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat",
+          "fat32",
+          "ntfs",
+          "btrfs"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": "https://wiki.batocera.org/",
+        "formattingGuideUrl": "https://wiki.batocera.org/add_games_bios"
+      },
+      "formattingNotes": "Supports internal storage, USB drives, and network shares. Very flexible filesystem support."
+    },
+    {
+      "id": "retropie",
+      "name": "RetroPie",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-retropie",
+      "supportedFrontends": [
+        "emulationstation-retropie",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "~/RetroPie/BIOS",
+        "roms": "~/RetroPie/roms",
+        "saves": "~/RetroPie/roms/{platform}",
+        "states": "~/RetroPie/roms/{platform}",
+        "screenshots": "~/RetroPie/screenshots",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://retropie.org.uk/docs/",
+        "formattingGuideUrl": "https://retropie.org.uk/docs/Transferring-Roms/"
+      },
+      "formattingNotes": "Primarily for Raspberry Pi. ROMs go in ~/RetroPie/roms/{platform}."
+    },
+    {
+      "id": "lakka",
+      "name": "Lakka",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "lakka-retroarch",
+      "supportedFrontends": [
+        "lakka-retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/storage/system",
+        "roms": "/storage/roms",
+        "saves": "/storage/savefiles",
+        "states": "/storage/savestates",
+        "screenshots": "/storage/screenshots",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://www.lakka.tv/doc/Home/",
+        "formattingGuideUrl": "https://www.lakka.tv/doc/ROMs/"
+      },
+      "formattingNotes": "Lightweight RetroArch-focused distro. ROMs stored in /storage/roms."
+    },
+    {
+      "id": "recalbox",
+      "name": "Recalbox",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "recalbox-es",
+      "supportedFrontends": [
+        "recalbox-es",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/recalbox/share/bios",
+        "roms": "/recalbox/share/roms",
+        "saves": "/recalbox/share/saves",
+        "states": "/recalbox/share/saves",
+        "screenshots": "/recalbox/share/screenshots",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://wiki.recalbox.com/",
+        "formattingGuideUrl": "https://wiki.recalbox.com/en/basic-usage/getting-started/add-roms"
+      },
+      "formattingNotes": "User-friendly Linux distro. Share partition contains all user data."
+    },
+    {
+      "id": "emuelec",
+      "name": "EmuELEC",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/storage/roms/bios",
+        "roms": "/storage/roms",
+        "saves": "/storage/roms/savestates",
+        "states": "/storage/roms/savestates",
+        "screenshots": "/storage/screenshots",
+        "portmaster": "/storage/roms/ports"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": "https://github.com/EmuELEC/EmuELEC/wiki",
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "For Amlogic-based devices. STORAGE partition uses ext4."
+    },
+    {
+      "id": "garlicos",
+      "name": "GarlicOS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "simplemenu",
+      "supportedFrontends": [
+        "simplemenu",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/mnt/SDCARD/BIOS",
+        "roms": "/mnt/SDCARD/Roms",
+        "saves": "/mnt/SDCARD/Saves",
+        "states": "/mnt/SDCARD/Saves",
+        "screenshots": "/mnt/SDCARD/Screenshots",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://www.patreon.com/posts/garlicos-for-76561333",
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Designed for RG35XX. Uses FAT32 for maximum compatibility. Simple folder structure."
+    },
+    {
+      "id": "minui",
+      "name": "MinUI",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "simplemenu",
+      "supportedFrontends": [
+        "simplemenu"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/mnt/SDCARD/Bios",
+        "roms": "/mnt/SDCARD/Roms",
+        "saves": "/mnt/SDCARD/.userdata/shared/saves",
+        "states": "/mnt/SDCARD/.userdata/shared/states",
+        "screenshots": null,
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://github.com/shauninman/MinUI",
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Minimalist firmware. Uses FAT32. Very simple folder structure."
+    },
+    {
+      "id": "onionos",
+      "name": "OnionOS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "simplemenu",
+      "supportedFrontends": [
+        "simplemenu",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/mnt/SDCARD/BIOS",
+        "roms": "/mnt/SDCARD/Roms",
+        "saves": "/mnt/SDCARD/Saves",
+        "states": "/mnt/SDCARD/Saves",
+        "screenshots": "/mnt/SDCARD/Screenshots",
+        "portmaster": "/mnt/SDCARD/Roms/PORTS"
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": "https://github.com/OnionUI/Onion/wiki",
+        "formattingGuideUrl": "https://github.com/OnionUI/Onion/wiki/Installation"
+      },
+      "formattingNotes": "For Miyoo Mini devices. Uses FAT32. Excellent PortMaster support."
+    },
+    {
+      "id": "windows-10",
+      "name": "Windows 10",
+      "type": "windows",
+      "baseOS": null,
+      "supportedDevices": [],
+      "defaultFrontend": null,
+      "supportedFrontends": [
+        "launchbox",
+        "bigbox",
+        "playnite",
+        "retroarch",
+        "emulationstation-de",
+        "pegasus",
+        "steam-rom-manager"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": null,
+        "roms": null,
+        "saves": null,
+        "states": null,
+        "screenshots": null,
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "ntfs",
+        "supported": [
+          "ntfs",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Full flexibility in folder structure. NTFS recommended for large files."
+    },
+    {
+      "id": "windows-11",
+      "name": "Windows 11",
+      "type": "windows",
+      "baseOS": null,
+      "supportedDevices": [],
+      "defaultFrontend": null,
+      "supportedFrontends": [
+        "launchbox",
+        "bigbox",
+        "playnite",
+        "retroarch",
+        "emulationstation-de",
+        "pegasus",
+        "steam-rom-manager"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": null,
+        "roms": null,
+        "saves": null,
+        "states": null,
+        "screenshots": null,
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "ntfs",
+        "supported": [
+          "ntfs",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Full flexibility in folder structure. NTFS recommended for large files."
+    },
+    {
+      "id": "macos",
+      "name": "macOS",
+      "type": "macos",
+      "baseOS": null,
+      "supportedDevices": [],
+      "defaultFrontend": "openemu",
+      "supportedFrontends": [
+        "openemu",
+        "retroarch",
+        "emulationstation-de",
+        "pegasus",
+        "steam-rom-manager"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": null,
+        "roms": null,
+        "saves": null,
+        "states": null,
+        "screenshots": null,
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "apfs",
+        "supported": [
+          "apfs",
+          "hfs+",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "APFS is the default filesystem for modern macOS."
+    },
+    {
+      "id": "steamos",
+      "name": "SteamOS",
+      "type": "steamOS",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "steam-rom-manager",
+      "supportedFrontends": [
+        "steam-rom-manager",
+        "emulationstation-de",
+        "retroarch",
+        "pegasus"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "~/Emulation/bios",
+        "roms": "~/Emulation/roms",
+        "saves": "~/Emulation/saves",
+        "states": "~/Emulation/states",
+        "screenshots": "~/Pictures/Screenshots",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "btrfs",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://help.steampowered.com/en/faqs/view/671A-4453-E8D2-323C",
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "EmuDeck recommended for setup. Uses ~/Emulation folder structure."
+    },
+    {
+      "id": "android",
+      "name": "Android",
+      "type": "android",
+      "baseOS": null,
+      "supportedDevices": [],
+      "defaultFrontend": "daijisho",
+      "supportedFrontends": [
+        "daijisho",
+        "retroarch",
+        "beacon-launcher",
+        "pegasus"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/storage/emulated/0/RetroArch/system",
+        "roms": "/storage/emulated/0/Roms",
+        "saves": "/storage/emulated/0/RetroArch/saves",
+        "states": "/storage/emulated/0/RetroArch/states",
+        "screenshots": "/storage/emulated/0/RetroArch/screenshots",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32",
+          "ext4"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Scoped storage limitations on Android 11+. External SD card recommended for ROMs."
+    },
+    {
+      "id": "linux-desktop",
+      "name": "Linux (Desktop)",
+      "type": "linux",
+      "baseOS": null,
+      "supportedDevices": [],
+      "defaultFrontend": "retroarch",
+      "supportedFrontends": [
+        "retroarch",
+        "emulationstation-de",
+        "pegasus",
+        "gnome-games",
+        "steam-rom-manager"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": null,
+        "roms": null,
+        "saves": null,
+        "states": null,
+        "screenshots": null,
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "btrfs",
+          "xfs",
+          "exfat",
+          "ntfs"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Full flexibility in folder structure. ext4 recommended for best performance."
+    },
+    {
+      "id": "anbernic-stock-linux-rg35xx-family",
+      "name": "Anbernic Stock (Linux â€“ RG35XX / XX family)",
+      "type": "linux",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation",
+      "supportedFrontends": [
+        "emulationstation",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock firmware for Anbernic RG35XX series. ROM and BIOS paths vary by device - user must select paths during setup."
+    },
+    {
+      "id": "anbernic-stock-linux-rk3566-family",
+      "name": "Anbernic Stock (Linux â€“ RK3566 family)",
+      "type": "linux",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation",
+      "supportedFrontends": [
+        "emulationstation",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock Linux firmware for Anbernic RK3566-based devices. ROM and BIOS paths vary - user must select paths during setup."
+    },
+    {
+      "id": "anbernic-stock-android-rk3566-family",
+      "name": "Anbernic Stock (Android â€“ RK3566 family)",
+      "type": "android",
+      "baseOS": "android",
+      "supportedDevices": [],
+      "defaultFrontend": "daijisho",
+      "supportedFrontends": [
+        "daijisho",
+        "retroarch",
+        "beacon-launcher",
+        "pegasus"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32",
+          "ext4"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock Android firmware for Anbernic RK3566-based devices. Scoped storage limitations apply on Android 11+."
+    },
+    {
+      "id": "anbernic-stock-android-t618-family",
+      "name": "Anbernic Stock (Android â€“ T618 family)",
+      "type": "android",
+      "baseOS": "android",
+      "supportedDevices": [],
+      "defaultFrontend": "daijisho",
+      "supportedFrontends": [
+        "daijisho",
+        "retroarch",
+        "beacon-launcher",
+        "pegasus"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32",
+          "ext4"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock Android firmware for Anbernic T618-based devices. Scoped storage limitations apply on Android 11+."
+    },
+    {
+      "id": "anbernic-stock-android-t820-family",
+      "name": "Anbernic Stock (Android â€“ T820 family)",
+      "type": "android",
+      "baseOS": "android",
+      "supportedDevices": [],
+      "defaultFrontend": "daijisho",
+      "supportedFrontends": [
+        "daijisho",
+        "retroarch",
+        "beacon-launcher",
+        "pegasus"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32",
+          "ext4"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock Android firmware for Anbernic T820-based devices. Scoped storage limitations apply on Android 11+."
+    },
+    {
+      "id": "retroid-stock-android-modern",
+      "name": "Retroid Stock (Android â€“ modern devices)",
+      "type": "android",
+      "baseOS": "android",
+      "supportedDevices": [],
+      "defaultFrontend": "daijisho",
+      "supportedFrontends": [
+        "daijisho",
+        "retroarch",
+        "beacon-launcher",
+        "pegasus"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32",
+          "ext4"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock Android firmware for modern Retroid devices (Pocket 3+, Pocket 4, Flip, etc.). Scoped storage limitations apply."
+    },
+    {
+      "id": "retroid-stock-retroidos-legacy",
+      "name": "Retroid Stock (RetroidOS / Retroid Mode â€“ legacy)",
+      "type": "android",
+      "baseOS": "android",
+      "supportedDevices": [],
+      "defaultFrontend": "daijisho",
+      "supportedFrontends": [
+        "daijisho",
+        "retroarch",
+        "beacon-launcher",
+        "pegasus"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "/games/download",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Legacy Retroid Mode / RetroidOS for older devices (Pocket 2, Pocket 2+). ROMs typically in /games/download/."
+    },
+    {
+      "id": "trimui-stock-trimuios-smart-pro",
+      "name": "TrimUI Stock (Smart Pro / TrimUI OS)",
+      "type": "linux",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation",
+      "supportedFrontends": [
+        "emulationstation",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/RetroArch/.retroarch/system",
+        "roms": "/Roms",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock TrimUI OS for Smart Pro and similar devices. ROMs in /Roms, BIOS in /RetroArch/.retroarch/system."
+    },
+    {
+      "id": "magicx-stock-linux-family",
+      "name": "MagicX Stock (Linux â€“ Zero/XU family)",
+      "type": "linux",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation",
+      "supportedFrontends": [
+        "emulationstation",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock Linux firmware for MagicX devices (Zero, XU family). ROM and BIOS paths vary - user must select paths during setup."
+    },
+    {
+      "id": "miyoo-stock-family",
+      "name": "Miyoo Stock (Linux â€“ Mini/Mini Plus family)",
+      "type": "linux",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation",
+      "supportedFrontends": [
+        "emulationstation",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock firmware for Miyoo Mini and Mini Plus devices. FAT32 required. Most users prefer OnionOS CFW."
+    },
+    {
+      "id": "powkiddy-stock-linux-family",
+      "name": "PowKiddy Stock (Linux â€“ common firmwares)",
+      "type": "linux",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation",
+      "supportedFrontends": [
+        "emulationstation",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock Linux firmware for PowKiddy devices. ROM and BIOS paths vary by device model - user must select paths during setup."
+    },
+    {
+      "id": "powkiddy-stock-android-family",
+      "name": "PowKiddy Stock (Android â€“ common firmwares)",
+      "type": "android",
+      "baseOS": "android",
+      "supportedDevices": [],
+      "defaultFrontend": "daijisho",
+      "supportedFrontends": [
+        "daijisho",
+        "retroarch",
+        "beacon-launcher",
+        "pegasus"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32",
+          "ext4"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock Android firmware for PowKiddy devices. Scoped storage limitations apply on Android 11+."
+    },
+    {
+      "id": "datafrog-stock-sf2000",
+      "name": "Data Frog Stock (SF2000)",
+      "type": "linux",
+      "baseOS": "proprietary",
+      "supportedDevices": [],
+      "defaultFrontend": "retroarch",
+      "supportedFrontends": [
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Proprietary stock firmware for Data Frog SF2000. Uses ROMS/<core-name>/ folder structure. FAT32 only."
+    },
+    {
+      "id": "m17-stock-handheld",
+      "name": "M17 Stock (Handheld)",
+      "type": "linux",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation",
+      "supportedFrontends": [
+        "emulationstation",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/retroarch/system",
+        "roms": "/roms",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock firmware for M17 handheld. ROMs in /roms/, BIOS in /retroarch/system/."
+    },
+    {
+      "id": "gkd-stock-iux-pixel2",
+      "name": "Game Kiddy Stock (Pixel II â€“ IUX firmware)",
+      "type": "linux",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation",
+      "supportedFrontends": [
+        "emulationstation",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "__USER_SELECT__",
+        "roms": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__",
+        "portmaster": null
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Stock IUX firmware for Game Kiddy Pixel II. ROM and BIOS paths vary - user must select paths during setup."
+    },
+    {
+      "id": "gammaos",
+      "name": "GammaOS",
+      "type": "cfw",
+      "baseOS": "android",
+      "androidVersion": "12",
+      "supportedDevices": [],
+      "defaultFrontend": "daijisho",
+      "supportedFrontends": [
+        "daijisho",
+        "retroarch",
+        "reset-collection",
+        "dig"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/storage/emulated/0/RetroArch/system",
+        "roms": "/storage/emulated/0/Roms",
+        "saves": "/storage/emulated/0/RetroArch/saves",
+        "states": "/storage/emulated/0/RetroArch/states",
+        "screenshots": "/storage/emulated/0/RetroArch/screenshots"
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32",
+          "ext4"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Android 12 based CFW. Common on Anbernic and Retroid devices."
+    },
+    {
+      "id": "gammaos-next",
+      "name": "GammaOS Next",
+      "type": "cfw",
+      "baseOS": "android",
+      "androidVersion": "13-14",
+      "supportedDevices": [],
+      "defaultFrontend": "daijisho",
+      "supportedFrontends": [
+        "daijisho",
+        "retroarch",
+        "reset-collection",
+        "dig"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/storage/emulated/0/RetroArch/system",
+        "roms": "/storage/emulated/0/Roms",
+        "saves": "/storage/emulated/0/RetroArch/saves",
+        "states": "/storage/emulated/0/RetroArch/states",
+        "screenshots": "/storage/emulated/0/RetroArch/screenshots"
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32",
+          "ext4"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Android 13/14 based GammaOS successor. Improved performance and compatibility."
+    },
+    {
+      "id": "gammaos-core",
+      "name": "GammaOS Core",
+      "aliases": [
+        "GammaOS C."
+      ],
+      "type": "cfw",
+      "baseOS": "android",
+      "androidVersion": "13",
+      "variant": "tv",
+      "supportedDevices": [],
+      "defaultFrontend": "daijisho",
+      "supportedFrontends": [
+        "daijisho",
+        "retroarch",
+        "reset-collection"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/storage/emulated/0/RetroArch/system",
+        "roms": "/storage/emulated/0/Roms",
+        "saves": "/storage/emulated/0/RetroArch/saves",
+        "states": "/storage/emulated/0/RetroArch/states",
+        "screenshots": "/storage/emulated/0/RetroArch/screenshots"
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32",
+          "ext4"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null,
+        "formattingGuideUrl": null
+      },
+      "formattingNotes": "Android TV variant of GammaOS. Designed for TV box form factors."
+    },
+    {
+      "id": "351droid",
+      "name": "351DROID",
+      "type": "cfw",
+      "baseOS": "android",
+      "supportedDevices": [],
+      "defaultFrontend": "daijisho",
+      "supportedFrontends": [
+        "daijisho",
+        "retroarch"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/storage/emulated/0/RetroArch/system",
+        "roms": "/storage/emulated/0/Roms",
+        "saves": "/storage/emulated/0/RetroArch/saves",
+        "states": "/storage/emulated/0/RetroArch/states"
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null
+      },
+      "formattingNotes": "Android-based CFW for RG351 devices."
+    },
+    {
+      "id": "crossmix-os",
+      "name": "CrossMix OS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch",
+        "simplemenu"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/mnt/SDCARD/BIOS",
+        "roms": "/mnt/SDCARD/Roms"
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": "https://github.com/cizia64/CrossMix-OS"
+      },
+      "formattingNotes": "Linux CFW for TrimUI devices. Fork/alternative to stock TrimUI OS."
+    },
+    {
+      "id": "funkey-os",
+      "name": "FunKey-OS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "retroarch",
+      "supportedFrontends": [
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/mnt/FunKey/.fba",
+        "roms": "/mnt/FunKey"
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://github.com/FunKey-Project/FunKey-OS"
+      },
+      "formattingNotes": "Custom Linux OS for FunKey S device."
+    },
+    {
+      "id": "opendingux",
+      "name": "OpenDingux",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "simplemenu",
+      "supportedFrontends": [
+        "simplemenu",
+        "retroarch",
+        "gmenu2x"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/media/data/local/home/.retroarch/system",
+        "roms": "/media/data/local/home/roms"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://github.com/OpenDingux"
+      },
+      "formattingNotes": "Open source Linux firmware for Ingenic-based handhelds (RG300, RG350, etc.)."
+    },
+    {
+      "id": "retrofw",
+      "name": "RetroFW",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "gmenu2x",
+      "supportedFrontends": [
+        "gmenu2x",
+        "simplemenu",
+        "retroarch"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/home/.retroarch/system",
+        "roms": "/home/roms"
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://github.com/retrofw/retrofw.github.io"
+      },
+      "formattingNotes": "Lightweight Linux CFW for older JZ4760-based handhelds (RS-97, LDK, etc.)."
+    },
+    {
+      "id": "clockworkos",
+      "name": "Clockwork OS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "retroarch",
+      "supportedFrontends": [
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/home/cpi/.config/retroarch/system",
+        "roms": "/home/cpi/games"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://github.com/clockworkpi"
+      },
+      "formattingNotes": "Linux-based OS for Clockwork Pi GameShell and DevTerm devices."
+    },
+    {
+      "id": "spruce",
+      "name": "Spruce",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch",
+        "simplemenu"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/mnt/SDCARD/BIOS",
+        "roms": "/mnt/SDCARD/Roms"
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": null
+      },
+      "formattingNotes": "Linux CFW for Miyoo devices. Alternative to OnionOS/MiyooCFW."
+    },
+    {
+      "id": "nextui",
+      "name": "NextUI",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/mnt/SDCARD/BIOS",
+        "roms": "/mnt/SDCARD/Roms"
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": null
+      },
+      "formattingNotes": "Linux CFW focused on clean UI. Supports TrimUI and similar devices."
+    },
+    {
+      "id": "plumos",
+      "name": "PlumOS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/storage/roms/bios",
+        "roms": "/storage/roms"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": null
+      },
+      "formattingNotes": "Linux CFW for RG35XX and similar Allwinner devices."
+    },
+    {
+      "id": "thera",
+      "name": "TheRA",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "retroarch",
+      "supportedFrontends": [
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/roms/bios",
+        "roms": "/roms"
+      },
+      "filesystem": {
+        "recommended": "ntfs",
+        "supported": [
+          "ntfs",
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null
+      },
+      "formattingNotes": "RetroArch-focused Linux CFW. Supports NTFS for large ROM files."
+    },
+    {
+      "id": "trimuios",
+      "name": "TrimUI OS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch",
+        "simplemenu"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/mnt/SDCARD/BIOS",
+        "roms": "/mnt/SDCARD/Roms"
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": null
+      },
+      "formattingNotes": "Stock OS for TrimUI devices (Smart Pro, Brick, etc.)."
+    },
+    {
+      "id": "miyoocfw",
+      "name": "Miyoo CFW",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "simplemenu",
+      "supportedFrontends": [
+        "simplemenu",
+        "retroarch"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/mnt/SDCARD/BIOS",
+        "roms": "/mnt/SDCARD/Roms"
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null
+      },
+      "formattingNotes": "Community CFW for older Miyoo devices."
+    },
+    {
+      "id": "unofficialos",
+      "name": "UnofficialOS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/storage/roms/bios",
+        "roms": "/storage/roms"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": null
+      },
+      "formattingNotes": "Community-maintained JELOS fork for unsupported devices."
+    },
+    {
+      "id": "simple30",
+      "name": "Simple30",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "simplemenu",
+      "supportedFrontends": [
+        "simplemenu",
+        "retroarch"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/mnt/sdcard/bios",
+        "roms": "/mnt/sdcard/roms"
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": null
+      },
+      "formattingNotes": "Lightweight Linux CFW for RG350/280 devices."
+    },
+    {
+      "id": "nxhope",
+      "name": "NxHope",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/storage/roms/bios",
+        "roms": "/storage/roms"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": null
+      },
+      "formattingNotes": "Community Linux CFW."
+    },
+    {
+      "id": "melios",
+      "name": "MeliOS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/storage/roms/bios",
+        "roms": "/storage/roms"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": null
+      },
+      "formattingNotes": "Linux CFW focused on performance."
+    },
+    {
+      "id": "stock-proprietary",
+      "name": "Stock (Proprietary Firmware)",
+      "type": "stock",
+      "baseOS": "proprietary",
+      "supportedDevices": [],
+      "defaultFrontend": null,
+      "supportedFrontends": [],
+      "allowFrontendSelection": false,
+      "formattingNotes": "Device-specific proprietary firmware. Check manufacturer documentation."
+    },
+    {
+      "id": "android-stock",
+      "name": "Stock Android",
+      "type": "stock",
+      "baseOS": "android",
+      "supportedDevices": [],
+      "defaultFrontend": null,
+      "supportedFrontends": [
+        "retroarch",
+        "daijisho",
+        "dig",
+        "reset-collection",
+        "arc-browser",
+        "launchbox-android"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/storage/emulated/0/RetroArch/system",
+        "roms": "/storage/emulated/0/Roms"
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "formattingNotes": "Generic stock Android. Path locations may vary by device and Android version."
+    },
+    {
+      "id": "analogue-os",
+      "name": "Analogue OS",
+      "type": "stock",
+      "baseOS": "fpga",
+      "supportedDevices": [],
+      "defaultFrontend": null,
+      "supportedFrontends": [],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/Assets",
+        "roms": "/Assets"
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://www.analogue.co/support"
+      },
+      "formattingNotes": "FPGA-based system for Analogue devices (Pocket, Duo, etc.). Uses openFPGA cores."
+    },
+    {
+      "id": "emudeck",
+      "name": "EmuDeck",
+      "type": "overlay",
+      "baseOS": "linux",
+      "parentOS": [
+        "steamos",
+        "linux-desktop"
+      ],
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch",
+        "pegasus",
+        "steam-rom-manager"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "~/Emulation/bios",
+        "roms": "~/Emulation/roms"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "btrfs",
+          "ntfs"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://www.emudeck.com/"
+      },
+      "formattingNotes": "Emulation configuration overlay for SteamOS/Linux. Not a standalone OS."
+    },
+    {
+      "id": "bazzite",
+      "name": "Bazzite",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "steam",
+      "supportedFrontends": [
+        "steam",
+        "emulationstation-de",
+        "retroarch"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "~/Emulation/bios",
+        "roms": "~/Emulation/roms"
+      },
+      "filesystem": {
+        "recommended": "btrfs",
+        "supported": [
+          "btrfs",
+          "ext4"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://bazzite.gg/"
+      },
+      "formattingNotes": "Fedora-based gaming OS with SteamOS compatibility. Good for PC handhelds."
+    },
+    {
+      "id": "chimeraos",
+      "name": "ChimeraOS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "steam",
+      "supportedFrontends": [
+        "steam",
+        "emulationstation-de",
+        "retroarch"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "~/Emulation/bios",
+        "roms": "~/Emulation/roms"
+      },
+      "filesystem": {
+        "recommended": "btrfs",
+        "supported": [
+          "btrfs",
+          "ext4"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://chimeraos.org/"
+      },
+      "formattingNotes": "Linux gaming OS for PC handhelds. Alternative to SteamOS."
+    },
+    {
+      "id": "retroid-os",
+      "name": "Retroid OS",
+      "type": "cfw",
+      "baseOS": "android",
+      "supportedDevices": [],
+      "defaultFrontend": "retroarch",
+      "supportedFrontends": [
+        "retroarch",
+        "daijisho"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/storage/emulated/0/RetroArch/system",
+        "roms": "/storage/emulated/0/Roms"
+      },
+      "filesystem": {
+        "recommended": "exfat",
+        "supported": [
+          "exfat",
+          "fat32"
+        ]
+      },
+      "supportsPortMaster": false,
+      "formattingNotes": "Retroid's custom Android launcher/mode for their devices."
+    },
+    {
+      "id": "libreelec",
+      "name": "LibreELEC",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "retroarch",
+      "supportedFrontends": [
+        "retroarch"
+      ],
+      "allowFrontendSelection": false,
+      "paths": {
+        "bios": "/storage/.config/retroarch/system",
+        "roms": "/storage/roms"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://libreelec.tv/"
+      },
+      "formattingNotes": "Kodi-focused Linux OS with RetroArch addon support."
+    },
+    {
+      "id": "raspbian",
+      "name": "Raspberry Pi OS",
+      "aliases": [
+        "Raspbian"
+      ],
+      "type": "linux",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": null,
+      "supportedFrontends": [
+        "retroarch",
+        "emulationstation-de",
+        "pegasus",
+        "lakka-retroarch"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "~/RetroPie/BIOS",
+        "roms": "~/RetroPie/roms"
+      },
+      "filesystem": {
+        "recommended": "ext4",
+        "supported": [
+          "ext4",
+          "fat32",
+          "exfat",
+          "ntfs"
+        ]
+      },
+      "supportsPortMaster": false,
+      "links": {
+        "wikiUrl": "https://www.raspberrypi.com/software/"
+      },
+      "formattingNotes": "Official Raspberry Pi OS. Often used with RetroPie overlay."
+    },
+    {
+      "id": "muos",
+      "name": "muOS",
+      "type": "cfw",
+      "baseOS": "linux",
+      "supportedDevices": [],
+      "defaultFrontend": "emulationstation-de",
+      "supportedFrontends": [
+        "emulationstation-de",
+        "retroarch",
+        "simplemenu"
+      ],
+      "allowFrontendSelection": true,
+      "paths": {
+        "bios": "/mnt/sdcard/MUOS/bios",
+        "roms": "/mnt/sdcard/roms"
+      },
+      "filesystem": {
+        "recommended": "fat32",
+        "supported": [
+          "fat32",
+          "exfat"
+        ]
+      },
+      "supportsPortMaster": true,
+      "links": {
+        "wikiUrl": "https://muos.dev/"
+      },
+      "formattingNotes": "Linux CFW for RG35XX and similar devices. Clean UI with good performance."
+    },
+    {
+      "id": "android-emulationstation",
+      "name": "Android + EmulationStation (Standard)",
+      "osType": "android",
+      "baseOs": "android",
+      "supportedDeviceTypes": [
+        "handheld",
+        "phone",
+        "tablet"
+      ],
+      "defaultFrontend": "emulationstation",
+      "features": [
+        "retroarch",
+        "standaloneEmulators",
+        "emulationStation",
+        "standardFolderStructure"
+      ],
+      "website": null,
+      "downloadUrl": null,
+      "notes": "Standard EmulationStation configuration used by most Android gaming handhelds"
+    },
+    {
+      "id": "retrobat",
+      "name": "RetroBat",
+      "type": "windows",
+      "baseOS": "windows",
+      "defaultFrontend": "emulationstation-de",
+      "supportedDevices": [],
+      "features": [
+        "portable-installation",
+        "emulationstation-frontend",
+        "retroarch-bundled",
+        "standalone-emulators",
+        "auto-configuration"
+      ],
+      "website": "https://www.retrobat.org/",
+      "downloadUrl": "https://www.retrobat.org/download/",
+      "notes": "Portable Windows-based EmulationStation frontend with bundled emulators. Supports both RetroArch cores and standalone emulators. Designed for plug-and-play emulation on Windows PCs."
+    }
+  ],
+  "changelog": [
+    {
+      "version": "2.1.0",
+      "date": "2026-01-05",
+      "changes": [
+        "Added 'retrobat' OS entry for Windows-based EmulationStation frontend"
+      ]
+    }
+  ]
+}

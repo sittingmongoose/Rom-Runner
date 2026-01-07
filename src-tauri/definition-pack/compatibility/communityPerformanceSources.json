@@ -1,0 +1,180 @@
+{
+  "version": "0.2.0",
+  "generatedAt": "2026-01-02T05:21:00.454399+00:00",
+  "notes": [
+    "Layer C sources are community spreadsheets/lists that map game -> (playability/performance/settings) on a specific device or chipset class.",
+    "Treat as lower confidence than official emulator DBs; use for per-ROM performance hints and settings suggestions."
+  ],
+  "sources": [
+    {
+      "sourceId": "odin2_8gen2_sheet",
+      "displayName": "Odin 2 Game Compatibility Sheets (Snapdragon 8 Gen 2)",
+      "type": "community-sheet",
+      "url": "https://docs.google.com/spreadsheets/d/1XaPYEyTinKk7F2uTfgSDpgEelhUYPFBWo7knX_3aQgw/edit?usp=sharing",
+      "hardwareScope": {
+        "deviceFamily": "Odin 2",
+        "chipset": "Snapdragon 8 Gen 2"
+      },
+      "coversPlatforms": [
+        "switch",
+        "wiiu",
+        "ps2",
+        "3ds",
+        "wii",
+        "gamecube",
+        "vita",
+        "dreamcast"
+      ],
+      "dataKinds": [
+        "performance",
+        "settings",
+        "emulatorVersion"
+      ],
+      "primaryKeys": [
+        "gameTitle",
+        "platform",
+        "region"
+      ],
+      "confidence": "layerC"
+    },
+    {
+      "sourceId": "rp4pro_official_sheet",
+      "displayName": "Retroid Pocket 4 Pro Compatibility Sheet (Dimensity 1100)",
+      "type": "community-sheet",
+      "url": "https://docs.google.com/spreadsheets/d/1pt2LCjE2RBvPlCQBmiPI7ashzGRzEAjx7O50wRfRq7U/edit?usp=sharing",
+      "hardwareScope": {
+        "deviceFamily": "Retroid Pocket 4 Pro",
+        "chipset": "Dimensity 1100"
+      },
+      "coversPlatforms": [
+        "switch",
+        "ps2",
+        "3ds",
+        "wii",
+        "gamecube",
+        "vita"
+      ],
+      "dataKinds": [
+        "performance",
+        "settings",
+        "emulatorVersion"
+      ],
+      "primaryKeys": [
+        "gameTitle",
+        "platform"
+      ],
+      "confidence": "layerC"
+    },
+    {
+      "sourceId": "rp4pro_community_tests_sheet",
+      "displayName": "Retroid Pocket 4 Pro Community Tests (raw submissions)",
+      "type": "community-sheet",
+      "url": "https://docs.google.com/spreadsheets/d/1BEtjET1HihLtNt1LCN0r44h7y3Lq1rvbeAd2gZ8re3s/edit?usp=sharing",
+      "hardwareScope": {
+        "deviceFamily": "Retroid Pocket 4 Pro",
+        "chipset": "Dimensity 1100"
+      },
+      "coversPlatforms": [
+        "switch",
+        "ps2",
+        "3ds",
+        "wii",
+        "gamecube",
+        "vita"
+      ],
+      "dataKinds": [
+        "performance",
+        "settings",
+        "emulatorVersion"
+      ],
+      "primaryKeys": [
+        "gameTitle",
+        "platform"
+      ],
+      "confidence": "layerC"
+    },
+    {
+      "sourceId": "rp3plus_t618_sheet",
+      "displayName": "Retroid Pocket 3+ / T618 Community Compatibility Sheet",
+      "type": "community-sheet",
+      "url": "https://docs.google.com/spreadsheets/d/1hPQXrhr0VgCCQBv_klgIVZ5_CowY8G3iQOUNS9bsnhM/edit",
+      "hardwareScope": {
+        "deviceFamily": "Retroid Pocket 3+ class",
+        "chipset": "Unisoc T618"
+      },
+      "coversPlatforms": [
+        "ps2",
+        "3ds",
+        "wii",
+        "gamecube",
+        "dreamcast",
+        "psp",
+        "n64"
+      ],
+      "dataKinds": [
+        "performance",
+        "settings",
+        "emulatorVersion"
+      ],
+      "primaryKeys": [
+        "gameTitle",
+        "platform"
+      ],
+      "confidence": "layerC"
+    },
+    {
+      "sourceId": "r36s_tf_compat_sheet",
+      "displayName": "RGB20S/R35S/R36S TF Compatibility Sheet (ArkOS class)",
+      "type": "community-sheet",
+      "url": "https://docs.google.com/spreadsheets/d/1gWxtr-GmwWop-_qGUq022RXxK2aTLpPg9Qra68TQLI8/edit#gid=0",
+      "hardwareScope": {
+        "deviceFamily": "R35S/R36S class",
+        "chipset": "RK3326-class (varies)"
+      },
+      "coversPlatforms": [
+        "up_to_ps1",
+        "up_to_snes",
+        "ports"
+      ],
+      "dataKinds": [
+        "compatibility",
+        "settings"
+      ],
+      "primaryKeys": [
+        "gameTitle",
+        "platform"
+      ],
+      "confidence": "layerC"
+    },
+    {
+      "sourceId": "emudeck_compat_site",
+      "displayName": "EmuDeck/Steam Deck community compatibility list",
+      "type": "community-site",
+      "url": "https://brantje.github.io/emudeck-compatibility-list/",
+      "hardwareScope": {
+        "deviceFamily": "Steam Deck",
+        "chipset": "AMD Van Gogh (Steam Deck)"
+      },
+      "coversPlatforms": [
+        "ps3",
+        "wiiu",
+        "switch",
+        "ps2",
+        "3ds",
+        "wii",
+        "gamecube",
+        "saturn",
+        "xbox"
+      ],
+      "dataKinds": [
+        "performance",
+        "notes"
+      ],
+      "primaryKeys": [
+        "gameTitle",
+        "platform"
+      ],
+      "confidence": "layerC"
+    }
+  ]
+}

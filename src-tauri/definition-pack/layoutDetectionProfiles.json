@@ -1,0 +1,928 @@
+{
+  "$schema": "./ROM_Runner_JSON_Schemas.json",
+  "version": "0.2.0",
+  "generatedAt": "2026-01-05T12:00:00Z",
+  "description": "Layout Detection Profiles for ROM Runner Destination Scanning",
+  "changelog": [
+    {
+      "version": "0.2.0",
+      "date": "2026-01-05",
+      "changes": [
+        "Fixed schema compliance: removed duplicate 'layout' field (keep 'expectedLayout' only)",
+        "Fixed schema compliance: removed 'confidence' from detection blocks (keep 'minimumConfidence' only)",
+        "Fixed schema compliance: restructured variations from detection/layoutOverrides to condition/overrides",
+        "Removed non-spec fields: osFamilyId, displayName, portmaster, links",
+        "Converted link URLs to notes field content",
+        "Added RetroBat layout detection profile (requires retrobat osId in operating-systems_v2_1_0.json)"
+      ]
+    },
+    {
+      "version": "0.1.0",
+      "date": "2026-01-04",
+      "changes": ["Initial generation by ChatGPT"]
+    }
+  ],
+  "profiles": [
+    {
+      "id": "arkos-default",
+      "osId": "arkos",
+      "name": "ArkOS",
+      "detection": {
+        "markersAny": [
+          "/.ArkOS",
+          "/opt/system/Advanced",
+          "/roms2"
+        ],
+        "markersAll": [
+          "/roms",
+          "/roms/bios"
+        ],
+        "markersNone": [
+          "/storage/.config/emuelec",
+          "/userdata/system/batocera.conf",
+          "/recalbox/share/system/recalbox.conf",
+          "/.rocknix"
+        ],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/roms",
+        "bios": "/roms/bios",
+        "saves": "/roms/savestates",
+        "states": "/roms/savestates",
+        "screenshots": "/screenshots"
+      },
+      "variations": [
+        {
+          "name": "ArkOS dual-SD (roms2)",
+          "condition": "When /roms2 directory exists (dual SD card setup)",
+          "overrides": {
+            "roms": "/roms2",
+            "bios": "/roms2/bios",
+            "saves": "/roms2/savestates",
+            "states": "/roms2/savestates"
+          }
+        }
+      ],
+      "notes": "Base layout matches ArkOS wiki guidance. Wiki: https://github.com/christianhaitian/arkos/wiki",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "rocknix-default",
+      "osId": "rocknix",
+      "name": "ROCKNIX",
+      "detection": {
+        "markersAny": [
+          "/.rocknix",
+          "/roms",
+          "/games-internal/roms",
+          "/games-external/roms"
+        ],
+        "markersAll": [
+          "/storage/.config/distribution"
+        ],
+        "markersNone": [
+          "/.ArkOS",
+          "/userdata/system/batocera.conf",
+          "/recalbox/share/system/recalbox.conf"
+        ],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/storage/roms",
+        "bios": "/storage/roms/bios",
+        "saves": "/storage/roms/savestates",
+        "states": "/storage/roms/savestates",
+        "screenshots": "/storage/screenshots"
+      },
+      "variations": [
+        {
+          "name": "ROCKNIX Samba share (/roms)",
+          "condition": "When accessing via /roms Samba share",
+          "overrides": {
+            "roms": "/roms",
+            "bios": "/roms/bios",
+            "saves": "/roms/saves",
+            "states": "/roms/saves"
+          }
+        },
+        {
+          "name": "ROCKNIX internal games-internal",
+          "condition": "When /games-internal/roms exists",
+          "overrides": {
+            "roms": "/games-internal/roms",
+            "bios": "/games-internal/roms/bios"
+          }
+        }
+      ],
+      "notes": "ROCKNIX (JELOS successor) uses internal /storage paths. Wiki: https://rocknix.org/",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "jelos-default",
+      "osId": "jelos",
+      "name": "JELOS",
+      "detection": {
+        "markersAny": [
+          "/roms",
+          "/storage/games-internal",
+          "/storage/games-external"
+        ],
+        "markersAll": [
+          "/storage/.config/distribution",
+          "/storage/.update"
+        ],
+        "markersNone": [
+          "/.rocknix"
+        ],
+        "minimumConfidence": "medium"
+      },
+      "expectedLayout": {
+        "roms": "/storage/roms",
+        "bios": "/storage/roms/bios",
+        "saves": "/storage/roms/savestates",
+        "states": "/storage/roms/savestates",
+        "screenshots": "/storage/screenshots"
+      },
+      "variations": [
+        {
+          "name": "JELOS Samba share (/roms)",
+          "condition": "When accessing via /roms Samba share and ROCKNIX not detected",
+          "overrides": {
+            "roms": "/roms",
+            "bios": "/roms/bios"
+          }
+        }
+      ],
+      "notes": "JELOS is end-of-life; detection excludes ROCKNIX. Wiki: https://jelos.org/",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "amberelec-default",
+      "osId": "amberelec",
+      "name": "AmberELEC",
+      "detection": {
+        "markersAny": [
+          "/.amberelec",
+          "/roms",
+          "/roms/gamedata"
+        ],
+        "markersAll": [
+          "/storage/roms",
+          "/storage/.config"
+        ],
+        "markersNone": [
+          "/.rocknix",
+          "/.ArkOS",
+          "/userdata/system/batocera.conf"
+        ],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/storage/roms",
+        "bios": "/storage/roms/bios",
+        "saves": "/storage/roms/savestates",
+        "states": "/storage/roms/savestates",
+        "screenshots": "/storage/screenshots"
+      },
+      "variations": [
+        {
+          "name": "AmberELEC Samba share (/roms)",
+          "condition": "When accessing via /roms Samba share",
+          "overrides": {
+            "roms": "/roms",
+            "bios": "/roms/bios"
+          }
+        }
+      ],
+      "notes": "AmberELEC uses /storage/roms and /storage/.config. Wiki: https://amberelec.org/",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "batocera-default",
+      "osId": "batocera",
+      "name": "Batocera",
+      "detection": {
+        "markersAny": [
+          "/userdata/bios",
+          "/userdata/saves",
+          "/boot/batocera-boot.conf"
+        ],
+        "markersAll": [
+          "/userdata/system/batocera.conf",
+          "/userdata/roms"
+        ],
+        "markersNone": [
+          "/recalbox/share/system/recalbox.conf"
+        ],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/userdata/roms",
+        "bios": "/userdata/bios",
+        "saves": "/userdata/saves",
+        "states": "/userdata/savestates",
+        "screenshots": "/userdata/screenshots"
+      },
+      "variations": [],
+      "notes": "Batocera uses /userdata for share data. Wiki: https://wiki.batocera.org/",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "lakka-default",
+      "osId": "lakka",
+      "name": "Lakka",
+      "detection": {
+        "markersAny": [
+          "/storage/roms",
+          "/storage/downloads"
+        ],
+        "markersAll": [
+          "/storage/.config/retroarch/retroarch.cfg"
+        ],
+        "markersNone": [
+          "/storage/.config/emuelec",
+          "/storage/.config/amberelec"
+        ],
+        "minimumConfidence": "medium"
+      },
+      "expectedLayout": {
+        "roms": "/storage/roms",
+        "bios": "/storage/system",
+        "saves": "/storage/savefiles",
+        "states": "/storage/savestates",
+        "screenshots": "/storage/screenshots"
+      },
+      "variations": [],
+      "notes": "Lakka is LibreELEC-based and RetroArch-centric. Wiki: https://www.lakka.tv/doc/Home/",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "emuelec-default",
+      "osId": "emuelec",
+      "name": "EmuELEC",
+      "detection": {
+        "markersAny": [
+          "/storage/roms",
+          "/roms",
+          "/storage/.config/emuelec"
+        ],
+        "markersAll": [
+          "/storage/.config/emuelec/configs/emuelec.conf"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/storage/roms",
+        "bios": "/storage/roms/bios",
+        "saves": "/storage/roms/savestates",
+        "states": "/storage/roms/savestates",
+        "screenshots": "/storage/screenshots"
+      },
+      "variations": [
+        {
+          "name": "EmuELEC Samba share (/roms)",
+          "condition": "When accessing via /roms Samba share",
+          "overrides": {
+            "roms": "/roms",
+            "bios": "/roms/bios"
+          }
+        }
+      ],
+      "notes": "EmuELEC has distinct config under /storage/.config/emuelec. Wiki: https://github.com/EmuELEC/EmuELEC/wiki",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "recalbox-default",
+      "osId": "recalbox",
+      "name": "Recalbox",
+      "detection": {
+        "markersAny": [
+          "/recalbox/share/bios",
+          "/recalbox/share/saves"
+        ],
+        "markersAll": [
+          "/recalbox/share/system/recalbox.conf",
+          "/recalbox/share/roms"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/recalbox/share/roms",
+        "bios": "/recalbox/share/bios",
+        "saves": "/recalbox/share/saves",
+        "states": "/recalbox/share/saves",
+        "screenshots": "/recalbox/share/screenshots"
+      },
+      "variations": [],
+      "notes": "Recalbox share paths are under /recalbox/share. Wiki: https://wiki.recalbox.com/",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "onionos-default",
+      "osId": "onionos",
+      "name": "OnionOS",
+      "detection": {
+        "markersAny": [
+          "/mnt/SDCARD/Apps",
+          "/mnt/SDCARD/RetroArch"
+        ],
+        "markersAll": [
+          "/mnt/SDCARD/Roms",
+          "/mnt/SDCARD/BIOS"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/mnt/SDCARD/Roms",
+        "bios": "/mnt/SDCARD/BIOS",
+        "saves": "/mnt/SDCARD/Saves",
+        "states": "/mnt/SDCARD/Saves",
+        "screenshots": "/mnt/SDCARD/Screenshots"
+      },
+      "variations": [],
+      "notes": "OnionOS uses /mnt/SDCARD as SD root mountpoint. Wiki: https://github.com/OnionUI/Onion/wiki",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "garlicos-default",
+      "osId": "garlicos",
+      "name": "GarlicOS",
+      "detection": {
+        "markersAny": [
+          "/CFW",
+          "/roms"
+        ],
+        "markersAll": [
+          "/mnt/SDCARD/Roms",
+          "/mnt/SDCARD/BIOS"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/mnt/SDCARD/Roms",
+        "bios": "/mnt/SDCARD/BIOS",
+        "saves": "/mnt/SDCARD/Saves",
+        "states": "/mnt/SDCARD/Saves",
+        "screenshots": "/mnt/SDCARD/Screenshots"
+      },
+      "variations": [],
+      "notes": "GarlicOS uses /mnt/SDCARD on device. Patreon: https://www.patreon.com/posts/garlicos-for-76561333",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "minui-default",
+      "osId": "minui",
+      "name": "MinUI",
+      "detection": {
+        "markersAny": [
+          "/Saves",
+          "/trimui"
+        ],
+        "markersAll": [
+          "/Bios",
+          "/Roms",
+          "/MinUI.zip"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/mnt/SDCARD/Roms",
+        "bios": "/mnt/SDCARD/Bios",
+        "saves": "/mnt/SDCARD/.userdata/shared/saves",
+        "states": "/mnt/SDCARD/.userdata/shared/states"
+      },
+      "variations": [],
+      "notes": "MinUI installs by copying Bios, Roms, Saves, and MinUI.zip to SD root. Wiki: https://github.com/shauninman/MinUI",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "muos-default",
+      "osId": "muos",
+      "name": "muOS",
+      "detection": {
+        "markersAny": [
+          "/mnt/sdcard/BIOS",
+          "/mnt/sdcard/MUOS"
+        ],
+        "markersAll": [
+          "/mnt/sdcard/MUOS/info/config/retroarch.cfg",
+          "/mnt/sdcard/roms"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/mnt/sdcard/roms",
+        "bios": "/mnt/sdcard/MUOS/bios"
+      },
+      "variations": [
+        {
+          "name": "muOS alternate save root",
+          "condition": "When /mnt/sdcard/saves directory exists at top level",
+          "overrides": {
+            "saves": "/mnt/sdcard/saves",
+            "states": "/mnt/sdcard/saves"
+          }
+        }
+      ],
+      "notes": "muOS has distinct MUOS directory and RetroArch config location. Wiki: https://muos.dev/",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "knulli-default",
+      "osId": "knulli",
+      "name": "KNULLI",
+      "detection": {
+        "markersAny": [
+          "/.knulli",
+          "/userdata/system/knulli.conf"
+        ],
+        "markersAll": [
+          "/userdata/roms",
+          "/userdata/bios"
+        ],
+        "markersNone": [
+          "/userdata/system/batocera.conf"
+        ],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/userdata/roms",
+        "bios": "/userdata/bios",
+        "saves": "/userdata/saves",
+        "states": "/userdata/states",
+        "screenshots": "/userdata/screenshots"
+      },
+      "variations": [],
+      "notes": "KNULLI is Batocera-derived with distinct config. Wiki: https://knulli.org/",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "crossmix-os-default",
+      "osId": "crossmix-os",
+      "name": "CrossMix OS",
+      "detection": {
+        "markersAny": [
+          "/Apps",
+          "/CrossMix-OS",
+          "/Imgs"
+        ],
+        "markersAll": [
+          "/System",
+          "/Roms",
+          "/BIOS"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/mnt/SDCARD/Roms",
+        "bios": "/mnt/SDCARD/BIOS"
+      },
+      "variations": [],
+      "notes": "CrossMix-OS places System/Apps/Emus plus Roms/BIOS at SD root. Wiki: https://github.com/cizia64/CrossMix-OS",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "spruce-default",
+      "osId": "spruce",
+      "name": "Spruce",
+      "detection": {
+        "markersAny": [
+          "/CreditsAndChangelog.txt",
+          "/Updater",
+          "/App",
+          "/Emu"
+        ],
+        "markersAll": [
+          "/spruce",
+          "/Roms",
+          "/BIOS"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/mnt/SDCARD/Roms",
+        "bios": "/mnt/SDCARD/BIOS"
+      },
+      "variations": [],
+      "notes": "Spruce bundles a /spruce directory plus standard Roms/BIOS folders.",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "emudeck-default",
+      "osId": "emudeck",
+      "name": "EmuDeck",
+      "detection": {
+        "markersAny": [
+          "/Emulation/tools",
+          "/Emulation/saves"
+        ],
+        "markersAll": [
+          "/Emulation/roms",
+          "/Emulation/bios"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "~/Emulation/roms",
+        "bios": "~/Emulation/bios"
+      },
+      "variations": [
+        {
+          "name": "EmuDeck home directory (~/Emulation)",
+          "condition": "When ~/Emulation/roms and ~/Emulation/bios exist",
+          "overrides": {
+            "roms": "~/Emulation/roms",
+            "bios": "~/Emulation/bios",
+            "saves": "~/Emulation/saves",
+            "states": "~/Emulation/saves"
+          }
+        }
+      ],
+      "notes": "EmuDeck creates an Emulation directory with roms/bios/saves. Wiki: https://www.emudeck.com/",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "steamos-default",
+      "osId": "steamos",
+      "name": "SteamOS",
+      "detection": {
+        "markersAny": [
+          "~/Emulation/tools",
+          "~/Emulation",
+          "/Emulation/roms",
+          "/Emulation/bios"
+        ],
+        "markersAll": [
+          "~/Emulation/roms",
+          "~/Emulation/bios"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "medium"
+      },
+      "expectedLayout": {
+        "roms": "~/Emulation/roms",
+        "bios": "~/Emulation/bios",
+        "saves": "~/Emulation/saves",
+        "states": "~/Emulation/states",
+        "screenshots": "~/Pictures/Screenshots"
+      },
+      "variations": [
+        {
+          "name": "SteamOS with SD-based Emulation folder (/Emulation)",
+          "condition": "When /Emulation/roms and /Emulation/bios exist at SD root",
+          "overrides": {
+            "roms": "/Emulation/roms",
+            "bios": "/Emulation/bios",
+            "saves": "/Emulation/saves",
+            "states": "/Emulation/states"
+          }
+        }
+      ],
+      "notes": "SteamOS layout is EmuDeck/Emulation-focused; SteamOS itself does not imply a specific ROM layout without tools like EmuDeck.",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "retroid-stock-android-modern-default",
+      "osId": "retroid-stock-android-modern",
+      "name": "Retroid Stock (Android – modern devices)",
+      "detection": {
+        "markersAny": [
+          "/Android/data",
+          "/Android/obb"
+        ],
+        "markersAll": [
+          "/Android"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "low"
+      },
+      "expectedLayout": {
+        "roms": "__USER_SELECT__",
+        "bios": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__"
+      },
+      "variations": [],
+      "notes": "Android SD cards vary widely; detection is low-confidence. User must select paths.",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "retroid-os-default",
+      "osId": "retroid-os",
+      "name": "Retroid OS",
+      "detection": {
+        "markersAny": [
+          "/system",
+          "/emulators"
+        ],
+        "markersAll": [
+          "/games",
+          "/games/download"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "medium"
+      },
+      "expectedLayout": {
+        "roms": "/storage/emulated/0/Roms",
+        "bios": "/storage/emulated/0/RetroArch/system"
+      },
+      "variations": [],
+      "notes": "RetroidOS commonly stores games under /games/download. Wiki: https://wiki.retroidhandhelds.com/",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "anbernic-stock-android-rk3566-family-default",
+      "osId": "anbernic-stock-android-rk3566-family",
+      "name": "Anbernic Stock (Android – RK3566 family)",
+      "detection": {
+        "markersAny": [
+          "/Android/data",
+          "/Android/obb"
+        ],
+        "markersAll": [
+          "/Android"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "low"
+      },
+      "expectedLayout": {
+        "roms": "__USER_SELECT__",
+        "bios": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__"
+      },
+      "variations": [],
+      "notes": "Stock Android layouts vary; user must select paths.",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "anbernic-stock-android-t618-family-default",
+      "osId": "anbernic-stock-android-t618-family",
+      "name": "Anbernic Stock (Android – T618 family)",
+      "detection": {
+        "markersAny": [
+          "/Android/data",
+          "/Android/obb"
+        ],
+        "markersAll": [
+          "/Android"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "low"
+      },
+      "expectedLayout": {
+        "roms": "__USER_SELECT__",
+        "bios": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__"
+      },
+      "variations": [],
+      "notes": "Stock Android layouts vary; user must select paths.",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "anbernic-stock-android-t820-family-default",
+      "osId": "anbernic-stock-android-t820-family",
+      "name": "Anbernic Stock (Android – T820 family)",
+      "detection": {
+        "markersAny": [
+          "/Android/data",
+          "/Android/obb"
+        ],
+        "markersAll": [
+          "/Android"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "low"
+      },
+      "expectedLayout": {
+        "roms": "__USER_SELECT__",
+        "bios": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__"
+      },
+      "variations": [],
+      "notes": "Stock Android layouts vary; user must select paths.",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "anbernic-stock-linux-rg35xx-family-default",
+      "osId": "anbernic-stock-linux-rg35xx-family",
+      "name": "Anbernic Stock (Linux – RG35XX family)",
+      "detection": {
+        "markersAny": [
+          "/bios",
+          "/Roms",
+          "/ROMS"
+        ],
+        "markersAll": [
+          "/roms"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "low"
+      },
+      "expectedLayout": {
+        "roms": "__USER_SELECT__",
+        "bios": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__"
+      },
+      "variations": [],
+      "notes": "Stock Linux layouts differ by device/image; user must confirm paths.",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "anbernic-stock-linux-rk3566-family-default",
+      "osId": "anbernic-stock-linux-rk3566-family",
+      "name": "Anbernic Stock (Linux – RK3566 family)",
+      "detection": {
+        "markersAny": [
+          "/bios",
+          "/Roms",
+          "/ROMS"
+        ],
+        "markersAll": [
+          "/roms"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "low"
+      },
+      "expectedLayout": {
+        "roms": "__USER_SELECT__",
+        "bios": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__"
+      },
+      "variations": [],
+      "notes": "Stock Linux layouts differ by device/image; user must confirm paths.",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "magicx-stock-linux-family-default",
+      "osId": "magicx-stock-linux-family",
+      "name": "MagicX Stock (Linux – Zero/XU family)",
+      "detection": {
+        "markersAny": [
+          "/bios",
+          "/Roms",
+          "/ROMS"
+        ],
+        "markersAll": [
+          "/roms"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "low"
+      },
+      "expectedLayout": {
+        "roms": "__USER_SELECT__",
+        "bios": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__"
+      },
+      "variations": [],
+      "notes": "MagicX stock Linux layouts differ by model; user must confirm paths.",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "miyoo-stock-family-default",
+      "osId": "miyoo-stock-family",
+      "name": "Miyoo Stock (Linux – Mini/Mini Plus family)",
+      "detection": {
+        "markersAny": [
+          "/BIOS",
+          "/Saves",
+          "/.tmp_update"
+        ],
+        "markersAll": [
+          "/Roms"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "low"
+      },
+      "expectedLayout": {
+        "roms": "__USER_SELECT__",
+        "bios": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__"
+      },
+      "variations": [],
+      "notes": "Miyoo stock SD layouts vary; user must confirm paths.",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "powkiddy-stock-linux-family-default",
+      "osId": "powkiddy-stock-linux-family",
+      "name": "PowKiddy Stock (Linux – common firmwares)",
+      "detection": {
+        "markersAny": [
+          "/bios",
+          "/Roms",
+          "/ROMS"
+        ],
+        "markersAll": [
+          "/roms"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "low"
+      },
+      "expectedLayout": {
+        "roms": "__USER_SELECT__",
+        "bios": "__USER_SELECT__",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__"
+      },
+      "variations": [],
+      "notes": "PowKiddy stock Linux layouts differ by model; user must confirm paths.",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "trimui-stock-trimuios-smart-pro-default",
+      "osId": "trimui-stock-trimuios-smart-pro",
+      "name": "TrimUI Stock (Smart Pro / TrimUI OS)",
+      "detection": {
+        "markersAny": [
+          "/System",
+          "/Imgs",
+          "/trimui"
+        ],
+        "markersAll": [
+          "/Roms"
+        ],
+        "markersNone": [],
+        "minimumConfidence": "low"
+      },
+      "expectedLayout": {
+        "roms": "/Roms",
+        "bios": "/RetroArch/.retroarch/system",
+        "saves": "__USER_SELECT__",
+        "states": "__USER_SELECT__",
+        "screenshots": "__USER_SELECT__"
+      },
+      "variations": [],
+      "notes": "TrimUI stock layouts can vary; detection is low-confidence.",
+      "lastUpdated": "2026-01-05"
+    },
+    {
+      "id": "retrobat-default",
+      "osId": "retrobat",
+      "name": "RetroBat",
+      "detection": {
+        "markersAny": [
+          "/retrobat.exe",
+          "/emulationstation/.emulationstation",
+          "/system/configgen"
+        ],
+        "markersAll": [
+          "/roms",
+          "/bios",
+          "/emulators"
+        ],
+        "markersNone": [
+          "/userdata/system/batocera.conf",
+          "/recalbox/share"
+        ],
+        "minimumConfidence": "high"
+      },
+      "expectedLayout": {
+        "roms": "/roms",
+        "bios": "/bios",
+        "saves": "/saves",
+        "states": "/saves",
+        "screenshots": "/screenshots"
+      },
+      "variations": [
+        {
+          "name": "RetroBat custom install path",
+          "condition": "When RetroBat is installed to a custom directory (e.g., D:\\RetroBat)",
+          "overrides": {}
+        },
+        {
+          "name": "RetroBat with decorations",
+          "condition": "When /decorations directory exists for bezels/overlays",
+          "overrides": {}
+        }
+      ],
+      "notes": "RetroBat is a portable Windows-based EmulationStation frontend. Uses relative paths from install root. Requires retrobat.exe marker for confident detection. Wiki: https://wiki.retrobat.org/",
+      "lastUpdated": "2026-01-05"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "emulator-settings-v1",
+  "source": "rpcs3-wiki",
+  "sourceUrl": "https://wiki.rpcs3.net",
+  "generatedAt": "2026-01-04T00:00:00+00:00",
+  "items": [
+    {
+      "platformId": "ps3",
+      "emulatorId": "rpcs3",
+      "externalIdType": "ps3-serial",
+      "externalGameId": "BLUS30253",
+      "title": "Skate 2",
+      "settings": {
+        "cpu": {
+          "spuBlockSize": "Safe"
+        },
+        "gpu": {
+          "antiAliasing": "Disabled",
+          "zcullAccuracy": "Relaxed",
+          "writeColorBuffers": true,
+          "multithreadedRsx": true
+        }
+      },
+      "settingNotes": {
+        "cpu": {
+          "spuBlockSize": "Mega seems a bit slower with more fluctuation in FPS."
+        },
+        "gpu": {
+          "antiAliasing": "Significantly improves render blur.",
+          "zcullAccuracy": "Improves performance, no known issues.",
+          "writeColorBuffers": "Fixes excessive brightness.",
+          "multithreadedRsx": "Improves performance."
+        }
+      },
+      "settingsFormat": "rpcs3-config",
+      "applyMode": "suggested",
+      "knownIssues": [
+        "Objects can fall through the ground randomly - Issue 11936: When in-game, objects such as rubbish bins can fall through the ground then appear in the normal position and fall through the ground again repeatedly. A workaround for it is to use ASMJIT for SPU Decoding; rebooting the game can also fix it."
+      ],
+      "notes": "Netplay testing: For the complete list of games tested with RPCN, please check the RPCN Compatibility List.",
+      "confidence": "medium",
+      "sourceUrl": "https://wiki.rpcs3.net/index.php?title=Skate_2"
+    },
+    {
+      "platformId": "ps3",
+      "emulatorId": "rpcs3",
+      "externalIdType": "ps3-serial",
+      "externalGameId": "BLUS31011",
+      "title": "Call of Duty: Black Ops 2",
+      "settings": {
+        "cpu": {
+          "spuBlockSize": "Safe"
+        },
+        "gpu": {
+          "zcullAccuracy": "Approximate"
+        }
+      },
+      "settingNotes": {
+        "cpu": {
+          "spuBlockSize": "Anything other than Safe causes freezing."
+        },
+        "gpu": {
+          "zcullAccuracy": "Improves performance."
+        }
+      },
+      "settingsFormat": "rpcs3-config",
+      "applyMode": "suggested",
+      "knownIssues": [
+        "Broken Font - Fixed by PR 13158: Previously text rendered as squares (Issue 8718, now marked fixed)."
+      ],
+      "notes": "Netplay testing: For the complete list of games tested with RPCN, please check the RPCN Compatibility List.",
+      "confidence": "medium",
+      "sourceUrl": "https://wiki.rpcs3.net/index.php?title=Call_of_Duty:_Black_Ops_2"
+    }
+  ]
+}

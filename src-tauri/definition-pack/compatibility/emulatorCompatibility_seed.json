@@ -1,0 +1,40 @@
+{
+  "$schema": "../ROM_Runner_JSON_Schemas.json#/definitions/EmulatorCompatibility",
+  "version": "0.1.0",
+  "generatedAt": "2026-01-02T01:25:21.772602+00:00",
+  "description": "Emulator compatibility records (per-game status). Separate from performance gating.",
+  "schemaVersion": "compat-source-v1",
+  "items": [],
+  "statusEnum": [
+    "perfect",
+    "playable",
+    "ingame",
+    "menu_intro",
+    "boots_only",
+    "broken",
+    "unknown"
+  ],
+  "confidenceEnum": [
+    "high",
+    "medium",
+    "low"
+  ],
+  "usage": {
+    "description": "Use these records to determine if a game is compatible with a specific emulator.",
+    "excludeWhen": [
+      "broken",
+      "boots_only"
+    ],
+    "warnWhen": [
+      "unknown",
+      "menu_intro",
+      "ingame"
+    ],
+    "allowWhen": [
+      "perfect",
+      "playable"
+    ],
+    "strictMode": "Exclude anything not 'perfect' or 'playable'",
+    "relaxedMode": "Allow 'ingame' with warning; exclude 'broken'/'boots_only'"
+  }
+}

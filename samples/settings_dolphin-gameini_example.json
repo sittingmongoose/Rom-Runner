@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "emulator-settings-v1",
+  "source": "dolphin-gameini",
+  "sourceUrl": "https://github.com/dolphin-emu/dolphin/tree/master/Data/Sys/GameSettings",
+  "generatedAt": "2026-01-04T00:00:00Z",
+  "items": [
+    {
+      "platformId": "gamecube",
+      "emulatorId": "dolphin",
+      "externalIdType": "dolphin-game-id",
+      "externalGameId": "GALE01",
+      "title": "Super Smash Bros. Melee",
+      "settings": {
+        "Core": {
+          "CPUThread": "True",
+          "GPUDeterminismMode": "fake-completion",
+          "SyncOnSkipIdle": "True"
+        },
+        "Video_Settings": {
+          "SafeTextureCacheColorSamples": "0"
+        },
+        "Video_Hacks": {
+          "EFBAccessEnable": "False",
+          "EFBToTextureEnable": "True",
+          "XFBToTextureEnable": "True",
+          "ImmediateXFBEnable": "False"
+        },
+        "Video_Enhancements": {
+          "ForceFiltering": "True"
+        }
+      },
+      "settingsFormat": "dolphin-ini",
+      "applyMode": "required",
+      "confidence": "high",
+      "sourceUrl": "https://raw.githubusercontent.com/dolphin-emu/dolphin/master/Data/Sys/GameSettings/GALE01.ini",
+      "notes": "Example derived from prompt; run dolphin_gameini.py to generate real output from upstream."
+    }
+  ]
+}

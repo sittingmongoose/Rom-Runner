@@ -1,0 +1,2624 @@
+{
+  "$schema": "../ROM_Runner_JSON_Schemas.json#/definitions/Platform",
+  "version": "2.0.0",
+  "generatedAt": "2026-01-03T17:00:00Z",
+  "platforms": [
+    {
+      "id": "3do",
+      "name": "3DO Interactive Multiplayer",
+      "shortName": "3DO",
+      "manufacturer": "3DO Company",
+      "generation": 5,
+      "releaseYear": 1993,
+      "type": "console",
+      "supportedFormats": [
+        "iso",
+        "bin",
+        "cue",
+        "chd"
+      ],
+      "preferredFormat": "chd",
+      "fileExtensions": [
+        ".iso",
+        ".bin",
+        ".cue",
+        ".chd"
+      ],
+      "typicalRomSize": {
+        "min": 50000000,
+        "max": 700000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "commonFolderNames": [
+        "3DO",
+        "3do",
+        "3DO Interactive"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "3ds",
+      "name": "Nintendo 3DS",
+      "shortName": "3DS",
+      "manufacturer": "Nintendo",
+      "generation": 8,
+      "releaseYear": 2011,
+      "type": "handheld",
+      "supportedFormats": [
+        "3ds",
+        "cia",
+        "cxi",
+        "app",
+        "zip"
+      ],
+      "preferredFormat": "cia",
+      "fileExtensions": [
+        ".3ds",
+        ".cia",
+        ".cxi",
+        ".app",
+        ".zip"
+      ],
+      "typicalRomSize": {
+        "min": 16777216,
+        "max": 8589934592
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "3DS",
+        "3ds",
+        "Nintendo 3DS"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "amiga",
+      "name": "Commodore Amiga",
+      "shortName": "Amiga",
+      "manufacturer": "Commodore",
+      "generation": 4,
+      "releaseYear": 1985,
+      "type": "computer",
+      "supportedFormats": [
+        "adf",
+        "adz",
+        "dms",
+        "ipf",
+        "hdf",
+        "lha",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "adf",
+      "fileExtensions": [
+        ".adf",
+        ".adz",
+        ".dms",
+        ".ipf",
+        ".hdf",
+        ".lha",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 100000,
+        "max": 100000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "commonFolderNames": [
+        "Amiga",
+        "amiga"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "amstradcpc",
+      "name": "Amstrad CPC",
+      "shortName": "CPC",
+      "manufacturer": "Amstrad",
+      "generation": 3,
+      "releaseYear": 1984,
+      "type": "computer",
+      "supportedFormats": [
+        "dsk",
+        "sna",
+        "tap",
+        "cdt",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "dsk",
+      "fileExtensions": [
+        ".dsk",
+        ".sna",
+        ".tap",
+        ".cdt",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 1024,
+        "max": 524288
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "AmstradCPC",
+        "amstradcpc",
+        "cpc",
+        "amstrad"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "arcade",
+      "name": "Arcade",
+      "shortName": "Arcade",
+      "manufacturer": "Various",
+      "generation": 0,
+      "releaseYear": 1971,
+      "type": "arcade",
+      "supportedFormats": [
+        "zip",
+        "7z",
+        "chd"
+      ],
+      "preferredFormat": "zip",
+      "fileExtensions": [
+        ".zip",
+        ".7z",
+        ".chd"
+      ],
+      "typicalRomSize": {
+        "min": 10000,
+        "max": 4000000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Arcade",
+        "arcade",
+        "MAME",
+        "mame",
+        "FBNeo",
+        "fbneo"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "atari-2600",
+      "name": "Atari 2600",
+      "shortName": "2600",
+      "manufacturer": "Atari",
+      "generation": 2,
+      "releaseYear": 1977,
+      "type": "console",
+      "supportedFormats": [
+        "a26",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "a26",
+      "fileExtensions": [
+        ".a26",
+        ".bin",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 2048,
+        "max": 32768
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Atari2600",
+        "atari2600",
+        "2600",
+        "Atari 2600"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "atari-5200",
+      "name": "Atari 5200",
+      "shortName": "5200",
+      "manufacturer": "Atari",
+      "generation": 2,
+      "releaseYear": 1982,
+      "type": "console",
+      "supportedFormats": [
+        "a52",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "a52",
+      "fileExtensions": [
+        ".a52",
+        ".bin",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 8192,
+        "max": 32768
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Atari5200",
+        "atari5200",
+        "5200",
+        "Atari 5200"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "atari-7800",
+      "name": "Atari 7800",
+      "shortName": "7800",
+      "manufacturer": "Atari",
+      "generation": 3,
+      "releaseYear": 1986,
+      "type": "console",
+      "supportedFormats": [
+        "a78",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "a78",
+      "fileExtensions": [
+        ".a78",
+        ".bin",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 8192,
+        "max": 131072
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Atari7800",
+        "atari7800",
+        "7800",
+        "Atari 7800"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "atari-jaguar",
+      "name": "Atari Jaguar",
+      "shortName": "Jaguar",
+      "manufacturer": "Atari",
+      "generation": 5,
+      "releaseYear": 1993,
+      "type": "console",
+      "supportedFormats": [
+        "j64",
+        "jag",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "j64",
+      "fileExtensions": [
+        ".j64",
+        ".jag",
+        ".bin",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 1048576,
+        "max": 6291456
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Jaguar",
+        "jaguar",
+        "Atari Jaguar"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "atari-lynx",
+      "name": "Atari Lynx",
+      "shortName": "Lynx",
+      "manufacturer": "Atari",
+      "generation": 4,
+      "releaseYear": 1989,
+      "type": "handheld",
+      "supportedFormats": [
+        "lnx",
+        "o",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "lnx",
+      "fileExtensions": [
+        ".lnx",
+        ".o",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 65536,
+        "max": 524288
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Lynx",
+        "lynx",
+        "Atari Lynx"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "atari-st",
+      "name": "Atari ST",
+      "shortName": "ST",
+      "manufacturer": "Atari",
+      "generation": 4,
+      "releaseYear": 1985,
+      "type": "computer",
+      "supportedFormats": [
+        "st",
+        "stx",
+        "msa",
+        "ipf",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "st",
+      "fileExtensions": [
+        ".st",
+        ".stx",
+        ".msa",
+        ".ipf",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 100000,
+        "max": 10000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "AtariST",
+        "atarist",
+        "st"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "c64",
+      "name": "Commodore 64",
+      "shortName": "C64",
+      "manufacturer": "Commodore",
+      "generation": 3,
+      "releaseYear": 1982,
+      "type": "computer",
+      "supportedFormats": [
+        "d64",
+        "t64",
+        "crt",
+        "prg",
+        "tap",
+        "g64",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "d64",
+      "fileExtensions": [
+        ".d64",
+        ".t64",
+        ".crt",
+        ".prg",
+        ".tap",
+        ".g64",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 1024,
+        "max": 1048576
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "C64",
+        "c64",
+        "Commodore 64"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "cdi",
+      "name": "Philips CD-i",
+      "shortName": "CD-i",
+      "manufacturer": "Philips",
+      "generation": 4,
+      "releaseYear": 1991,
+      "type": "console",
+      "supportedFormats": [
+        "chd",
+        "iso",
+        "bin",
+        "cue"
+      ],
+      "preferredFormat": "chd",
+      "fileExtensions": [
+        ".chd",
+        ".iso",
+        ".bin",
+        ".cue"
+      ],
+      "typicalRomSize": {
+        "min": 50000000,
+        "max": 700000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "CDi",
+        "cdi",
+        "CD-i",
+        "Philips CD-i"
+      ],
+      "compressionSupport": [
+        {
+          "format": "chd",
+          "toolRequired": "chdman",
+          "spaceSavings": "40-60%",
+          "emulatorSupport": [
+            "mame",
+            "same-cdi"
+          ]
+        }
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "channelf",
+      "name": "Fairchild Channel F",
+      "shortName": "ChF",
+      "manufacturer": "Fairchild",
+      "generation": 1,
+      "releaseYear": 1976,
+      "type": "console",
+      "supportedFormats": [
+        "bin",
+        "chf",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "bin",
+      "fileExtensions": [
+        ".bin",
+        ".chf",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 2048,
+        "max": 8192
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "ChannelF",
+        "channelf",
+        "Fairchild"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "colecovision",
+      "name": "ColecoVision",
+      "shortName": "CV",
+      "manufacturer": "Coleco",
+      "generation": 2,
+      "releaseYear": 1982,
+      "type": "console",
+      "supportedFormats": [
+        "col",
+        "bin",
+        "rom",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "col",
+      "fileExtensions": [
+        ".col",
+        ".bin",
+        ".rom",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 8192,
+        "max": 32768
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "ColecoVision",
+        "colecovision",
+        "coleco",
+        "cv"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "dos",
+      "name": "DOS",
+      "shortName": "DOS",
+      "manufacturer": "IBM/Microsoft",
+      "generation": 3,
+      "releaseYear": 1981,
+      "type": "computer",
+      "supportedFormats": [
+        "exe",
+        "com",
+        "bat",
+        "iso",
+        "img",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "zip",
+      "fileExtensions": [
+        ".exe",
+        ".com",
+        ".bat",
+        ".iso",
+        ".img",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 10000,
+        "max": 700000000
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": true,
+      "commonFolderNames": [
+        "DOS",
+        "dos",
+        "PC",
+        "pc"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "dreamcast",
+      "name": "Sega Dreamcast",
+      "shortName": "DC",
+      "manufacturer": "Sega",
+      "generation": 6,
+      "releaseYear": 1998,
+      "type": "console",
+      "supportedFormats": [
+        "gdi",
+        "cdi",
+        "chd",
+        "cue",
+        "bin"
+      ],
+      "preferredFormat": "chd",
+      "fileExtensions": [
+        ".gdi",
+        ".cdi",
+        ".chd",
+        ".cue",
+        ".bin"
+      ],
+      "typicalRomSize": {
+        "min": 100000000,
+        "max": 1200000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "multiDiscFormat": "m3u",
+      "commonFolderNames": [
+        "Dreamcast",
+        "dreamcast",
+        "dc",
+        "DC"
+      ],
+      "compressionSupport": [
+        {
+          "format": "chd",
+          "toolRequired": "chdman",
+          "spaceSavings": "40-60%",
+          "emulatorSupport": [
+            "flycast",
+            "redream"
+          ]
+        }
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "famicom-disk-system",
+      "name": "Famicom Disk System",
+      "shortName": "FDS",
+      "manufacturer": "Nintendo",
+      "generation": 3,
+      "releaseYear": 1986,
+      "type": "console",
+      "supportedFormats": [
+        "fds",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "fds",
+      "fileExtensions": [
+        ".fds",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 65536,
+        "max": 131072
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "FDS",
+        "fds",
+        "Famicom Disk System"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "fbneo",
+      "name": "FinalBurn Neo",
+      "shortName": "FBNeo",
+      "manufacturer": "Various",
+      "generation": 0,
+      "releaseYear": 1971,
+      "type": "arcade",
+      "supportedFormats": [
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "zip",
+      "fileExtensions": [
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 10000,
+        "max": 500000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "FBNeo",
+        "fbneo",
+        "fba",
+        "FinalBurn"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "fm-towns",
+      "name": "Fujitsu FM Towns",
+      "shortName": "FMT",
+      "manufacturer": "Fujitsu",
+      "generation": 4,
+      "releaseYear": 1989,
+      "type": "computer",
+      "supportedFormats": [
+        "iso",
+        "cue",
+        "ccd",
+        "chd",
+        "zip"
+      ],
+      "preferredFormat": "chd",
+      "fileExtensions": [
+        ".iso",
+        ".cue",
+        ".ccd",
+        ".chd",
+        ".zip"
+      ],
+      "typicalRomSize": {
+        "min": 50000000,
+        "max": 700000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "commonFolderNames": [
+        "FMTowns",
+        "fmtowns",
+        "fmt"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "gamecube",
+      "name": "Nintendo GameCube",
+      "shortName": "GCN",
+      "manufacturer": "Nintendo",
+      "generation": 6,
+      "releaseYear": 2001,
+      "type": "console",
+      "supportedFormats": [
+        "iso",
+        "gcm",
+        "gcz",
+        "rvz",
+        "wbfs",
+        "ciso",
+        "wia"
+      ],
+      "preferredFormat": "rvz",
+      "fileExtensions": [
+        ".iso",
+        ".gcm",
+        ".gcz",
+        ".rvz",
+        ".wbfs",
+        ".ciso",
+        ".wia"
+      ],
+      "typicalRomSize": {
+        "min": 100000000,
+        "max": 1459978240
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": true,
+      "multiDiscFormat": "iso",
+      "commonFolderNames": [
+        "GCN",
+        "gcn",
+        "GameCube",
+        "gc",
+        "gamecube"
+      ],
+      "compressionSupport": [
+        {
+          "format": "rvz",
+          "toolRequired": "dolphin-tool",
+          "spaceSavings": "50-70%",
+          "emulatorSupport": [
+            "dolphin"
+          ]
+        },
+        {
+          "format": "gcz",
+          "toolRequired": "dolphin-tool",
+          "spaceSavings": "30-50%",
+          "emulatorSupport": [
+            "dolphin"
+          ]
+        }
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "gamegear",
+      "name": "Sega Game Gear",
+      "shortName": "GG",
+      "manufacturer": "Sega",
+      "generation": 4,
+      "releaseYear": 1990,
+      "type": "handheld",
+      "supportedFormats": [
+        "gg",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "gg",
+      "fileExtensions": [
+        ".gg",
+        ".bin",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 32768,
+        "max": 1048576
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "GG",
+        "gg",
+        "Game Gear",
+        "gamegear"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "gb",
+      "name": "Nintendo Game Boy",
+      "shortName": "GB",
+      "manufacturer": "Nintendo",
+      "generation": 4,
+      "releaseYear": 1989,
+      "type": "handheld",
+      "supportedFormats": [
+        "gb",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "gb",
+      "fileExtensions": [
+        ".gb",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 32768,
+        "max": 2097152
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "GB",
+        "gb",
+        "Game Boy",
+        "gameboy"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "gba",
+      "name": "Nintendo Game Boy Advance",
+      "shortName": "GBA",
+      "manufacturer": "Nintendo",
+      "generation": 5,
+      "releaseYear": 2001,
+      "type": "handheld",
+      "supportedFormats": [
+        "gba",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "gba",
+      "fileExtensions": [
+        ".gba",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 262144,
+        "max": 33554432
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "GBA",
+        "gba",
+        "Game Boy Advance",
+        "gameboyadvance"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "gbc",
+      "name": "Nintendo Game Boy Color",
+      "shortName": "GBC",
+      "manufacturer": "Nintendo",
+      "generation": 4,
+      "releaseYear": 1998,
+      "type": "handheld",
+      "supportedFormats": [
+        "gbc",
+        "gb",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "gbc",
+      "fileExtensions": [
+        ".gbc",
+        ".gb",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 32768,
+        "max": 8388608
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "GBC",
+        "gbc",
+        "Game Boy Color",
+        "gameboycolor"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "genesis",
+      "name": "Sega Genesis / Mega Drive",
+      "shortName": "Genesis",
+      "manufacturer": "Sega",
+      "generation": 4,
+      "releaseYear": 1988,
+      "type": "console",
+      "supportedFormats": [
+        "md",
+        "gen",
+        "bin",
+        "smd",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "md",
+      "fileExtensions": [
+        ".md",
+        ".gen",
+        ".bin",
+        ".smd",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 131072,
+        "max": 5242880
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Genesis",
+        "genesis",
+        "Mega Drive",
+        "megadrive",
+        "md"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "intellivision",
+      "name": "Mattel Intellivision",
+      "shortName": "INTV",
+      "manufacturer": "Mattel",
+      "generation": 2,
+      "releaseYear": 1979,
+      "type": "console",
+      "supportedFormats": [
+        "int",
+        "bin",
+        "rom",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "int",
+      "fileExtensions": [
+        ".int",
+        ".bin",
+        ".rom",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 4096,
+        "max": 32768
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Intellivision",
+        "intellivision",
+        "intv",
+        "INTV"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "msx",
+      "name": "MSX",
+      "shortName": "MSX",
+      "manufacturer": "Microsoft/ASCII",
+      "generation": 3,
+      "releaseYear": 1983,
+      "type": "computer",
+      "supportedFormats": [
+        "rom",
+        "mx1",
+        "mx2",
+        "dsk",
+        "cas",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "rom",
+      "fileExtensions": [
+        ".rom",
+        ".mx1",
+        ".mx2",
+        ".dsk",
+        ".cas",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 8192,
+        "max": 4194304
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "MSX",
+        "msx"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "msx2",
+      "name": "MSX2",
+      "shortName": "MSX2",
+      "manufacturer": "Microsoft/ASCII",
+      "generation": 3,
+      "releaseYear": 1985,
+      "type": "computer",
+      "supportedFormats": [
+        "rom",
+        "mx2",
+        "dsk",
+        "cas",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "rom",
+      "fileExtensions": [
+        ".rom",
+        ".mx2",
+        ".dsk",
+        ".cas",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 8192,
+        "max": 4194304
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "MSX2",
+        "msx2"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "n64",
+      "name": "Nintendo 64",
+      "shortName": "N64",
+      "manufacturer": "Nintendo",
+      "generation": 5,
+      "releaseYear": 1996,
+      "type": "console",
+      "supportedFormats": [
+        "n64",
+        "z64",
+        "v64",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "z64",
+      "fileExtensions": [
+        ".n64",
+        ".z64",
+        ".v64",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 4194304,
+        "max": 67108864
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "N64",
+        "n64",
+        "Nintendo 64"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "nds",
+      "name": "Nintendo DS",
+      "shortName": "NDS",
+      "manufacturer": "Nintendo",
+      "generation": 7,
+      "releaseYear": 2004,
+      "type": "handheld",
+      "supportedFormats": [
+        "nds",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "nds",
+      "fileExtensions": [
+        ".nds",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 1048576,
+        "max": 536870912
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "NDS",
+        "nds",
+        "Nintendo DS",
+        "ds"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "neogeo",
+      "name": "SNK Neo Geo",
+      "shortName": "Neo Geo",
+      "manufacturer": "SNK",
+      "generation": 4,
+      "releaseYear": 1990,
+      "type": "console",
+      "supportedFormats": [
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "zip",
+      "fileExtensions": [
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 1048576,
+        "max": 716800000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "NeoGeo",
+        "neogeo",
+        "Neo Geo",
+        "ng"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "neogeo-cd",
+      "name": "SNK Neo Geo CD",
+      "shortName": "NGCD",
+      "manufacturer": "SNK",
+      "generation": 5,
+      "releaseYear": 1994,
+      "type": "console",
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd"
+      ],
+      "preferredFormat": "chd",
+      "fileExtensions": [
+        ".bin",
+        ".cue",
+        ".iso",
+        ".chd"
+      ],
+      "typicalRomSize": {
+        "min": 50000000,
+        "max": 700000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "NeoGeoCD",
+        "neogeocd",
+        "Neo Geo CD",
+        "ngcd"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "neogeo-pocket",
+      "name": "SNK Neo Geo Pocket",
+      "shortName": "NGP",
+      "manufacturer": "SNK",
+      "generation": 5,
+      "releaseYear": 1998,
+      "type": "handheld",
+      "supportedFormats": [
+        "ngp",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "ngp",
+      "fileExtensions": [
+        ".ngp",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 131072,
+        "max": 4194304
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "NGP",
+        "ngp",
+        "Neo Geo Pocket"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "neogeo-pocket-color",
+      "name": "SNK Neo Geo Pocket Color",
+      "shortName": "NGPC",
+      "manufacturer": "SNK",
+      "generation": 5,
+      "releaseYear": 1999,
+      "type": "handheld",
+      "supportedFormats": [
+        "ngc",
+        "ngp",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "ngc",
+      "fileExtensions": [
+        ".ngc",
+        ".ngp",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 131072,
+        "max": 4194304
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "NGPC",
+        "ngpc",
+        "Neo Geo Pocket Color"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "nes",
+      "name": "Nintendo Entertainment System",
+      "shortName": "NES",
+      "manufacturer": "Nintendo",
+      "generation": 3,
+      "releaseYear": 1983,
+      "type": "console",
+      "supportedFormats": [
+        "nes",
+        "unf",
+        "unif",
+        "fds",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "nes",
+      "fileExtensions": [
+        ".nes",
+        ".unf",
+        ".unif",
+        ".fds",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 8192,
+        "max": 1048576
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "NES",
+        "nes",
+        "Nintendo Entertainment System",
+        "fc",
+        "famicom"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "odyssey2",
+      "name": "Magnavox Odyssey 2",
+      "shortName": "O2",
+      "manufacturer": "Magnavox",
+      "generation": 2,
+      "releaseYear": 1978,
+      "type": "console",
+      "supportedFormats": [
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "bin",
+      "fileExtensions": [
+        ".bin",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 2048,
+        "max": 16384
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Odyssey2",
+        "odyssey2",
+        "o2",
+        "Videopac"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "pc-98",
+      "name": "NEC PC-98",
+      "shortName": "PC-98",
+      "manufacturer": "NEC",
+      "generation": 4,
+      "releaseYear": 1982,
+      "type": "computer",
+      "supportedFormats": [
+        "hdi",
+        "fdi",
+        "fdd",
+        "d88",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "hdi",
+      "fileExtensions": [
+        ".hdi",
+        ".fdi",
+        ".fdd",
+        ".d88",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 100000,
+        "max": 100000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "commonFolderNames": [
+        "PC98",
+        "pc98",
+        "PC-98"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "pcfx",
+      "name": "PC-FX",
+      "shortName": "PC-FX",
+      "manufacturer": "NEC",
+      "generation": 5,
+      "releaseYear": 1994,
+      "type": "console",
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd"
+      ],
+      "preferredFormat": "chd",
+      "fileExtensions": [
+        ".bin",
+        ".cue",
+        ".iso",
+        ".chd"
+      ],
+      "typicalRomSize": {
+        "min": 50000000,
+        "max": 700000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "commonFolderNames": [
+        "PCFX",
+        "pcfx",
+        "PC-FX"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "pico8",
+      "name": "PICO-8",
+      "shortName": "PICO-8",
+      "manufacturer": "Lexaloffle",
+      "generation": 8,
+      "releaseYear": 2015,
+      "type": "console",
+      "supportedFormats": [
+        "p8",
+        "png"
+      ],
+      "preferredFormat": "p8",
+      "fileExtensions": [
+        ".p8",
+        ".png"
+      ],
+      "typicalRomSize": {
+        "min": 1000,
+        "max": 100000
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "PICO-8",
+        "pico8",
+        "pico-8"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "pokemini",
+      "name": "Pokemon Mini",
+      "shortName": "PKM",
+      "manufacturer": "Nintendo",
+      "generation": 5,
+      "releaseYear": 2001,
+      "type": "handheld",
+      "supportedFormats": [
+        "min",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "min",
+      "fileExtensions": [
+        ".min",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 65536,
+        "max": 524288
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "PKM",
+        "pokemini",
+        "Pokemon Mini"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "ports",
+      "name": "Ports",
+      "shortName": "Ports",
+      "manufacturer": "Various",
+      "generation": 0,
+      "releaseYear": 2020,
+      "type": "computer",
+      "supportedFormats": [
+        "sh",
+        "squashfs"
+      ],
+      "preferredFormat": "sh",
+      "fileExtensions": [
+        ".sh",
+        ".squashfs"
+      ],
+      "typicalRomSize": {
+        "min": 1000000,
+        "max": 5000000000
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Ports",
+        "ports",
+        "PortMaster"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "ps2",
+      "name": "Sony PlayStation 2",
+      "shortName": "PS2",
+      "manufacturer": "Sony",
+      "generation": 6,
+      "releaseYear": 2000,
+      "type": "console",
+      "supportedFormats": [
+        "iso",
+        "bin",
+        "chd",
+        "cso",
+        "gz"
+      ],
+      "preferredFormat": "chd",
+      "fileExtensions": [
+        ".iso",
+        ".bin",
+        ".chd",
+        ".cso",
+        ".gz"
+      ],
+      "typicalRomSize": {
+        "min": 100000000,
+        "max": 4700000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "multiDiscFormat": "m3u",
+      "commonFolderNames": [
+        "PS2",
+        "ps2",
+        "PlayStation 2"
+      ],
+      "compressionSupport": [
+        {
+          "format": "chd",
+          "toolRequired": "chdman",
+          "spaceSavings": "40-60%",
+          "emulatorSupport": [
+            "pcsx2",
+            "aethersx2"
+          ]
+        },
+        {
+          "format": "cso",
+          "toolRequired": null,
+          "spaceSavings": "20-40%",
+          "emulatorSupport": [
+            "pcsx2",
+            "aethersx2"
+          ]
+        }
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "ps3",
+      "name": "Sony PlayStation 3",
+      "shortName": "PS3",
+      "manufacturer": "Sony",
+      "generation": 7,
+      "releaseYear": 2006,
+      "type": "console",
+      "supportedFormats": [
+        "iso",
+        "pkg",
+        "folder"
+      ],
+      "preferredFormat": "folder",
+      "fileExtensions": [
+        ".iso",
+        ".pkg"
+      ],
+      "typicalRomSize": {
+        "min": 1000000000,
+        "max": 50000000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "commonFolderNames": [
+        "PS3",
+        "ps3",
+        "PlayStation 3"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "psp",
+      "name": "Sony PlayStation Portable",
+      "shortName": "PSP",
+      "manufacturer": "Sony",
+      "generation": 7,
+      "releaseYear": 2004,
+      "type": "handheld",
+      "supportedFormats": [
+        "iso",
+        "cso",
+        "chd",
+        "pbp"
+      ],
+      "preferredFormat": "chd",
+      "fileExtensions": [
+        ".iso",
+        ".cso",
+        ".chd",
+        ".pbp"
+      ],
+      "typicalRomSize": {
+        "min": 50000000,
+        "max": 1800000000
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "PSP",
+        "psp",
+        "PlayStation Portable"
+      ],
+      "compressionSupport": [
+        {
+          "format": "chd",
+          "toolRequired": "chdman",
+          "spaceSavings": "30-50%",
+          "emulatorSupport": [
+            "ppsspp"
+          ]
+        },
+        {
+          "format": "cso",
+          "toolRequired": null,
+          "spaceSavings": "20-40%",
+          "emulatorSupport": [
+            "ppsspp"
+          ]
+        }
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "psvita",
+      "name": "Sony PlayStation Vita",
+      "shortName": "Vita",
+      "manufacturer": "Sony",
+      "generation": 8,
+      "releaseYear": 2011,
+      "type": "handheld",
+      "supportedFormats": [
+        "vpk",
+        "mai",
+        "folder"
+      ],
+      "preferredFormat": "vpk",
+      "fileExtensions": [
+        ".vpk",
+        ".mai"
+      ],
+      "typicalRomSize": {
+        "min": 100000000,
+        "max": 4000000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "PSVita",
+        "psvita",
+        "PlayStation Vita",
+        "vita"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "psx",
+      "name": "Sony PlayStation",
+      "shortName": "PS1",
+      "manufacturer": "Sony",
+      "generation": 5,
+      "releaseYear": 1994,
+      "type": "console",
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "img",
+        "chd",
+        "pbp",
+        "m3u"
+      ],
+      "preferredFormat": "chd",
+      "fileExtensions": [
+        ".bin",
+        ".cue",
+        ".iso",
+        ".img",
+        ".chd",
+        ".pbp",
+        ".m3u"
+      ],
+      "typicalRomSize": {
+        "min": 50000000,
+        "max": 700000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "multiDiscFormat": "m3u",
+      "commonFolderNames": [
+        "PSX",
+        "psx",
+        "PlayStation",
+        "ps1",
+        "PS1"
+      ],
+      "compressionSupport": [
+        {
+          "format": "chd",
+          "toolRequired": "chdman",
+          "spaceSavings": "40-60%",
+          "emulatorSupport": [
+            "duckstation",
+            "pcsx-rearmed",
+            "beetle-psx",
+            "swanstation"
+          ]
+        },
+        {
+          "format": "pbp",
+          "toolRequired": null,
+          "spaceSavings": "30-50%",
+          "emulatorSupport": [
+            "ppsspp",
+            "duckstation"
+          ]
+        }
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "saturn",
+      "name": "Sega Saturn",
+      "shortName": "Saturn",
+      "manufacturer": "Sega",
+      "generation": 5,
+      "releaseYear": 1994,
+      "type": "console",
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd",
+        "mds",
+        "ccd"
+      ],
+      "preferredFormat": "chd",
+      "fileExtensions": [
+        ".bin",
+        ".cue",
+        ".iso",
+        ".chd",
+        ".mds",
+        ".ccd"
+      ],
+      "typicalRomSize": {
+        "min": 50000000,
+        "max": 700000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "multiDiscFormat": "m3u",
+      "commonFolderNames": [
+        "Saturn",
+        "saturn",
+        "Sega Saturn"
+      ],
+      "compressionSupport": [
+        {
+          "format": "chd",
+          "toolRequired": "chdman",
+          "spaceSavings": "40-60%",
+          "emulatorSupport": [
+            "beetle-saturn",
+            "yabause",
+            "kronos"
+          ]
+        }
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "scummvm",
+      "name": "ScummVM",
+      "shortName": "ScummVM",
+      "manufacturer": "Various",
+      "generation": 0,
+      "releaseYear": 1987,
+      "type": "computer",
+      "supportedFormats": [
+        "scummvm"
+      ],
+      "preferredFormat": "scummvm",
+      "fileExtensions": [
+        ".scummvm"
+      ],
+      "typicalRomSize": {
+        "min": 1000000,
+        "max": 2000000000
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "ScummVM",
+        "scummvm"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "sega-32x",
+      "name": "Sega 32X",
+      "shortName": "32X",
+      "manufacturer": "Sega",
+      "generation": 4,
+      "releaseYear": 1994,
+      "type": "console",
+      "supportedFormats": [
+        "32x",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "32x",
+      "fileExtensions": [
+        ".32x",
+        ".bin",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 262144,
+        "max": 4194304
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "32X",
+        "32x",
+        "Sega 32X"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "sega-cd",
+      "name": "Sega CD / Mega CD",
+      "shortName": "Sega CD",
+      "manufacturer": "Sega",
+      "generation": 4,
+      "releaseYear": 1991,
+      "type": "console",
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd"
+      ],
+      "preferredFormat": "chd",
+      "fileExtensions": [
+        ".bin",
+        ".cue",
+        ".iso",
+        ".chd"
+      ],
+      "typicalRomSize": {
+        "min": 50000000,
+        "max": 700000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "multiDiscFormat": "m3u",
+      "commonFolderNames": [
+        "SegaCD",
+        "segacd",
+        "Mega CD",
+        "megacd"
+      ],
+      "compressionSupport": [
+        {
+          "format": "chd",
+          "toolRequired": "chdman",
+          "spaceSavings": "40-60%",
+          "emulatorSupport": [
+            "genesis-plus-gx",
+            "picodrive"
+          ]
+        }
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "sg-1000",
+      "name": "Sega SG-1000",
+      "shortName": "SG-1000",
+      "manufacturer": "Sega",
+      "generation": 3,
+      "releaseYear": 1983,
+      "type": "console",
+      "supportedFormats": [
+        "sg",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "sg",
+      "fileExtensions": [
+        ".sg",
+        ".bin",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 8192,
+        "max": 65536
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "SG1000",
+        "sg1000",
+        "SG-1000"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "sharp-x1",
+      "name": "Sharp X1",
+      "shortName": "X1",
+      "manufacturer": "Sharp",
+      "releaseYear": 1982,
+      "generation": 3,
+      "type": "computer",
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Sharp X1",
+        "Sharp-X1",
+        "X1",
+        "sharp-x1",
+        "x1"
+      ],
+      "fileExtensions": [
+        ".d88",
+        ".dsk",
+        ".2d",
+        ".2hd",
+        ".zip",
+        ".7z"
+      ],
+      "supportedFormats": [
+        "d88",
+        "dsk",
+        "2d",
+        "2hd",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "d88",
+      "typicalRomSize": {
+        "min": 100000,
+        "max": 50000000
+      },
+      "biosSubdirectory": "xmil"
+    },
+    {
+      "id": "sms",
+      "name": "Sega Master System",
+      "shortName": "SMS",
+      "manufacturer": "Sega",
+      "generation": 3,
+      "releaseYear": 1985,
+      "type": "console",
+      "supportedFormats": [
+        "sms",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "sms",
+      "fileExtensions": [
+        ".sms",
+        ".bin",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 32768,
+        "max": 524288
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "SMS",
+        "sms",
+        "Master System",
+        "mastersystem"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "snes",
+      "name": "Super Nintendo Entertainment System",
+      "shortName": "SNES",
+      "manufacturer": "Nintendo",
+      "generation": 4,
+      "releaseYear": 1990,
+      "type": "console",
+      "supportedFormats": [
+        "sfc",
+        "smc",
+        "swc",
+        "fig",
+        "bs",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "sfc",
+      "fileExtensions": [
+        ".sfc",
+        ".smc",
+        ".swc",
+        ".fig",
+        ".bs",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 262144,
+        "max": 6291456
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "SNES",
+        "snes",
+        "Super Nintendo",
+        "sfc",
+        "Super Famicom"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "supergrafx",
+      "name": "SuperGrafx",
+      "shortName": "SGX",
+      "manufacturer": "NEC",
+      "generation": 4,
+      "releaseYear": 1989,
+      "type": "console",
+      "supportedFormats": [
+        "sgx",
+        "pce",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "sgx",
+      "fileExtensions": [
+        ".sgx",
+        ".pce",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 131072,
+        "max": 2097152
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "SGX",
+        "sgx",
+        "SuperGrafx",
+        "supergrafx"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "switch",
+      "name": "Nintendo Switch",
+      "shortName": "Switch",
+      "manufacturer": "Nintendo",
+      "generation": 8,
+      "releaseYear": 2017,
+      "type": "console",
+      "supportedFormats": [
+        "nsp",
+        "xci",
+        "nsz",
+        "xcz"
+      ],
+      "preferredFormat": "nsz",
+      "fileExtensions": [
+        ".nsp",
+        ".xci",
+        ".nsz",
+        ".xcz"
+      ],
+      "typicalRomSize": {
+        "min": 100000000,
+        "max": 32212254720
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Switch",
+        "switch",
+        "Nintendo Switch",
+        "ns"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "tg16",
+      "name": "TurboGrafx-16 / PC Engine",
+      "shortName": "TG16",
+      "manufacturer": "NEC",
+      "generation": 4,
+      "releaseYear": 1987,
+      "type": "console",
+      "supportedFormats": [
+        "pce",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "pce",
+      "fileExtensions": [
+        ".pce",
+        ".bin",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 131072,
+        "max": 2097152
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "TG16",
+        "tg16",
+        "PC Engine",
+        "pcengine",
+        "TurboGrafx16"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "tgcd",
+      "name": "TurboGrafx-CD / PC Engine CD",
+      "shortName": "TGCD",
+      "manufacturer": "NEC",
+      "generation": 4,
+      "releaseYear": 1988,
+      "type": "console",
+      "supportedFormats": [
+        "bin",
+        "cue",
+        "iso",
+        "chd"
+      ],
+      "preferredFormat": "chd",
+      "fileExtensions": [
+        ".bin",
+        ".cue",
+        ".iso",
+        ".chd"
+      ],
+      "typicalRomSize": {
+        "min": 50000000,
+        "max": 700000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "multiDiscFormat": "m3u",
+      "commonFolderNames": [
+        "TGCD",
+        "tgcd",
+        "PC Engine CD",
+        "pcecd",
+        "TurboGrafx-CD"
+      ],
+      "compressionSupport": [
+        {
+          "format": "chd",
+          "toolRequired": "chdman",
+          "spaceSavings": "40-60%",
+          "emulatorSupport": [
+            "beetle-pce",
+            "mednafen"
+          ]
+        }
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "tic80",
+      "name": "TIC-80",
+      "shortName": "TIC-80",
+      "manufacturer": "Nesbox",
+      "generation": 8,
+      "releaseYear": 2017,
+      "type": "console",
+      "supportedFormats": [
+        "tic"
+      ],
+      "preferredFormat": "tic",
+      "fileExtensions": [
+        ".tic"
+      ],
+      "typicalRomSize": {
+        "min": 1000,
+        "max": 100000
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "TIC-80",
+        "tic80",
+        "tic-80"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "vectrex",
+      "name": "Vectrex",
+      "shortName": "VEC",
+      "manufacturer": "Smith Engineering",
+      "generation": 2,
+      "releaseYear": 1982,
+      "type": "console",
+      "supportedFormats": [
+        "vec",
+        "bin",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "vec",
+      "fileExtensions": [
+        ".vec",
+        ".bin",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 4096,
+        "max": 32768
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Vectrex",
+        "vectrex",
+        "vec"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "virtualboy",
+      "name": "Virtual Boy",
+      "shortName": "VB",
+      "manufacturer": "Nintendo",
+      "generation": 4,
+      "releaseYear": 1995,
+      "type": "console",
+      "supportedFormats": [
+        "vb",
+        "vboy",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "vb",
+      "fileExtensions": [
+        ".vb",
+        ".vboy",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 262144,
+        "max": 2097152
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "VB",
+        "vb",
+        "Virtual Boy",
+        "virtualboy"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "wii",
+      "name": "Nintendo Wii",
+      "shortName": "Wii",
+      "manufacturer": "Nintendo",
+      "generation": 7,
+      "releaseYear": 2006,
+      "type": "console",
+      "supportedFormats": [
+        "iso",
+        "wbfs",
+        "rvz",
+        "wia",
+        "gcz",
+        "ciso"
+      ],
+      "preferredFormat": "rvz",
+      "fileExtensions": [
+        ".iso",
+        ".wbfs",
+        ".rvz",
+        ".wia",
+        ".gcz",
+        ".ciso"
+      ],
+      "typicalRomSize": {
+        "min": 100000000,
+        "max": 4699979776
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": true,
+      "multiDiscFormat": "iso",
+      "commonFolderNames": [
+        "Wii",
+        "wii",
+        "Nintendo Wii"
+      ],
+      "compressionSupport": [
+        {
+          "format": "rvz",
+          "toolRequired": "dolphin-tool",
+          "spaceSavings": "50-80%",
+          "emulatorSupport": [
+            "dolphin"
+          ]
+        },
+        {
+          "format": "wbfs",
+          "toolRequired": "wit",
+          "spaceSavings": "20-50%",
+          "emulatorSupport": [
+            "dolphin"
+          ]
+        }
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "wiiu",
+      "name": "Nintendo Wii U",
+      "shortName": "Wii U",
+      "manufacturer": "Nintendo",
+      "generation": 8,
+      "releaseYear": 2012,
+      "type": "console",
+      "supportedFormats": [
+        "wud",
+        "wux",
+        "iso",
+        "rpx",
+        "wua"
+      ],
+      "preferredFormat": "wux",
+      "fileExtensions": [
+        ".wud",
+        ".wux",
+        ".iso",
+        ".rpx",
+        ".wua"
+      ],
+      "typicalRomSize": {
+        "min": 1000000000,
+        "max": 25769803776
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "WiiU",
+        "wiiu",
+        "Wii U"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "wonderswan",
+      "name": "Bandai WonderSwan",
+      "shortName": "WS",
+      "manufacturer": "Bandai",
+      "generation": 5,
+      "releaseYear": 1999,
+      "type": "handheld",
+      "supportedFormats": [
+        "ws",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "ws",
+      "fileExtensions": [
+        ".ws",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 131072,
+        "max": 16777216
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "WS",
+        "ws",
+        "WonderSwan",
+        "wonderswan"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "wonderswan-color",
+      "name": "Bandai WonderSwan Color",
+      "shortName": "WSC",
+      "manufacturer": "Bandai",
+      "generation": 5,
+      "releaseYear": 2000,
+      "type": "handheld",
+      "supportedFormats": [
+        "wsc",
+        "ws",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "wsc",
+      "fileExtensions": [
+        ".wsc",
+        ".ws",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 131072,
+        "max": 16777216
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "WSC",
+        "wsc",
+        "WonderSwan Color"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "x68000",
+      "name": "Sharp X68000",
+      "shortName": "X68K",
+      "manufacturer": "Sharp",
+      "generation": 4,
+      "releaseYear": 1987,
+      "type": "computer",
+      "supportedFormats": [
+        "dim",
+        "xdf",
+        "hdm",
+        "2hd",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "dim",
+      "fileExtensions": [
+        ".dim",
+        ".xdf",
+        ".hdm",
+        ".2hd",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 100000,
+        "max": 100000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": true,
+      "commonFolderNames": [
+        "X68000",
+        "x68000",
+        "x68k"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "xbox",
+      "name": "Microsoft Xbox",
+      "shortName": "Xbox",
+      "manufacturer": "Microsoft",
+      "generation": 6,
+      "releaseYear": 2001,
+      "type": "console",
+      "supportedFormats": [
+        "iso",
+        "xiso"
+      ],
+      "preferredFormat": "iso",
+      "fileExtensions": [
+        ".iso",
+        ".xiso"
+      ],
+      "typicalRomSize": {
+        "min": 100000000,
+        "max": 8000000000
+      },
+      "requiresBios": true,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "Xbox",
+        "xbox",
+        "Microsoft Xbox"
+      ],
+      "biosSubdirectory": null
+    },
+    {
+      "id": "zxspectrum",
+      "name": "ZX Spectrum",
+      "shortName": "ZX",
+      "manufacturer": "Sinclair",
+      "generation": 3,
+      "releaseYear": 1982,
+      "type": "computer",
+      "supportedFormats": [
+        "tzx",
+        "tap",
+        "z80",
+        "sna",
+        "szx",
+        "dsk",
+        "zip",
+        "7z"
+      ],
+      "preferredFormat": "tzx",
+      "fileExtensions": [
+        ".tzx",
+        ".tap",
+        ".z80",
+        ".sna",
+        ".szx",
+        ".dsk",
+        ".zip",
+        ".7z"
+      ],
+      "typicalRomSize": {
+        "min": 1024,
+        "max": 262144
+      },
+      "requiresBios": false,
+      "supportsMultiDisc": false,
+      "commonFolderNames": [
+        "ZXSpectrum",
+        "zxspectrum",
+        "spectrum",
+        "zx"
+      ],
+      "biosSubdirectory": null
+    }
+  ],
+  "changeLog": {
+    "2.0.0": {
+      "date": "2026-01-03",
+      "changes": [
+        "Added sharp-x1 platform with biosSubdirectory xmil"
+      ]
+    },
+    "1.0.0": {
+      "date": "2026-01-01",
+      "changes": [
+        "Initial release with 68 platforms"
+      ]
+    }
+  }
+}

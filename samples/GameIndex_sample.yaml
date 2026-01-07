@@ -1,0 +1,40 @@
+# Minimal fixture for local testing without fetching the full GameIndex.yaml
+SLUS-20946:
+  name: "God of War"
+  region: "NTSC-U"
+  compat: 5
+  gsHWFixes:
+    mipmap: 2
+    texturePreloading: 1
+    cpuCLUTRender: 1
+  speedHacks:
+    mvuFlagSpeedHack: 0
+  patches:
+    default:
+      content: |
+        // 60 FPS patch
+        patch=1,EE,00123456,extended,00000001
+  memcardFilters:
+    - "SLUS-20946"
+
+SLES-12345:
+  name: "Example PAL Game"
+  region: "PAL"
+  compat: 3
+  roundModes:
+    eeRoundMode: 1
+    vuRoundMode: 3
+  clampModes:
+    eeClampMode: 1
+    vuClampMode: 3
+  gameFixes:
+    - SoftwareRendererFMVHack
+  patches:
+    default: |
+      // Example patch in string form
+      patch=1,EE,00ABCDEF,word,00000000
+
+SLUS-00000:
+  name: "No Settings Title Only"
+  region: "NTSC-U"
+  compat: 4

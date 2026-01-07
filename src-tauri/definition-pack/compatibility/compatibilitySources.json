@@ -1,0 +1,535 @@
+{
+  "$schema": "./ROM_Runner_JSON_Schemas.json",
+  "version": "1.1.0",
+  "generatedAt": "2026-01-02",
+  "description": "Registry of compatibility and performance data sources for ROM Runner",
+  "schemaVersion": "compat-sources-v2",
+  
+  "sourcePriority": {
+    "description": "Tie-break order when multiple sources provide data for the same game+emulator(+device). Lower number = higher priority. Applied during pack build.",
+    "gamePerformance": [
+      "user-override",
+      "community-verified",
+      "retrocatalog-api",
+      "emuready-listings",
+      "emulator-official",
+      "rom-runner-db"
+    ],
+    "emulatorCompatibility": [
+      "user-override",
+      "emulator-official",
+      "emuready-listings",
+      "community-verified",
+      "rom-runner-db"
+    ],
+    "emulatorGameSettings": [
+      "user-override",
+      "emuready-emulator-config",
+      "emulator-official",
+      "community-verified",
+      "rom-runner-db"
+    ]
+  },
+
+  "normalization": {
+    "emuready": {
+      "description": "Mapping tables for EmuReady IDs to ROM Runner IDs",
+      "systemToplatformId": {
+        "_comment": "Populate after fetching /general.systems endpoint",
+        "Nintendo Switch": "switch",
+        "PlayStation 2": "ps2",
+        "PlayStation Portable": "psp",
+        "Nintendo 3DS": "3ds",
+        "Nintendo DS": "nds",
+        "Nintendo GameCube": "gamecube",
+        "Nintendo Wii": "wii",
+        "Nintendo Wii U": "wiiu",
+        "Sony PlayStation": "psx",
+        "Sega Dreamcast": "dreamcast",
+        "Sega Saturn": "saturn",
+        "Nintendo 64": "n64",
+        "Super Nintendo": "snes",
+        "Sega Genesis": "genesis",
+        "Game Boy Advance": "gba",
+        "Nintendo Entertainment System": "nes",
+        "Game Boy": "gb",
+        "Game Boy Color": "gbc",
+        "Sega Game Gear": "gamegear",
+        "Sega Master System": "sms",
+        "TurboGrafx-16": "tg16",
+        "Neo Geo": "neogeo",
+        "Atari 2600": "atari-2600",
+        "Atari 7800": "atari-7800",
+        "Atari Lynx": "atari-lynx",
+        "PlayStation 3": "ps3",
+        "Xbox": "xbox",
+        "Xbox 360": "xbox360",
+        "Sony PS Vita": "psvita",
+        "PC": "pc"
+      },
+      "emulatorToEmulatorId": {
+        "_comment": "Populate after fetching /emulators.get endpoint. Maps EmuReady emulator names to ROM Runner emulator IDs or RetroArch core IDs",
+        "Yuzu": "yuzu",
+        "Ryujinx": "ryujinx",
+        "AetherSX2": "aethersx2",
+        "PCSX2": "pcsx2",
+        "PPSSPP": "ppsspp",
+        "Citra": "citra",
+        "Azahar": "azahar",
+        "Lime3DS": "lime3ds",
+        "DraStic": "drastic",
+        "melonDS": "melonds",
+        "Dolphin": "dolphin",
+        "DuckStation": "duckstation",
+        "Flycast": "flycast",
+        "Redream": "redream",
+        "Yaba Sanshiro": "yaba-sanshiro",
+        "Mupen64Plus": "mupen64plus",
+        "ParaLLEl N64": "parallel-n64",
+        "Snes9x": "snes9x",
+        "bsnes": "bsnes",
+        "Genesis Plus GX": "genesis-plus-gx",
+        "mGBA": "mgba",
+        "VBA-M": "vba-m",
+        "RPCS3": "rpcs3",
+        "Xemu": "xemu",
+        "Xenia": "xenia",
+        "Vita3K": "vita3k",
+        "RetroArch": "retroarch",
+        "Lemuroid": "lemuroid",
+        "NetherSX2": "nethersx2"
+      },
+      "deviceToDeviceId": {
+        "_comment": "Populate via /devices.get; maps EmuReady device IDs to ROM Runner device IDs",
+        "_mappingStrategy": "auto-match by device name + manual overrides for mismatches"
+      },
+      "socToChipsetId": {
+        "_comment": "Populate via /socs.get; maps EmuReady SoC IDs to ROM Runner chipset IDs",
+        "Snapdragon 8 Gen 2": "sd8gen2",
+        "Snapdragon 8 Gen 3": "sd8gen3",
+        "Dimensity 9000": "dimensity-9000",
+        "Dimensity 1200": "dimensity-1200",
+        "Rockchip RK3566": "rk3566",
+        "Rockchip RK3326": "rk3326",
+        "Rockchip RK3588": "rk3588",
+        "Allwinner H700": "h700",
+        "Unisoc T618": "t618"
+      }
+    },
+    "retrocatalog": {
+      "description": "Mapping tables for RetroCatalog keys to ROM Runner platformIds",
+      "platformKeyToPlatformId": {
+        "gb": "gb",
+        "nes": "nes",
+        "genesis": "genesis",
+        "gba": "gba",
+        "snes": "snes",
+        "ps": "psx",
+        "ds": "nds",
+        "n64": "n64",
+        "dreamcast": "dreamcast",
+        "psp": "psp",
+        "saturn": "saturn",
+        "gamecube": "gamecube",
+        "3ds": "3ds",
+        "wii": "wii",
+        "ps2": "ps2",
+        "switch": "switch",
+        "wiiu": "wiiu",
+        "ps3": "ps3"
+      }
+    }
+  },
+
+  "sourceCatalog": [
+    {
+      "id": "retrocatalog-api",
+      "name": "RetroCatalog API",
+      "type": "api",
+      "authType": "api-key",
+      "description": "Official RetroCatalog API for device catalog and platform compatibility scores",
+      "dataProvides": ["gamePerformance"],
+      "endpoints": {
+        "devices": "/api/devices",
+        "platformScores": "/api/devices/{deviceId}/scores"
+      },
+      "cachePolicy": {
+        "ttlHours": 168,
+        "staleWhileRevalidate": true
+      },
+      "envVar": "RETROCATALOG_API_KEY",
+      "rateLimits": {
+        "requestsPerMinute": 60,
+        "requestsPerDay": 10000
+      },
+      "notes": "Official API access granted by site creator. Replaces previous scraping approach."
+    },
+    {
+      "id": "retrocatalog-devices",
+      "name": "RetroCatalog Device Catalog",
+      "type": "api-subset",
+      "parentSource": "retrocatalog-api",
+      "description": "Device specifications and metadata from RetroCatalog",
+      "dataProvides": ["devices"],
+      "outputFile": "devices.retrocatalog.json"
+    },
+    {
+      "id": "retrocatalog-platform-scores",
+      "name": "RetroCatalog Platform Scores",
+      "type": "api-subset",
+      "parentSource": "retrocatalog-api",
+      "description": "Device Ã¢â€ â€™ platform compatibility scores (0-100)",
+      "dataProvides": ["gamePerformance"],
+      "outputFile": "gamePerformance.retrocatalog.json",
+      "conversionNotes": "Score 0-100 maps to tiers: 0=unplayable, 1-39=poor, 40-59=playable, 60-79=good, 80-100=excellent. gameId='*' for platform-wide defaults."
+    },
+
+    {
+      "id": "emuready-api",
+      "name": "EmuReady API",
+      "type": "api",
+      "authType": "bearer-jwt",
+      "description": "Community-driven emulation compatibility database with 95 endpoints covering devices, emulators, games, and listings",
+      "baseUrl": "https://www.emuready.com/api/mobile/trpc",
+      "docsUrl": "https://www.emuready.com/docs/api/reference",
+      "openApiUrl": "https://www.emuready.com/api-docs/mobile-openapi.json",
+      "dataProvides": ["emulatorCompatibility", "emulatorGameSettings", "gamePerformance"],
+      "cachePolicy": {
+        "ttlHours": 24,
+        "staleWhileRevalidate": true
+      },
+      "envVar": "EMUREADY_API_KEY",
+      "rateLimits": {
+        "requestsPerMinute": 100,
+        "burstLimit": 200
+      },
+      "publicEndpoints": [
+        "/catalog.getDeviceCompatibility",
+        "/devices.get",
+        "/emulators.get",
+        "/games.get",
+        "/listings.get",
+        "/listings.byGame",
+        "/listings.getEmulatorConfig",
+        "/general.systems",
+        "/general.performanceScales",
+        "/socs.get"
+      ],
+      "notes": "Large community-driven database with performance ratings, votes, and developer verifications. Scores use Wilson score for statistical confidence."
+    },
+    {
+      "id": "emuready-devices",
+      "name": "EmuReady Device Catalog",
+      "type": "api-subset",
+      "parentSource": "emuready-api",
+      "endpoint": "/devices.get",
+      "description": "Device catalog with SOC and brand information",
+      "dataProvides": ["devices"],
+      "outputFile": "devices.emuready.json"
+    },
+    {
+      "id": "emuready-systems",
+      "name": "EmuReady Systems",
+      "type": "api-subset",
+      "parentSource": "emuready-api",
+      "endpoint": "/general.systems",
+      "description": "Platform/system catalog for ID normalization",
+      "dataProvides": ["platforms"],
+      "outputFile": "platforms.emuready.json"
+    },
+    {
+      "id": "emuready-emulators",
+      "name": "EmuReady Emulators",
+      "type": "api-subset",
+      "parentSource": "emuready-api",
+      "endpoint": "/emulators.get",
+      "description": "Emulator catalog with core mappings",
+      "dataProvides": ["emulators"],
+      "outputFile": "emulators.emuready.json"
+    },
+    {
+      "id": "emuready-listings",
+      "name": "EmuReady Compatibility Listings",
+      "type": "api-subset",
+      "parentSource": "emuready-api",
+      "endpoint": "/listings.get",
+      "description": "Per-game compatibility reports with performance ratings, votes, and developer verifications",
+      "dataProvides": ["emulatorCompatibility", "gamePerformance"],
+      "outputFiles": {
+        "emulatorCompatibility": "emulatorCompatibility.emuready.json",
+        "gamePerformance": "gamePerformance.emuready.json"
+      },
+      "conversionNotes": "EmuReady performance scales map to ROM Runner tiers. Listings include deviceId, emulatorId, and gameId."
+    },
+    {
+      "id": "emuready-device-compat",
+      "name": "EmuReady Device Compatibility Scores",
+      "type": "api-subset",
+      "parentSource": "emuready-api",
+      "endpoint": "/catalog.getDeviceCompatibility",
+      "description": "Aggregated deviceÃ¢â€ â€™system compatibility scores (0-100) calculated from performance ratings, community votes (Wilson score), and developer verifications",
+      "dataProvides": ["gamePerformance"],
+      "outputFile": "gamePerformance.emuready-aggregate.json",
+      "conversionNotes": "These are platform-wide defaults (gameId='*'). May overlap with RetroCatalog scores; use sourcePriority for tie-breaking."
+    },
+    {
+      "id": "emuready-emulator-config",
+      "name": "EmuReady Emulator Configurations",
+      "type": "api-subset",
+      "parentSource": "emuready-api",
+      "endpoint": "/listings.getEmulatorConfig",
+      "description": "Per-listing emulator configuration files for launching games with optimal settings",
+      "dataProvides": ["emulatorGameSettings"],
+      "outputFile": "emulatorGameSettings.emuready.json",
+      "conversionNotes": "Returns raw config file content. Store in rawConfigBlob field with format detection."
+    },
+
+    {
+      "id": "rpcs3-compat",
+      "name": "RPCS3 Compatibility List",
+      "type": "scrape",
+      "url": "https://rpcs3.net/compatibility",
+      "description": "Official RPCS3 PS3 emulator compatibility database",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["ps3"],
+      "emulators": ["rpcs3"],
+      "ingestScript": "scripts/ingest/rpcs3_compat.py",
+      "outputFile": "emulatorCompatibility.rpcs3.json"
+    },
+    {
+      "id": "dolphin-compat",
+      "name": "Dolphin Wiki Compatibility",
+      "type": "scrape",
+      "url": "https://wiki.dolphin-emu.org/index.php?title=Category:Compatibility",
+      "description": "Dolphin emulator GameCube/Wii compatibility wiki",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["gamecube", "wii"],
+      "emulators": ["dolphin"],
+      "ingestScript": "scripts/ingest/dolphin_compat.py",
+      "outputFile": "emulatorCompatibility.dolphin.json"
+    },
+    {
+      "id": "cemu-compat",
+      "name": "Cemu Compatibility List",
+      "type": "scrape",
+      "url": "https://compat.cemu.info/",
+      "description": "Cemu Wii U emulator compatibility database",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["wiiu"],
+      "emulators": ["cemu"],
+      "ingestScript": "scripts/ingest/cemu_compat.py",
+      "outputFile": "emulatorCompatibility.cemu.json"
+    },
+    {
+      "id": "pcsx2-compat",
+      "name": "PCSX2 Compatibility List",
+      "type": "scrape",
+      "url": "https://pcsx2.net/compat/",
+      "description": "PCSX2 PS2 emulator compatibility page",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["ps2"],
+      "emulators": ["pcsx2", "aethersx2", "nethersx2"],
+      "ingestScript": "scripts/ingest/pcsx2_compat.py",
+      "outputFile": "emulatorCompatibility.pcsx2.json"
+    },
+    {
+      "id": "vita3k-compat",
+      "name": "Vita3K Compatibility Database",
+      "type": "github",
+      "url": "https://github.com/Vita3K/compatibility/blob/master/compatibility.json",
+      "description": "Vita3K PS Vita emulator compatibility from GitHub",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["psvita"],
+      "emulators": ["vita3k"],
+      "ingestScript": "scripts/ingest/vita3k_compat.py",
+      "outputFile": "emulatorCompatibility.vita3k.json"
+    },
+    {
+      "id": "xemu-xdb",
+      "name": "xemu Compatibility Database",
+      "type": "github",
+      "url": "https://github.com/xemu-project/xdb",
+      "description": "xemu Xbox emulator compatibility from GitHub xdb",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["xbox"],
+      "emulators": ["xemu"],
+      "ingestScript": "scripts/ingest/xemu_xdb.py",
+      "outputFile": "emulatorCompatibility.xemu.json"
+    },
+    {
+      "id": "xenia-compat",
+      "name": "Xenia Compatibility Issues",
+      "type": "github",
+      "url": "https://github.com/xenia-project/game-compatibility/issues",
+      "description": "Xenia Xbox 360 emulator compatibility from GitHub issues",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["xbox360"],
+      "emulators": ["xenia"],
+      "ingestScript": "scripts/ingest/xenia_compat.py",
+      "outputFile": "emulatorCompatibility.xenia.json"
+    },
+    {
+      "id": "ppsspp-reports",
+      "name": "PPSSPP Reporting Server",
+      "type": "api",
+      "url": "https://report.ppsspp.org/",
+      "description": "PPSSPP PSP emulator reporting server",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["psp"],
+      "emulators": ["ppsspp"],
+      "ingestScript": "scripts/ingest/ppsspp_reports.py",
+      "outputFile": "emulatorCompatibility.ppsspp.json"
+    },
+    {
+      "id": "redream-compat",
+      "name": "Redream Compatibility",
+      "type": "scrape",
+      "url": "https://redream.io/compatibility",
+      "description": "Redream Dreamcast emulator compatibility list",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["dreamcast"],
+      "emulators": ["redream"],
+      "ingestScript": "scripts/ingest/redream_compat.py",
+      "outputFile": "emulatorCompatibility.redream.json"
+    },
+    {
+      "id": "scummvm-compat",
+      "name": "ScummVM Compatibility",
+      "type": "scrape",
+      "url": "https://www.scummvm.org/compatibility/",
+      "description": "ScummVM adventure game engine compatibility",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["scummvm"],
+      "emulators": ["scummvm"],
+      "ingestScript": "scripts/ingest/scummvm_compat.py",
+      "outputFile": "emulatorCompatibility.scummvm.json"
+    },
+    {
+      "id": "azahar-compat",
+      "name": "Azahar Compatibility",
+      "type": "github",
+      "url": "https://github.com/azahar-emu/compatibility-list",
+      "description": "Azahar 3DS emulator compatibility from GitHub",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["3ds"],
+      "emulators": ["azahar"],
+      "ingestScript": "scripts/ingest/azahar_compat.py",
+      "outputFile": "emulatorCompatibility.azahar.json"
+    },
+    {
+      "id": "duckstation-gamedb",
+      "name": "DuckStation GameDB",
+      "type": "github",
+      "url": "https://github.com/stenzek/duckstation/blob/master/data/database/gamedb.yaml",
+      "description": "DuckStation PS1 emulator game database with compatibility and settings",
+      "dataProvides": ["emulatorCompatibility", "emulatorGameSettings"],
+      "platforms": ["psx"],
+      "emulators": ["duckstation"],
+      "ingestScript": "scripts/ingest/duckstation_gamedb.py",
+      "outputFile": "emulatorCompatibility.duckstation.json"
+    },
+    {
+      "id": "portmaster-info",
+      "name": "PortMaster Port Info",
+      "type": "github",
+      "url": "https://github.com/PortMaster/PortMaster-Info",
+      "description": "PortMaster native Linux game ports catalog",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["ports"],
+      "emulators": ["portmaster"],
+      "ingestScript": "scripts/ingest/portmaster_info.py",
+      "outputFile": "emulatorCompatibility.portmaster.json"
+    },
+    {
+      "id": "fbneo-dat",
+      "name": "FBNeo DAT Files",
+      "type": "dat",
+      "url": "https://github.com/libretro/FBNeo/tree/master/dats",
+      "description": "Final Burn Neo arcade DAT files",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["arcade", "neogeo", "cps1", "cps2", "cps3"],
+      "emulators": ["fbneo"],
+      "ingestScript": "scripts/ingest/fbneo_dat_arcade.py",
+      "outputFile": "emulatorCompatibility.fbneo.json"
+    },
+    {
+      "id": "mame2003plus-xml",
+      "name": "MAME 2003-Plus XML",
+      "type": "xml",
+      "url": "https://github.com/libretro/mame2003-plus-libretro/blob/master/metadata/mame2003-plus.xml",
+      "description": "MAME 2003-Plus game list with driver status",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["arcade"],
+      "emulators": ["mame2003-plus"],
+      "ingestScript": "scripts/ingest/mame2003plus_xml.py",
+      "outputFile": "emulatorCompatibility.mame2003plus.json"
+    },
+    {
+      "id": "mame2003-xml",
+      "name": "MAME 2003 XML",
+      "type": "xml",
+      "description": "MAME 2003 game list with driver status",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["arcade"],
+      "emulators": ["mame2003"],
+      "ingestScript": "scripts/ingest/mame2003_xml.py",
+      "outputFile": "emulatorCompatibility.mame2003.json"
+    },
+    {
+      "id": "cdi-theworldofcdi",
+      "name": "TheWorldOfCDi Emulator Compatibility",
+      "type": "scrape",
+      "url": "https://www.theworldofcdi.com/",
+      "description": "CD-i emulator compatibility from TheWorldOfCDi",
+      "dataProvides": ["emulatorCompatibility"],
+      "platforms": ["cdi"],
+      "emulators": ["same_cdi", "cdiemu"],
+      "ingestScript": "scripts/ingest/cdi_emulator_theworldofcdi.py",
+      "outputFile": "emulatorCompatibility.cdi.json"
+    },
+
+    {
+      "id": "user-override",
+      "name": "User Overrides",
+      "type": "local",
+      "description": "User-provided compatibility and settings overrides. Highest priority.",
+      "dataProvides": ["emulatorCompatibility", "emulatorGameSettings", "gamePerformance"],
+      "location": "user://overrides/",
+      "priority": 0
+    },
+    {
+      "id": "community-verified",
+      "name": "Community Verified Reports",
+      "type": "local",
+      "description": "Community-submitted and verified compatibility reports",
+      "dataProvides": ["emulatorCompatibility", "emulatorGameSettings", "gamePerformance"],
+      "location": "community://verified/"
+    },
+    {
+      "id": "rom-runner-db",
+      "name": "ROM Runner Database",
+      "type": "local",
+      "description": "ROM Runner's curated baseline compatibility and performance data",
+      "dataProvides": ["emulatorCompatibility", "emulatorGameSettings", "gamePerformance"],
+      "location": "definitionpack://",
+      "notes": "Fallback source when no other data exists"
+    }
+  ],
+
+  "ingestFramework": {
+    "description": "Configuration for running compatibility ingest scripts",
+    "cacheDir": ".cache/compat",
+    "outputDir": "out/compat",
+    "defaultRateLimitMs": 1000,
+    "authEnvVars": {
+      "RETROCATALOG_API_KEY": "API key for RetroCatalog official API",
+      "EMUREADY_API_KEY": "Bearer JWT for EmuReady API (Clerk auth)",
+      "GITHUB_TOKEN": "GitHub personal access token for higher rate limits"
+    },
+    "commands": {
+      "runAll": "python -m scripts.ingest.run_all --out-dir out/compat --cache-dir .cache/compat",
+      "runSingle": "python -m scripts.ingest.{script_name} --out {output_file} --cache-dir .cache/compat",
+      "mergeOutputs": "python -m scripts.ingest.merge_outputs --in-dir out/compat --out out/merged/"
+    }
+  }
+}

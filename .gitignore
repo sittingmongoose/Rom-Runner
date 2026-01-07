@@ -54,3 +54,4 @@ src-tauri/target/
 .cursor/**/.cache/
 .cursor/**/cache/
 .cursor/**/.tmp/
+.claude/_state/

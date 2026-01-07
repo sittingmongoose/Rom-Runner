@@ -1,170 +1,96 @@
-# ROM Runner - Development Bundle
+# ROM Runner
 
-**Bundle Version:** 1.1.0  
-**Generated:** 2026-01-07  
-**Status:** Ready for Cursor IDE development
+A future **desktop ROM + BIOS organizer** aimed at making it easy to prepare curated retro libraries for handhelds and other emulation setups.
 
-## Quick Start
+This repo is **early-stage**: it’s a design-and-data foundation (requirements, schemas, catalogs, scaffolding).  
+**There is no working application yet.**
 
-1. Extract this bundle to your project root
-2. Run `npm create tauri-app@latest rom-runner` (or use existing Tauri project)
-3. Copy these files into your project structure
-4. Follow `docs/guides/ROM_Runner_Cursor_Setup_Guide.md`
+---
 
-## Cursor MCP (Context7) — keep keys out of git
+## Why this exists
 
-- Template committed: `.cursor/mcp-config.example.json`
-- Local secret file (gitignored): `.cursor/mcp-config.json`
+Building a “ROM manager” gets messy fast: different devices want different folder layouts, BIOS files vary by core, and collections grow into thousands of files. ROM Runner’s goal is to become a simple desktop tool that can:
 
-Generate the local file from 1Password on each machine:
+- Inventory ROMs and BIOS files from one or more sources
+- Validate BIOS presence and hashes
+- Apply target-specific organization rules (per device / OS / emulator)
+- Copy/sync a curated subset to a destination (microSD/USB/network), efficiently and safely
 
-If an API key was ever committed to git history, rotate it (history can retain secrets even after deletion).
+---
 
-macOS/Linux:
-```sh
-export OP_CONTEXT7_API_KEY_REF='op://Your Vault/Your Item/CONTEXT7_API_KEY'
-./bin/setup-mcp-context7.sh
-```
+## What’s in the repository (today)
 
-Windows (PowerShell):
-```powershell
-$env:OP_CONTEXT7_API_KEY_REF = 'op://Your Vault/Your Item/CONTEXT7_API_KEY'
-.\bin\setup-mcp-context7.ps1
-```
+This repo contains the **groundwork** that implementation will be built from:
 
-## Directory Structure
+- **Requirements and planning docs**  
+  Product requirements, architecture notes, and supporting analysis.
 
-```
-rom-runner-bundle/
-├── .cursor/                    # Cursor IDE configuration
-│   └── rules                   # AI rules for Cursor
-├── docs/                       # Documentation
-│   ├── ROM_Runner_Complete_Requirements.md
-│   ├── ROM_Runner_File_Manifest.md
-│   ├── ROM_Runner_JSON_Schemas.json
-│   ├── specs/                  # Detailed specifications
-│   │   └── ROM_Runner_Theme_System_Specification_v1_0_0.md
-│   ├── architecture/           # Architecture docs
-│   ├── guides/                 # Setup & task guides
-│   ├── analysis/               # Reviews & inventories
-│   └── prompts/                # AI prompts for development
-├── resources/                  # Static assets
-│   └── branding/               # Logo files (NEW in v1.1.0)
-│       ├── Rom_Runner_-_Badge_1.svg
-│       ├── Rom_Runner_-_Badge_1_2x.png
-│       ├── Rom_Runner_-_Full_1.svg
-│       └── Rom_Runner_-_Full_1_2x.png
-├── src/                        # Frontend (React/TypeScript)
-│   ├── stores/                 # Zustand state management
-│   ├── bindings/               # Tauri IPC bindings
-│   ├── components/             # React components
-│   └── styles/                 # CSS & Tailwind config
-│       └── tokens.css          # Theme CSS custom properties
-├── src-tauri/                  # Backend (Rust)
-│   ├── src/
-│   │   ├── database/           # SQLite schema & migrations
-│   │   ├── commands/           # Tauri IPC commands
-│   │   └── bios/               # BIOS verification types
-│   └── definition-pack/        # Static data catalogs
-│       ├── platforms.json      # 70+ gaming platforms
-│       ├── emulators.json      # 100+ emulators
-│       ├── devices.json        # 600+ handheld devices
-│       ├── bios-hashes.json    # BIOS verification data
-│       └── compatibility/      # Compatibility framework
-├── scripts/                    # Python ingestor scripts
-│   └── ingest/                 # Community data ingestors
-└── samples/                    # Sample data files
-```
+- **Data catalogs (“definition pack”)**  
+  JSON catalogs describing platforms, emulators, operating systems, devices, BIOS hashes, and compatibility metadata.
 
-## Key Files
+- **Scaffolding / stubs**  
+  Early frontend/backend structure to align future implementation with the documented models.
 
-| File | Purpose |
-|------|---------|
-| `docs/guides/ROM_Runner_Cursor_Setup_Guide.md` | Main setup instructions |
-| `docs/guides/ROM_Runner_Phase0_Tasks.md` | Phase 0 task breakdown |
-| `docs/specs/ROM_Runner_Theme_System_Specification_v1_0_0.md` | Theme system spec (NEW) |
-| `src/stores/index.ts` | Zustand store exports |
-| `src/styles/tokens.css` | Theme CSS custom properties |
-| `src/bindings/commands.ts` | TypeScript IPC wrappers |
-| `src-tauri/src/commands/mod.rs` | Rust command handlers |
-| `src-tauri/src/database/schema.sql` | SQLite schema v1.0.1 |
-| `resources/branding/` | Logo assets (NEW) |
+- **Ingestion scripts**  
+  Python tooling used to generate/maintain the catalogs.
 
-## Version Summary
+---
 
-| Component | Version |
-|-----------|---------|
-| Requirements | v2.6.0 |
-| JSON Schemas | v1.1.0 |
-| SQLite Schema | v1.0.1 |
-| Zustand Stores | v1.1.0 |
-| Tauri Commands | v1.0.0 |
-| Definition Pack | v2.x |
-| Theme System | v1.0.0 |
-| Cursor Rules | v1.1.0 |
-| UI Architecture | v1.1.0 |
-| Stores Architecture | v1.1.0 |
+## How to navigate
 
-## What's Included
+If you’re trying to understand the project, start here:
 
-### Frontend (76+ files)
-- 6 Zustand stores with full TypeScript types
-- Tauri IPC bindings for 76 commands
-- CSS design tokens & Tailwind configuration
-- Theme system with 4 built-in themes (NEW in v1.1.0)
+- **Requirements (source of truth):** `docs/ROM_Runner_Complete_Requirements_v2_6_0.md`
+- **File map of the bundle:** `docs/ROM_Runner_File_Manifest.md`
+- **Schemas / models:** `docs/ROM_Runner_JSON_Schemas.json`
 
-### Backend Stubs (3 files)
-- Rust command signatures (stubs)
-- SQLite schema + migration
+If you want to inspect the data foundation:
 
-### Definition Pack (9 files)
-- platforms.json - 70+ platforms
-- emulators.json - 100+ emulators
-- devices.json - 600+ devices
-- operating-systems.json - 60+ OS entries
-- bios-hashes.json - Verification database
-- Plus compatibility framework files
+- **Definition pack:** `src-tauri/definition-pack/`
+  - platforms, emulators, devices, operating systems
+  - BIOS hashes
+  - compatibility framework + compatibility data
 
-### Theme System (NEW in v1.1.0)
-- 4 built-in theme families (Default, Neumorphism, Retro, Terminal)
-- Light/dark/system color modes
-- Custom theme import/export support
-- WCAG 2.1 AA accessibility compliance
-- Complete CSS custom properties
+---
 
-### Branding Assets (NEW in v1.1.0)
-- Full logo (SVG + PNG @2x)
-- Badge logo (SVG + PNG @2x)
-- Brand color definitions
+## Current scope
 
-### Python Scripts (20+ files)
-- Layer A: Official emulator compatibility scrapers
-- Layer B: Emulator game settings parsers
-- Layer C: Community sheet ingestors
+**In scope (being defined/built toward):**
+- Device-aware organization rules (platform folders, BIOS placement rules, etc.)
+- BIOS verification via hashes
+- Catalog-driven behavior (schemas + definition pack)
+- A desktop UX for selecting sources, targets, and curated sets
 
-## Theme Support
+**Not in scope (for now):**
+- Shipping a full ROM scraper / metadata front-end (box art, descriptions, etc.)
+- Bundling copyrighted ROM/BIOS content
+- A cloud service (this is intended to be a local desktop app)
 
-ROM Runner supports multiple visual themes:
+---
 
-| Theme | Description | Light | Dark |
-|-------|-------------|:-----:|:----:|
-| Default | Clean, modern professional | ✓ | ✓ |
-| Neumorphism | Soft shadows, extruded UI | ✓ | ✓ |
-| Retro | Vintage gaming aesthetic | ✓ | ✓ |
-| Terminal | Green phosphor CRT style | — | Fixed |
+## Roadmap (high level)
 
-See `docs/specs/ROM_Runner_Theme_System_Specification_v1_0_0.md` for details.
+- Turn the requirements + schemas into an implemented desktop app UI and workflow
+- Wire the definition pack into runtime logic and validation
+- Implement scanning + incremental sync/copy (minimize writes, resumable jobs)
+- Add device/OS-specific target layouts and deployment rules
+- Expand compatibility/performance metadata over time
 
-## Next Steps
+---
 
-1. Review `docs/guides/ROM_Runner_Cursor_Setup_Guide.md`
-2. Complete Phase 0 tasks in `docs/guides/ROM_Runner_Phase0_Tasks.md`
-3. Use `docs/guides/ROM_Runner_Quick_Reference.md` during development
-4. Review theme system in `docs/specs/ROM_Runner_Theme_System_Specification_v1_0_0.md`
+## Contributing
 
-## Version History
+This project is at an early foundation stage. Useful contributions right now include:
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.1.0 | Jan 7, 2026 | Added theme system, branding assets, updated stores/UI architecture |
-| 1.0.0 | Jan 7, 2026 | Initial bundle release |
+- Improving the definition pack data quality (platforms/emulators/devices/BIOS hashes)
+- Tightening schemas and validation rules
+- Identifying edge cases in device layouts and BIOS requirements
+- UX flow feedback based on the requirements doc
+
+If you’re opening a PR, keep changes **small and focused** and reference the relevant doc/schema where possible.
+
+---
+
+## License
+
+License information will be added as the project solidifies.

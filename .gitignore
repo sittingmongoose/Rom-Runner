@@ -48,7 +48,7 @@ src-tauri/target/
 .claude/settings.local.json
 
 # Cursor MCP config contains secrets (commit the .example.json instead)
-.cursor/mcp-config.json
+.cursor/mcp.json
 
 # Cursor cache / temp (safe to ignore)
 .cursor/**/.cache/

@@ -40,7 +40,7 @@ This repo contains the **groundwork** that implementation will be built from:
 
 If you’re trying to understand the project, start here:
 
-- **Requirements (source of truth):** `docs/ROM_Runner_Complete_Requirements_v2_6_0.md`
+- **Requirements (source of truth):** `docs/ROM_Runner_Complete_Requirements.md` (currently v2.7.0)
 - **File map of the bundle:** `docs/ROM_Runner_File_Manifest.md`
 - **Schemas / models:** `docs/ROM_Runner_JSON_Schemas.json`
 

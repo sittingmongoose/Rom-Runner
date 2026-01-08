@@ -15,6 +15,7 @@
       "**/.git": true
     },
     "terminal.integrated.cwd": "${workspaceFolder}",
-    "chatgpt.cliExecutable": "/usr/local/bin/codex-romrunner"
+    "chatgpt.cliExecutable": "/usr/local/bin/codex-romrunner",
+    "claudeCode.claudeProcessWrapper": "/usr/local/bin/claude-romrunner"
 }
   

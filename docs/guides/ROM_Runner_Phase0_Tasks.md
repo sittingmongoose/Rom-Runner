@@ -47,7 +47,7 @@ npm run tauri dev
 
 1. Create `.cursorrules` file in project root (see Setup Guide)
 2. Create `.cursorignore` file
-3. Copy specification files to `docs/specs/`
+3. Copy architecture/spec files to `docs/architecture/` and `docs/specs/` as applicable
 4. Copy Zustand stores to `src/stores/`
 
 **Acceptance:** Cursor recognizes project context.
@@ -72,7 +72,7 @@ Requirements:
 3. Update src/styles/index.css with Tailwind directives
 4. Verify dark mode class strategy
 
-Reference: docs/specs/UI_SCREEN_ARCHITECTURE_v1_1_0.md, Section 10 (Design System)
+Reference: docs/architecture/UI_SCREEN_ARCHITECTURE_v1_1_0.md, Section 10 (Design System)
 ```
 
 **Files Created:**
@@ -100,7 +100,7 @@ Requirements:
 2. Import tokens.css in main stylesheet
 3. Use CSS variables that can be toggled via .dark class on html
 
-Reference: docs/specs/UI_SCREEN_ARCHITECTURE_v1_1_0.md, Section 10
+Reference: docs/architecture/UI_SCREEN_ARCHITECTURE_v1_1_0.md, Section 10
 ```
 
 **Files Created:**
@@ -130,7 +130,7 @@ Requirements:
 Interface (from types.ts):
 - Use uiStore's sidebarCollapsed state
 
-Reference: docs/specs/UI_SCREEN_ARCHITECTURE_v1_1_0.md, Section 1 (App Shell)
+Reference: docs/architecture/UI_SCREEN_ARCHITECTURE_v1_1_0.md, Section 1 (App Shell)
 ```
 
 **Files Created:**
@@ -160,7 +160,7 @@ Requirements:
 6. Use Lucide React icons
 7. Keyboard navigation support
 
-Reference: docs/specs/UI_SCREEN_ARCHITECTURE_v1_1_0.md, Section 1.3 (Sidebar)
+Reference: docs/architecture/UI_SCREEN_ARCHITECTURE_v1_1_0.md, Section 1.3 (Sidebar)
 ```
 
 **Files Created:**
@@ -188,7 +188,7 @@ Requirements:
 4. Style: Match native titlebar appearance
 5. Use @tauri-apps/api/window for window controls
 
-Reference: docs/specs/UI_SCREEN_ARCHITECTURE_v1_1_0.md, Section 1.2 (Titlebar)
+Reference: docs/architecture/UI_SCREEN_ARCHITECTURE_v1_1_0.md, Section 1.2 (Titlebar)
 ```
 
 **Files Created:**
@@ -241,7 +241,7 @@ Initialize the SQLite database for ROM Runner Tauri backend.
 Requirements:
 1. Use rusqlite crate
 2. Create database at app data directory
-3. Apply schema from docs/schema_v1_0_1.sql
+3. Apply schema from src-tauri/src/database/schema.sql
 4. Create Tauri commands:
    - init_database() → initialize on app start
    - get_db_stats() → return table counts
@@ -258,7 +258,7 @@ Tables needed (from schema):
 - deployments
 - settings
 
-Reference: ChatGPT_Work_Package_Review_v1_0_0.md for schema details
+Reference: docs/analysis/ChatGPT_Work_Package_Review.md for schema details
 ```
 
 **Files Created:**

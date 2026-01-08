@@ -1,12 +1,13 @@
 # ROM Runner Definition Files Manifest
-**Version:** 2.6.0  
-**Last Updated:** January 7, 2026  
+**Version:** 2.7.0  
+**Last Updated:** January 8, 2026  
 **Purpose:** Comprehensive tracking of files in the ROM Runner development bundle (definition pack + stubs + scripts + docs)
 ---
-## Summary of Changes (v2.6.0)
+## Summary of Changes (v2.7.0)
 This update aligns the manifest with the current bundle layout (filenames, folders, and newly added docs/scripts).
 ### Notable Updates
-- Updated requirements to **v2.6.0** (`docs/ROM_Runner_Complete_Requirements_v2_6_0.md`).
+- Updated requirements to **v2.7.0** (`docs/ROM_Runner_Complete_Requirements.md` → `docs/ROM_Runner_Complete_Requirements_v2_7_0.md`).
+- Added `docs/analysis/ROM_Runner_Restored_Sections_v1_0_0.md` as a reference for what was restored into v2.7.0.
 - Standardized on **stable filenames** for definition-pack JSON (versions live inside the JSON `version` field).
 - Updated architecture docs to **v1.1.0**.
 - Added bundle tooling docs and Cursor command templates.
@@ -47,11 +48,13 @@ Paths below are **relative to the bundle root**.
 ### Core Documentation
 | Path | Version | Status | Notes |
 |------|---------|--------|------|
-| `docs/ROM_Runner_Complete_Requirements_v2_6_0.md` | 2.6.0 | ✅ ACTIVE | Source-of-truth requirements |
-| `docs/ROM_Runner_File_Manifest.md` | 2.6.0 | ✅ ACTIVE | This manifest |
+| `docs/ROM_Runner_Complete_Requirements.md` | 2.7.0 | ✅ ACTIVE | Stable pointer to current requirements |
+| `docs/ROM_Runner_Complete_Requirements_v2_7_0.md` | 2.7.0 | ✅ ACTIVE | Source-of-truth requirements (current) |
+| `docs/ROM_Runner_File_Manifest.md` | 2.7.0 | ✅ ACTIVE | This manifest |
 | `docs/ROM_Runner_JSON_Schemas.json` | 1.1.0 | ✅ ACTIVE | JSON Schema definitions (`version` field inside) |
 | `docs/analysis/INTEGRATION_SUMMARY.md` | - | ✅ ACTIVE | RetroCatalog / integration notes |
 | `docs/analysis/ChatGPT_Work_Package_Review.md` | - | ✅ ACTIVE | Deliverables review |
+| `docs/analysis/ROM_Runner_Restored_Sections_v1_0_0.md` | 1.0.0 | 📋 REFERENCE | What was restored into requirements v2.7.0 |
 | `docs/analysis/ROM_Runner_GitHub_File_Inventory.md` | 1.0.0 | 📋 REFERENCE | Inventory doc (may include planned files) |
 | `docs/analysis/ROM_Runner_Missing_Files_Analysis.md` | - | 📋 REFERENCE | Gaps/next steps |
 
@@ -205,6 +208,7 @@ Located in `scripts/ingest/`.
 ### ROM_Runner_Complete_Requirements
 | Version | Date | Key Changes |
 |---------|------|-------------|
+| 2.7.0 | 2026-01-08 | Restored missing sections (see restored sections reference), requirements content update |
 | 2.6.0 | 2026-01-07 | Theme system, updated architecture docs, bundle alignment |
 | 2.5.0 | 2026-01-04 | Destination scanning, layout detection profiles |
 | 2.4.0 | 2026-01-03 | OS emulator profiles, platform policies, Layer C sources |
@@ -213,6 +217,7 @@ Located in `scripts/ingest/`.
 ### ROM_Runner_File_Manifest
 | Version | Date | Key Changes |
 |---------|------|-------------|
+| 2.7.0 | 2026-01-08 | Requirements bumped to v2.7.0 + added stable requirements pointer + Phase0 path fixes |
 | 2.6.0 | 2026-01-07 | Updated for stable filenames + new bundle files |
 | 2.5.0 | 2026-01-05 | Prior comprehensive update (versioned filenames) |
 | 2.4.0 | 2026-01-05 | Added layout detection, SQLite schema, UI architecture |

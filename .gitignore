@@ -46,7 +46,7 @@ src-tauri/target/
 .claude/
 .codex/
 .cursorrules
-.cursor/rules/
+.cursor/
 
 # --- Local tools / scripts ---
 bin/

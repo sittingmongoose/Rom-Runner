@@ -40,22 +40,23 @@ build/
 target/
 src-tauri/target/
 
-# --- IDEs / Editor configs ---
+# --- IDEs ---
 .idea/
-.vscode/
-.claude/
-.codex/
-.cursorrules
-.cursor/
 
-# --- Local tools / scripts ---
-bin/
+# --- Local-only settings (templates are committed separately) ---
+.vscode/settings.local.json
+.claude/settings.local.json
+
+# Cursor MCP config contains secrets (commit the .example.json instead)
+.cursor/mcp.json
 mcp.json
 
-# --- Cache / temp directories ---
-.cache/
-.npm/
+# Cursor cache / temp (safe to ignore)
 .cursor/**/.cache/
 .cursor/**/cache/
 .cursor/**/.tmp/
 .claude/_state/
+
+# --- Cache / temp directories ---
+.cache/
+.npm/

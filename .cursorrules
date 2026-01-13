@@ -1,0 +1,291 @@
+# ROM Runner — Cursor Rules
+
+**Bundle Version:** 1.1.0  
+**Generated:** 2026-01-07  
+**Source of truth:** `README.md` (and the companion `rules` file in this bundle)
+
+These rules are meant to keep Cursor's AI grounded in the bundle's **actual** file layout and "known-good" reference docs.  
+If any path here disagrees with `README.md`, **trust the README** and update this file.
+
+---
+
+## Read First (always open these before starting a task)
+
+1. `docs/guides/ROM_Runner_Cursor_Setup_Guide.md` — setup + workflow
+2. `docs/guides/ROM_Runner_Phase0_Tasks.md` — Phase 0 checklist
+3. `docs/guides/ROM_Runner_Quick_Reference.md` — day-to-day dev reference
+4. `docs/ROM_Runner_Complete_Requirements.md` — requirements (v2.6.0 per README)
+5. `docs/ROM_Runner_File_Manifest.md` — what files exist and where
+6. `docs/ROM_Runner_JSON_Schemas.json` — schema/source-of-truth for types (v1.1.0 per README)
+7. `docs/specs/ROM_Runner_Theme_System_Specification_v1_0_0.md` — **theme system spec**
+8. `src/stores/types.ts` — shared TypeScript types (do **not** duplicate)
+
+---
+
+## Directory Structure (from README)
+
+```
+rom-runner-bundle/
+├── .cursor/                    # Cursor IDE configuration
+│   └── rules                   # AI rules for Cursor
+├── docs/                       # Documentation
+│   ├── ROM_Runner_Complete_Requirements.md
+│   ├── ROM_Runner_File_Manifest.md
+│   ├── ROM_Runner_JSON_Schemas.json
+│   ├── specs/                  # Detailed specifications
+│   │   └── ROM_Runner_Theme_System_Specification_v1_0_0.md
+│   ├── architecture/           # Architecture docs
+│   ├── guides/                 # Setup & task guides
+│   ├── analysis/               # Reviews & inventories
+│   └── prompts/                # AI prompts for development
+├── resources/                  # Static assets
+│   └── branding/               # Logo files
+│       ├── Rom_Runner_-_Badge_1.svg
+│       ├── Rom_Runner_-_Badge_1_2x.png
+│       ├── Rom_Runner_-_Full_1.svg
+│       └── Rom_Runner_-_Full_1_2x.png
+├── src/                        # Frontend (React/TypeScript)
+│   ├── stores/                 # Zustand state management
+│   ├── styles/                 # CSS & design tokens
+│   │   └── tokens.css          # Theme CSS custom properties
+│   └── ...
+├── src-tauri/                  # Backend (Rust/Tauri)
+│   └── src/
+│       ├── database/           # SQLite schema & migrations
+│       ├── commands/           # Tauri IPC commands
+│       └── bios/               # BIOS verification types
+│   └── definition-pack/        # Static data catalogs
+│       ├── platforms.json
+│       ├── emulators.json
+│       ├── devices.json
+│       ├── bios-hashes.json
+│       └── compatibility/
+├── scripts/                    # Python ingestor scripts
+│   └── ingest/                 # Community data ingestors
+└── samples/                    # Sample data files
+```
+
+---
+
+## Tech Stack (from README)
+
+- **Frontend:** React 18, TypeScript 5.x, Zustand, TanStack Query, TailwindCSS
+- **Backend:** Rust, Tauri 2.0, SQLite (rusqlite), tokio
+- **UI Components:** Radix UI primitives, Lucide React icons
+- **Data:** JSON definition packs + SQLite for user data
+
+---
+
+## "Always include in context" files (when editing code)
+
+When you change anything related to these areas, always pull in the nearest source-of-truth files:
+
+- **Types & schemas**
+  - `docs/ROM_Runner_JSON_Schemas.json`
+  - `src/stores/types.ts`
+- **Stores**
+  - `src/stores/index.ts` (exports)
+  - the specific store file you're modifying (avoid cross-store drift)
+- **IPC / commands**
+  - `src/bindings/commands.ts` (TypeScript IPC wrappers)
+  - `src-tauri/src/commands/mod.rs` (Rust command handlers)
+- **Database**
+  - `src-tauri/src/database/schema.sql` (SQLite schema v1.0.1 per README)
+- **Themes & Styling**
+  - `docs/specs/ROM_Runner_Theme_System_Specification_v1_0_0.md`
+  - `src/styles/tokens.css`
+- **Branding & Assets**
+  - `resources/branding/` (logo files)
+
+---
+
+## Theme System (NEW in v1.1.0)
+
+ROM Runner supports multiple visual themes. **Always reference the Theme System Specification** when working on UI.
+
+### Built-in Themes
+
+| Theme Family | Light Mode | Dark Mode | Notes |
+|--------------|:----------:|:---------:|-------|
+| **Default** | ✓ | ✓ | Clean, modern |
+| **Neumorphism** | ✓ | ✓ | Soft shadows, extruded UI |
+| **Retro** | ✓ | ✓ | Vintage gaming aesthetic |
+| **Terminal** | — | Fixed | Green phosphor on black |
+
+### Theme CSS Classes
+
+```css
+/* Theme family classes */
+.theme-default
+.theme-neumorphic
+.theme-retro
+.theme-terminal
+
+/* Color mode classes (combined with theme family) */
+.light
+.dark
+```
+
+### Theme-Related State
+
+```typescript
+// In settingsStore
+themeFamily: 'default' | 'neumorphic' | 'retro' | 'terminal';
+themeMode: 'light' | 'dark' | 'system';
+customThemes: Map<string, CustomTheme>;
+```
+
+### Brand Colors (from logo)
+
+```css
+--brand-blue: #1f6cb2;   /* Logo circle */
+--brand-navy: #02375e;   /* Logo text */
+--brand-gray: #dbddda;   /* Logo character */
+```
+
+---
+
+## Definition Pack guidance (from README)
+
+Static catalogs live in **`src-tauri/definition-pack/`** (treat as authoritative data inputs):
+
+- `platforms.json` — 70+ platforms  
+- `emulators.json` — 100+ emulators  
+- `devices.json` — 600+ handheld devices  
+- `operating-systems.json` — 60+ OS entries (if present in the pack)  
+- `bios-hashes.json` — BIOS verification database  
+- `compatibility/` — compatibility framework files  
+
+Do **not** hardcode data that belongs in the definition pack.
+
+---
+
+## Code Standards
+
+### TypeScript
+
+- **Use existing interfaces** from `src/stores/types.ts` — never create duplicates.
+- **Import types properly:** `import type { GameEntry } from '@/stores/types'`
+- Prefer narrow types / const assertions for literals.
+- Avoid `any` and `// @ts-ignore` (fix types instead).
+- Handle loading / error / empty states in UI components.
+- Debounce user-driven search inputs.
+
+### React + state
+
+- Prefer selectors: `useLibraryStore(state => state.games)` (avoid subscribing to entire store).
+- Keep components small and composable; push complex logic into hooks and stores.
+
+### Tailwind / UI
+
+- **Support all themes** — not just light/dark mode. Use CSS custom properties.
+- Use theme classes: `.theme-default`, `.theme-neumorphic`, `.theme-retro`, `.theme-terminal`
+- Use tokens from `src/styles/tokens.css`, not hardcoded colors.
+- Follow consistent spacing scale: 0.5, 1, 2, 4, 6, 8, 12, 16, 24.
+- Use `var(--surface-0)`, `var(--text-primary)`, etc. for theme-aware colors.
+
+### Neumorphic Components
+
+When building components for the neumorphic theme:
+
+```css
+/* Use neumorphic shadow utilities */
+.neu-raised { box-shadow: var(--neu-raised); }
+.neu-pressed { box-shadow: var(--neu-pressed); }
+.neu-flat { box-shadow: var(--neu-flat); }
+```
+
+### Terminal Theme Components
+
+When building components for the terminal theme:
+
+```css
+/* Terminal glow effect */
+.terminal-glow { text-shadow: 0 0 5px var(--glow-color); }
+```
+
+### Rust / Tauri
+
+- Keep Rust command signatures aligned with `src/bindings/commands.ts`.
+- Prefer explicit error types and clear boundary conversion (Rust ↔ TS).
+
+---
+
+## Common Patterns
+
+### Invoking Tauri commands (TypeScript)
+
+```ts
+import { invoke } from '@tauri-apps/api/core'
+
+const result = await invoke<ScanResult>('scan_rom_directory', {
+  path: directoryPath,
+  recursive: true,
+})
+```
+
+### Applying Theme
+
+```tsx
+// Theme is applied via CSS classes on document root
+const applyTheme = (family: ThemeFamily, mode: ThemeMode) => {
+  const root = document.documentElement;
+  root.classList.remove('theme-default', 'theme-neumorphic', 'theme-retro', 'theme-terminal');
+  root.classList.remove('light', 'dark');
+  
+  root.classList.add(`theme-${family}`);
+  
+  if (family !== 'terminal') {
+    const resolvedMode = mode === 'system' 
+      ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+      : mode;
+    root.classList.add(resolvedMode);
+  }
+};
+```
+
+---
+
+## Do Not
+
+1. ❌ Create new interfaces when one exists in `src/stores/types.ts`
+2. ❌ Subscribe to entire stores (causes unnecessary re-renders)
+3. ❌ Hardcode definition-pack data in UI or stores
+4. ❌ Skip theme support — **support all 4 themes, not just light/dark**
+5. ❌ Use hardcoded colors — use CSS custom properties from tokens.css
+6. ❌ Ignore TypeScript errors or silence them
+7. ❌ Leave `console.log` in production code (use proper logging)
+8. ❌ Change layout/position of elements between themes (only colors/shadows/fonts change)
+
+---
+
+## Testing Requirements
+
+Each UI component should have at least a basic test (render + key assertions).  
+Prefer small, stable tests over snapshot-heavy suites.
+
+**Theme Testing:** Test components render correctly in at least default-light and default-dark modes.
+
+---
+
+## When You Need Help
+
+- **Architecture decisions** → Ask Claude (design / tradeoffs)
+- **Complex Rust code** → Ask Claude Code
+- **Theme/styling questions** → Check `docs/specs/ROM_Runner_Theme_System_Specification_v1_0_0.md`
+- **Bulk component generation** → Use a codegen pass (then review)
+- **Simple components** → Continue in Cursor
+
+---
+
+## Version History
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 1.1.0 | Jan 7, 2026 | Added theme system, branding assets, theme-aware styling |
+| 1.0.0 | Jan 7, 2026 | Initial rules file |
+
+---
+
+This rules file targets ROM Runner **v0.1.x** development.
+Last updated: **2026-01-07**

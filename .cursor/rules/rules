@@ -1,0 +1,175 @@
+# ROM Runner — Cursor Rules
+
+**Bundle Version:** 1.0.0  
+**Generated:** 2026-01-07  
+**Source of truth:** `README.md`
+
+These rules are meant to keep Cursor’s AI grounded in the bundle’s **actual** file layout and “known-good” reference docs.  
+If any path here disagrees with `README.md`, **trust the README** and update this file.
+
+---
+
+## Read First (always open these before starting a task)
+
+1. `docs/guides/ROM_Runner_Cursor_Setup_Guide.md` — setup + workflow
+2. `docs/guides/ROM_Runner_Phase0_Tasks.md` — Phase 0 checklist
+3. `docs/guides/ROM_Runner_Quick_Reference.md` — day-to-day dev reference
+4. `docs/ROM_Runner_Complete_Requirements.md` — requirements (v2.5.0 per README)
+5. `docs/ROM_Runner_File_Manifest.md` — what files exist and where
+6. `docs/ROM_Runner_JSON_Schemas.json` — schema/source-of-truth for types (v1.1.0 per README)
+7. `src/stores/types.ts` — shared TypeScript types (do **not** duplicate)
+
+---
+
+## Directory Structure (from README)
+
+```
+rom-runner-bundle/
+├── .cursor/                    # Cursor IDE configuration
+│   └── rules                   # AI rules for Cursor
+├── docs/                       # Documentation
+│   ├── ROM_Runner_Complete_Requirements.md
+│   ├── ROM_Runner_File_Manifest.md
+│   ├── ROM_Runner_JSON_Schemas.json
+│   ├── architecture/           # Architecture docs
+│   ├── guides/                 # Setup & task guides
+│   ├── analysis/               # Reviews & inventories
+│   └── prompts/                # AI prompts for development
+├── src/                        # Frontend (React/TypeScript)
+│   ├── stores/                 # Zustand state management
+│   └── ...
+├── src-tauri/                  # Backend (Rust/Tauri)
+│   └── src/
+│       ├── database/           # SQLite schema & migrations
+│       ├── commands/           # Tauri IPC commands
+│       └── bios/               # BIOS verification types
+│   └── definition-pack/        # Static data catalogs
+│       ├── platforms.json
+│       ├── emulators.json
+│       ├── devices.json
+│       ├── bios-hashes.json
+│       └── compatibility/
+├── scripts/                    # Python ingestor scripts
+│   └── ingest/                 # Community data ingestors
+└── samples/                    # Sample data files
+```
+
+---
+
+## Tech Stack (from README)
+
+- **Frontend:** React 18, TypeScript 5.x, Zustand, TanStack Query, TailwindCSS
+- **Backend:** Rust, Tauri 2.0, SQLite (rusqlite), tokio
+- **UI Components:** Radix UI primitives, Lucide React icons
+- **Data:** JSON definition packs + SQLite for user data
+
+---
+
+## “Always include in context” files (when editing code)
+
+When you change anything related to these areas, always pull in the nearest source-of-truth files:
+
+- **Types & schemas**
+  - `docs/ROM_Runner_JSON_Schemas.json`
+  - `src/stores/types.ts`
+- **Stores**
+  - `src/stores/index.ts` (exports)
+  - the specific store file you’re modifying (avoid cross-store drift)
+- **IPC / commands**
+  - `src/bindings/commands.ts` (TypeScript IPC wrappers)
+  - `src-tauri/src/commands/mod.rs` (Rust command handlers)
+- **Database**
+  - `src-tauri/src/database/schema.sql` (SQLite schema v1.0.1 per README)
+
+---
+
+## Definition Pack guidance (from README)
+
+Static catalogs live in **`src-tauri/definition-pack/`** (treat as authoritative data inputs):
+
+- `platforms.json` — 70+ platforms  
+- `emulators.json` — 100+ emulators  
+- `devices.json` — 600+ handheld devices  
+- `operating-systems.json` — 60+ OS entries (if present in the pack)  
+- `bios-hashes.json` — BIOS verification database  
+- `compatibility/` — compatibility framework files  
+
+Do **not** hardcode data that belongs in the definition pack.
+
+---
+
+## Code Standards
+
+### TypeScript
+
+- **Use existing interfaces** from `src/stores/types.ts` — never create duplicates.
+- **Import types properly:** `import type { GameEntry } from '@/stores/types'`
+- Prefer narrow types / const assertions for literals.
+- Avoid `any` and `// @ts-ignore` (fix types instead).
+- Handle loading / error / empty states in UI components.
+- Debounce user-driven search inputs.
+
+### React + state
+
+- Prefer selectors: `useLibraryStore(state => state.games)` (avoid subscribing to entire store).
+- Keep components small and composable; push complex logic into hooks and stores.
+
+### Tailwind / UI
+
+- Support dark mode (`dark:`) everywhere.
+- Use tokens / config values, not arbitrary Tailwind magic numbers.
+- Follow consistent spacing scale: 0.5, 1, 2, 4, 6, 8, 12, 16, 24.
+
+### Rust / Tauri
+
+- Keep Rust command signatures aligned with `src/bindings/commands.ts`.
+- Prefer explicit error types and clear boundary conversion (Rust ↔ TS).
+
+---
+
+## Common Patterns
+
+### Invoking Tauri commands (TypeScript)
+
+```ts
+import { invoke } from '@tauri-apps/api/core'
+
+const result = await invoke<ScanResult>('scan_rom_directory', {
+  path: directoryPath,
+  recursive: true,
+})
+```
+
+---
+
+## Do Not
+
+1. ❌ Create new interfaces when one exists in `src/stores/types.ts`
+2. ❌ Subscribe to entire stores (causes unnecessary re-renders)
+3. ❌ Hardcode definition-pack data in UI or stores
+4. ❌ Skip dark mode support
+5. ❌ Ignore TypeScript errors or silence them
+6. ❌ Leave `console.log` in production code (use proper logging)
+
+---
+
+## Testing Requirements
+
+Each UI component should have at least a basic test (render + key assertions).  
+Prefer small, stable tests over snapshot-heavy suites.
+
+---
+
+## When You Need Help
+
+- **Architecture decisions** → Ask Claude (design / tradeoffs)
+- **Complex Rust code** → Ask Claude Code
+- **Bulk component generation** → Use a codegen pass (then review)
+- **Simple components** → Continue in Cursor
+
+---
+
+## Version
+
+This rules file targets ROM Runner **v0.1.x** development.
+Last updated: **2026-01-07** (bundle date in `README.md`)

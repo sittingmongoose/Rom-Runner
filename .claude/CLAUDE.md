@@ -1,12 +1,7 @@
-# ROM Runner — Claude Code Notes
+# RWM Puppet Master — Claude Code Notes
 
 ## Goal
 Work only inside this repository and keep changes small and reviewable.
-
-Before making non-trivial changes, read:
-- README.md
-- docs/ROM_Runner_Complete_Requirements.md
-- docs/guides/ROM_Runner_Quick_Reference.md
 
 ## Workflow
 - Prefer a short plan first, then implement.

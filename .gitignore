@@ -46,6 +46,7 @@ src-tauri/target/
 # --- Local-only settings (templates are committed separately) ---
 .vscode/settings.local.json
 .claude/settings.local.json
+.claude/.credentials.json
 
 # Cursor MCP config contains secrets (commit the .example.json instead)
 .cursor/mcp.json
